@@ -19,8 +19,4 @@ header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Autho
 |
 */
 
-//patient
-Route::POST('/patients/info/{id}', 'App\Http\Controllers\Api\PatientApiController@getPatientDetail');
-//end patient
-
 Route::POST('/login', 'Api\AuthController@login');

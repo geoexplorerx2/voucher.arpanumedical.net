@@ -28,14 +28,6 @@
 </head>
 <body onload="app();">
 
-    {{-- <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-            <div class="preloader-circle"></div>
-            <div class="preloader-img pere-text"><img src="{{ asset('assets/img/favicon.png') }}"></div>
-            </div>
-        </div>
-    </div> --}}
     @include('layouts.menu')
     <main class="main-content">
         @include('layouts.navbar')
@@ -47,7 +39,6 @@
                         <div class="row mb-2">
                             <div class="col-sm-12">
                                 <h3 class="m-0 text-dark text-center"> Reservation Voucher</h3>
-                                <button class="btn btn-warning" id="choosePatient" data-toggle="modal" data-target="#choosePatientModal">Choose Patient From the list <i class="fa fa-user"></i></button>
                                 <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
                                 <hr>
                             </div>
@@ -570,69 +561,41 @@
                 </section>
             </div>
         </div>
-        <div class="modal fade" id="choosePatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Choose Patient From the list</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form method="POST">
-                        <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card p-4">
-                                <div class="dt-responsive table-responsive">
-                                {!! $html->table() !!}
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-            </div>
-        </div>
+
     </main>
 
 
 
-@include("layouts.active_users_modal")
+    @include("layouts.active_users_modal")
 
-<script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/js.cookie.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/dropzone.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/chart.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/popover.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/Chart.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/glightbox.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/Chart.extension.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery.datatable.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/dataTables.responsive.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jscolor.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/jquery-steps.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/gijgo.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/rest_api.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/clockpicker.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
-<script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/js.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/dropzone.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/popover.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/Chart.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/glightbox.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/Chart.extension.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.datatable.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/dataTables.responsive.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jscolor.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-steps.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/gijgo.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/rest_api.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/clockpicker.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
 
 
-</script>
-{!! $html->scripts() !!}
+</body>
+</html>

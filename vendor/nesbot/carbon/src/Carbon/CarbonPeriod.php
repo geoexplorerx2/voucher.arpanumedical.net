@@ -24,7 +24,6 @@ use Carbon\Exceptions\UnreachableException;
 use Carbon\Traits\IntervalRounding;
 use Carbon\Traits\Mixin;
 use Carbon\Traits\Options;
-use Carbon\Traits\ToStringFormat;
 use Closure;
 use Countable;
 use DateInterval;
@@ -176,7 +175,6 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
         Mixin::mixin as baseMixin;
     }
     use Options;
-    use ToStringFormat;
 
     /**
      * Built-in filter for limit by recurrences.
@@ -1461,21 +1459,13 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      */
     public function toString()
     {
-        $format = $this->localToStringFormat ?? static::$toStringFormat;
-
-        if ($format instanceof Closure) {
-            return $format($this);
-        }
-
         $translator = ([$this->dateClass, 'getTranslator'])();
 
         $parts = [];
 
-        $format = $format ?? (
-            !$this->startDate->isStartOfDay() || ($this->endDate && !$this->endDate->isStartOfDay())
-                ? 'Y-m-d H:i:s'
-                : 'Y-m-d'
-        );
+        $format = !$this->startDate->isStartOfDay() || ($this->endDate && !$this->endDate->isStartOfDay())
+            ? 'Y-m-d H:i:s'
+            : 'Y-m-d';
 
         if ($this->recurrences !== null) {
             $parts[] = $this->translate('period_recurrences', [], $this->recurrences, $translator);
@@ -1685,80 +1675,54 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             return $roundedValue;
         }
 
+        $first = \count($parameters) >= 1 ? $parameters[0] : null;
+        $second = \count($parameters) >= 2 ? $parameters[1] : null;
+
         switch ($method) {
             case 'start':
             case 'since':
-                self::setDefaultParameters($parameters, [
-                    [0, 'date', null],
-                ]);
-
-                return $this->setStartDate(...$parameters);
+                return $this->setStartDate($first, $second);
 
             case 'sinceNow':
-                return $this->setStartDate(new Carbon(), ...$parameters);
+                return $this->setStartDate(new Carbon(), $first);
 
             case 'end':
             case 'until':
-                self::setDefaultParameters($parameters, [
-                    [0, 'date', null],
-                ]);
-
-                return $this->setEndDate(...$parameters);
+                return $this->setEndDate($first, $second);
 
             case 'untilNow':
-                return $this->setEndDate(new Carbon(), ...$parameters);
+                return $this->setEndDate(new Carbon(), $first);
 
             case 'dates':
             case 'between':
-                self::setDefaultParameters($parameters, [
-                    [0, 'start', null],
-                    [1, 'end', null],
-                ]);
-
-                return $this->setDates(...$parameters);
+                return $this->setDates($first, $second);
 
             case 'recurrences':
             case 'times':
-                self::setDefaultParameters($parameters, [
-                    [0, 'recurrences', null],
-                ]);
-
-                return $this->setRecurrences(...$parameters);
+                return $this->setRecurrences($first);
 
             case 'options':
-                self::setDefaultParameters($parameters, [
-                    [0, 'options', null],
-                ]);
-
-                return $this->setOptions(...$parameters);
+                return $this->setOptions($first);
 
             case 'toggle':
-                self::setDefaultParameters($parameters, [
-                    [0, 'options', null],
-                ]);
-
-                return $this->toggleOptions(...$parameters);
+                return $this->toggleOptions($first, $second);
 
             case 'filter':
             case 'push':
-                return $this->addFilter(...$parameters);
+                return $this->addFilter($first, $second);
 
             case 'prepend':
-                return $this->prependFilter(...$parameters);
+                return $this->prependFilter($first, $second);
 
             case 'filters':
-                self::setDefaultParameters($parameters, [
-                    [0, 'filters', []],
-                ]);
-
-                return $this->setFilters(...$parameters);
+                return $this->setFilters($first ?: []);
 
             case 'interval':
             case 'each':
             case 'every':
             case 'step':
             case 'stepBy':
-                return $this->setDateInterval(...$parameters);
+                return $this->setDateInterval($first);
 
             case 'invert':
                 return $this->invertDateInterval();
@@ -1781,7 +1745,9 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
                 return $this->setDateInterval((
                     // Override default P1D when instantiating via fluent setters.
                     [$this->isDefaultInterval ? new CarbonInterval('PT0S') : $this->dateInterval, $method]
-                )(...$parameters));
+                )(
+                    \count($parameters) === 0 ? 1 : $first
+                ));
         }
 
         if ($this->localStrictModeEnabled ?? Carbon::isStrictModeEnabled()) {
@@ -2673,14 +2639,5 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
         $class = $date instanceof DateTime ? DateTime::class : DateTimeImmutable::class;
 
         return new $class($date->format('Y-m-d H:i:s.u'), $date->getTimezone());
-    }
-
-    private static function setDefaultParameters(array &$parameters, array $defaults): void
-    {
-        foreach ($defaults as [$index, $name, $value]) {
-            if (!\array_key_exists($index, $parameters) && !\array_key_exists($name, $parameters)) {
-                $parameters[$index] = $value;
-            }
-        }
     }
 }

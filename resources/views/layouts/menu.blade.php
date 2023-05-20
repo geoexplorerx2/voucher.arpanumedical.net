@@ -20,31 +20,6 @@
                             <span class="nav-link-text">Voucher</span>
                         </a>
                     </li>
-                    @can('show patient')
-                    <li class="nav-item">
-                        <a class="nav-link" href="javascript:;">
-                            <i class="fa fa-id-badge text-primary"></i>
-                            <span class="nav-link-text">Patients</span>
-                            <i class="fa fa-caret-right sub-icon"></i>
-                        </a>
-                        <ul class="nav-item_sub">
-                            @can('show patient')
-                            <li>
-                                <a href="{{ route('patient.index'); }}">
-                                    <span>Choose From List</span>
-                                </a>
-                            </li>
-                            @endcan
-                            @can('create patient')
-                            <li>
-                                <a href="{{ route('patient.create'); }}">
-                                    <span>New Patient</span>
-                                </a>
-                            </li>
-                            @endcan
-                        </ul>
-                    </li>
-                    @endcan
                     @can('show users')
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:;">
@@ -88,13 +63,6 @@
                                     <span>Hotels</span>
                                 </a>
                             </li>
-                            @can('show lead source')
-                            <li>
-                                <a href="{{ route('leadsource.index'); }}">
-                                    <span>Lead Sources</span>
-                                </a>
-                            </li>
-                            @endcan
                             @can('show sales person')
                             <li>
                                 <a href="{{ route('salesperson.index'); }}">
