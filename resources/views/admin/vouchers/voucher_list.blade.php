@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
-    <title>Arpanu Medical Voucher</title>
+    <title>Dr Serkan Aygin Voucher System</title>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
@@ -36,13 +36,15 @@
             <div class="content-wrapper">
                 <div class="content-header">
                     <div class="container-fluid">
-                        <div class="row mb-2">
-                            <div class="col-sm-12">
+                        <div class="row mb-2 mt-3">
+                            <div class="col-sm-8">
                                 <h3 class="m-0 text-dark text-center"> Reservation Voucher</h3>
+                            </div>
+                            <div class="col-sm-4">
                                 <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
-                                <hr>
                             </div>
                         </div>
+                        <hr>
                     </div>
                 </div>
                 <section class="content">
