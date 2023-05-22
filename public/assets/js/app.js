@@ -1301,7 +1301,7 @@ function selectedValues() {
             $("#TotalPackageRateCurrencyText").html(' ' + TotalPackageRateCurrency);
         });
 
-        $("#PrePaymentReceivedCurrency").on("change", function () {
+        $("#ClinicBalanceCurrency").on("change", function () {
             let PrePaymentReceivedCurrency = $(this).children("option:selected").val();
             $("#PrePaymentReceivedCurrencyText").html(' ' + PrePaymentReceivedCurrency);
         });
@@ -1358,7 +1358,7 @@ function selectedValues() {
         $("#calculateTotalPackageRate").on("click", function(){
             var PrePaymentReceived  = $("#PrePaymentReceived").val();
             var ClinicBalance       = $("#ClinicBalance").val();
-            var currency            = $('#PrePaymentReceivedCurrency').val();
+            var currency            = $('#ClinicBalanceCurrency').val();
             var total               =  (parseInt(PrePaymentReceived) + parseInt(ClinicBalance));
             $("#TotalPackageRateVal").html(total +' '+ currency);
         });

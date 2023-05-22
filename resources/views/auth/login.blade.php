@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=7">
     <meta name="robots" content="noindex">
-    <title>Arpanu Medical Voucher</title>
+    <title>Dr Serkan Aygin Voucher System</title>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/app.css') }}" rel="stylesheet">

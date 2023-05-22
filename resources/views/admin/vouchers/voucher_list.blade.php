@@ -277,26 +277,14 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label for="PrePaymentReceived">Pre-payment Received:</label>
-                                                        <input type="text" class="form-control" id="PrePaymentReceived">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="PrePaymentReceivedCurrency">Currency:</label>
-                                                        <select class="form-control" id="PrePaymentReceivedCurrency">
-                                                            <option></option>
-                                                            <option value="€">Euro</option>
-                                                            <option value="$">Dollar</option>
-                                                            <option value="£">Pound</option>
-                                                            <option value="₺">TL</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
                                                         <label for="ClinicBalance">Balance In The Clinic:</label>
                                                         <input type="text" class="form-control" id="ClinicBalance">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="PrePaymentReceived">Pre-payment Received:</label>
+                                                        <input type="text" class="form-control" id="PrePaymentReceived">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -548,8 +536,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Balance In The Clinic: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <span class="data-desc" id="ClinicBalanceVal"></span>
-                                                                    <span class="data-desc" id="ClinicBalanceCurrencyText"></span>
+                                                                    <span class="data-name" id="ClinicBalanceVal"></span>
+                                                                    <span class="data-name" id="ClinicBalanceCurrencyText"></span>
                                                                 </div>
                                                             </div>
                                                         </div>
