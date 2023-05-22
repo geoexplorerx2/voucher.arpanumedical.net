@@ -1305,6 +1305,10 @@ function selectedValues() {
             $("#TotalPackageRateVal").html( $(this).val());
 
         });
+        $("#patientName").on("change", function () {
+            $("#passengerName").html( $(this).val());
+
+        });
         $("#PrePaymentReceived").on("change", function () {
             $("#PrePaymentReceivedVal").html( $(this).val());
 

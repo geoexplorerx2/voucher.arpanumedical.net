@@ -157,7 +157,13 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="patientName">Patient Name:</label>
+                                                        <input type="text" class="form-control" id="patientName" placeholder="Patient Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
                                                     <button class="btn btn-success float-right" id="calculateDate">Calculate</button>
                                                 </div>
                                             </div>
