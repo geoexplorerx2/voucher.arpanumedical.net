@@ -23,7 +23,7 @@
             <div class="col-lg-8 col-12">
                 <div class="card">
                     <div class="card-header">
-                        <img class="logo" src="{{ asset('assets/img/drserkanygin-logo.png') }}" alt="">
+                        <img class="logo" src="{{ asset('assets/img/logo.png') }}" alt="">
                     </div>
 
                     <div class="card-body">
