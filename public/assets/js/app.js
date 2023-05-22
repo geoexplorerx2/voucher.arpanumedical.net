@@ -1053,6 +1053,9 @@ $("#myTabContent").find("#treatmentId").on("change", function(){
 $("#roomType").select2({placeholder: "Select Room Type", dropdownAutoWidth: true, allowClear: true});
 $("#clinic").select2({placeholder: "Select Clinic", dropdownAutoWidth: true, allowClear: true});
 $("#hotel_voucher").select2({placeholder: "Select Hotel", dropdownAutoWidth: true, allowClear: true});
+$("#TotalPackageRateCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
+$("#PrePaymentReceivedCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
+$("#ClinicBalanceCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
 $("#hotel_category").select2({placeholder: "Select Category", dropdownAutoWidth: true, allowClear: true});
 $("#contactPerson").select2({placeholder: "Select Contact Person", dropdownAutoWidth: true, allowClear: true});
 $("#airportCode").select2({placeholder: "Select Airport Code", dropdownAutoWidth: true, allowClear: true});
@@ -1293,6 +1296,20 @@ function selectedValues() {
             let hotelCategoryVal = $(this).children("option:selected").val();
             $("#hotelCategoryText").html('<p class="data-desc" style="margin-bottom:0px;">' + hotelCategoryVal + '</p>');
         });
+        $("#TotalPackageRateCurrency").on("change", function () {
+            let TotalPackageRateCurrency = $(this).children("option:selected").val();
+            $("#TotalPackageRateCurrencyText").html(' ' + TotalPackageRateCurrency);
+        });
+
+        $("#PrePaymentReceivedCurrency").on("change", function () {
+            let PrePaymentReceivedCurrency = $(this).children("option:selected").val();
+            $("#PrePaymentReceivedCurrencyText").html(' ' + PrePaymentReceivedCurrency);
+        });
+
+        $("#ClinicBalanceCurrency").on("change", function () {
+            let ClinicBalanceCurrency = $(this).children("option:selected").val();
+            $("#ClinicBalanceCurrencyText").html(' ' + ClinicBalanceCurrency);
+        });
 
         $("#contactPerson").on("change", function () {
             let contactPersonVal = $(this).children("option:selected").text();
@@ -1301,19 +1318,19 @@ function selectedValues() {
             $("#contactPersonPhone").html( contactPersonPhone);
 
         });
-        $("#TotalPackageRate").on("change", function () {
+        $("#TotalPackageRate").on("input", function () {
             $("#TotalPackageRateVal").html( $(this).val());
 
         });
-        $("#patientName").on("change", function () {
+        $("#patientName").on("input", function () {
             $("#passengerName").html( $(this).val());
 
         });
-        $("#PrePaymentReceived").on("change", function () {
+        $("#PrePaymentReceived").on("input", function () {
             $("#PrePaymentReceivedVal").html( $(this).val());
 
         });
-        $("#ClinicBalance").on("change", function () {
+        $("#ClinicBalance").on("input", function () {
             $("#ClinicBalanceVal").html( $(this).val());
 
         });

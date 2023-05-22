@@ -20623,7 +20623,7 @@ a.btn-icon-only
 
 .card
 {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     border: 0;
     box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
 }

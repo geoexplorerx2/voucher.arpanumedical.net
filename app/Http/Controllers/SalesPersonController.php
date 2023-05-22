@@ -46,7 +46,7 @@ class SalesPersonController extends Controller
     {
         $sales_person = SalesPerson::where('id', '=', $id)->first();
 
-        return view('admin.salespersons.edit_salesperson', ['sales_persons' => $sales_person]);
+        return view('admin.salespersons.edit_salesperson', ['sales_person' => $sales_person]);
     }
 
     public function update(Request $request, $id)

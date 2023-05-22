@@ -98,6 +98,12 @@
                                             <div class="row hotel-reservation-data">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label for="patientName">Patient Name:</label>
+                                                        <input type="text" class="form-control" id="patientName" placeholder="Patient Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
                                                         <label for="hotel_voucher">Hotel</label>
                                                         <select class="form-control" id="hotel_voucher">
                                                             <option></option>
@@ -130,6 +136,19 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
+                                                        <label for="hotel_category">Category:</label>
+                                                        <select class="form-control" id="hotel_category">
+                                                            <option></option>
+                                                            <option value="BB (Bed & Breakfast)">BB (Bed & Breakfast)</option>
+                                                            <option value="HF (Half Board)">HF (Half Board)</option>
+                                                            <option value="FB (Full Board)">FB (Full Board)</option>
+                                                            <option value="All inclusive">All inclusive</option>
+                                                            <option value="Ultra all inclusive">Ultra all inclusive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
                                                         <label for="check-in">Check-in:</label>
                                                         <input type="text" class="form-control" id="check-in" autocomplete="off" placeholder="Check-in" maxlength="10">
                                                     </div>
@@ -147,25 +166,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="hotel_category">Category:</label>
-                                                        <select class="form-control" id="hotel_category">
-                                                            <option></option>
-                                                            <option value="BB (Bed & Breakfast)">BB (Bed & Breakfast)</option>
-                                                            <option value="HF (Half Board)">HF (Half Board)</option>
-                                                            <option value="FB (Full Board)">FB (Full Board)</option>
-                                                            <option value="All inclusive">All inclusive</option>
-                                                            <option value="Ultra all inclusive">Ultra all inclusive</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="patientName">Patient Name:</label>
-                                                        <input type="text" class="form-control" id="patientName" placeholder="Patient Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
+                                                    <label for="calculateDate">Calculate Nights:</label>
                                                     <button class="btn btn-success float-right" id="calculateDate">Calculate</button>
                                                 </div>
                                             </div>
@@ -258,22 +259,58 @@
                                         </div>
                                         <div class="col-lg-6 transfer-reservation-section">
                                             <h4>Payment Details</h4>
-                                            <hr>
+                                            <hr style="margin-top: 18px!important;">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Package fee, including the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers amounts to: [2.500 €]</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="importantNotes">Important Notes</label>
-                                                        <textarea class="form-control" id="importantNotes">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 13], holding a board with [D10].</textarea>
+                                                        <textarea class="form-control" id="importantNotes">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="PrePaymentReceived">Pre-payment Received:</label>
+                                                        <input type="text" class="form-control" id="PrePaymentReceived">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="PrePaymentReceivedCurrency">Currency:</label>
+                                                        <select class="form-control" id="PrePaymentReceivedCurrency">
+                                                            <option></option>
+                                                            <option value="€">Euro</option>
+                                                            <option value="$">Dollar</option>
+                                                            <option value="£">Pound</option>
+                                                            <option value="₺">TL</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="ClinicBalance">Balance In The Clinic:</label>
+                                                        <input type="text" class="form-control" id="ClinicBalance">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="ClinicBalanceCurrency">Currency:</label>
+                                                        <select class="form-control" id="ClinicBalanceCurrency">
+                                                            <option></option>
+                                                            <option value="€">Euro</option>
+                                                            <option value="$">Dollar</option>
+                                                            <option value="£">Pound</option>
+                                                            <option value="₺">TL</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="TotalPackageRate">Total Package Rate:</label>
@@ -282,14 +319,14 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label for="PrePaymentReceived">Pre-payment Received</label>
-                                                        <input type="text" class="form-control" id="PrePaymentReceived">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="ClinicBalance">Balance In The Clinic</label>
-                                                        <input type="text" class="form-control" id="ClinicBalance">
+                                                        <label for="TotalPackageRateCurrency">Currency:</label>
+                                                        <select class="form-control" id="TotalPackageRateCurrency">
+                                                            <option></option>
+                                                            <option value="€">Euro</option>
+                                                            <option value="$">Dollar</option>
+                                                            <option value="£">Pound</option>
+                                                            <option value="₺">TL</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -310,7 +347,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-name" style="border-bottom: 1px solid black;">Address: Merkez Mah. Abide-i Hürriye Cad. No: 171/8 Aykaç Aptç Kat:2 Şişli/İSTANBUL - TURKEY</p>
+                                                                <p class="data-name" style="border-bottom: 1px solid black;">Address: Merkez Mah. Abide-i Hürriye Cad. No: 171/8 Aykaç Apt. Kat:2 Şişli/İSTANBUL - TURKEY</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -406,7 +443,7 @@
                                                         <div class="row hotel-voucher-note">
                                                             <div class="col-lg-12">
                                                                 <span style="color: #81b9d8; font-size: 10px;" class="important-note">Important Notes</span>
-                                                                <p style="font-size: 9px; font-family: inherit" class="important-desc-1">* For check-in procedures before 14:00, depending on the availability of vacant rooms, you may have to wait for a short while.</span><br><span>** You are required to check out by 12:00.</span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" class="important-desc-1">* For check-in procedures before 15:00, depending on the availability of vacant rooms, you may have to wait for a short while.</span><br><span>** You are required to check out by 12:00.</span></p>
                                                                 <p style="font-size: 9px; font-family: inherit" class="important-desc-2"></p>
                                                             </div>
                                                         </div>
@@ -497,7 +534,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text-2"><h5 style="margin-bottom:0px">PAYMENT DETAILS</h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">PAYMENT DETAILS</h5></div>
                                                             </div>
                                                         </div>
 
@@ -507,7 +544,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Total Package Rate: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="TotalPackageRateVal"></p>
+                                                                    <span class="data-desc" id="TotalPackageRateVal"></span>
+                                                                    <span class="data-desc" id="TotalPackageRateCurrencyText"></span>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
@@ -515,7 +553,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Pre-payment Received: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="PrePaymentReceivedVal"></p>
+                                                                    <span class="data-desc" id="PrePaymentReceivedVal"></span>
+                                                                    <span class="data-desc" id="PrePaymentReceivedCurrencyText"></span>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
@@ -523,7 +562,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Balance In The Clinic: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="ClinicBalanceVal"></p>
+                                                                    <span class="data-desc" id="ClinicBalanceVal"></span>
+                                                                    <span class="data-desc" id="ClinicBalanceCurrencyText"></span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -537,7 +577,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text-2"><h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5></div>
                                                             </div>
                                                         </div>
 
