@@ -311,23 +311,9 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="TotalPackageRate">Total Package Rate:</label>
-                                                        <input type="text" class="form-control" id="TotalPackageRate">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <label for="TotalPackageRateCurrency">Currency:</label>
-                                                        <select class="form-control" id="TotalPackageRateCurrency">
-                                                            <option></option>
-                                                            <option value="€">Euro</option>
-                                                            <option value="$">Dollar</option>
-                                                            <option value="£">Pound</option>
-                                                            <option value="₺">TL</option>
-                                                        </select>
-                                                    </div>
+                                                <div class="col-lg-12">
+                                                    <label for="calculateDate">Calculate Total Package Rate:</label>
+                                                    <button class="btn btn-success float-right" id="calculateTotalPackageRate">Calculate</button>
                                                 </div>
                                             </div>
                                         </div>

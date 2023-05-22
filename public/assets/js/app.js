@@ -1318,10 +1318,6 @@ function selectedValues() {
             $("#contactPersonPhone").html( contactPersonPhone);
 
         });
-        $("#TotalPackageRate").on("input", function () {
-            $("#TotalPackageRateVal").html( $(this).val());
-
-        });
         $("#patientName").on("input", function () {
             $("#passengerName").html( $(this).val());
 
@@ -1359,7 +1355,13 @@ function selectedValues() {
                 $("#nightResult").html('<p style="font-size: 9px; margin-bottom:0px;">' + dayDifference(dates[0], dates[1]) + '</p>');
             });
         });
-
+        $("#calculateTotalPackageRate").on("click", function(){
+            var PrePaymentReceived  = $("#PrePaymentReceived").val();
+            var ClinicBalance       = $("#ClinicBalance").val();
+            var currency            = $('#PrePaymentReceivedCurrency').val();
+            var total               =  (parseInt(PrePaymentReceived) + parseInt(ClinicBalance));
+            $("#TotalPackageRateVal").html(total +' '+ currency);
+        });
         $("#description_area").on("input", function(){
             $("#description_text").text($(this).val());
         });
