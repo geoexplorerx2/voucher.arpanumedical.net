@@ -421,6 +421,7 @@ var app = (function() {
     getUetdsCities();
     getUetdsZones();
     getCustomerId();
+    saveVoucher();
     // datePickers();
 
     //api's
@@ -555,7 +556,7 @@ var Layout = (function() {
             firstDay: 1,
             format: userFormat
         },
-        minDate: moment().add(1, 'days'),
+        minDate: moment().add(0, 'days'),
         maxDate: moment().add(359, 'days'),
     });
     $('#dateOfProcedure').daterangepicker({
@@ -613,7 +614,7 @@ var Layout = (function() {
             firstDay: 1,
             format: userFormat
         },
-        minDate: moment().add(1, 'days'),
+        minDate: moment().add(0, 'days'),
         maxDate: moment().add(359, 'days'),
     });
 
@@ -960,8 +961,55 @@ function completeTreatmentPlan(){
     catch(error){ }
 }
 
-//send treatment plan
-function addTreatmentPlan(bmiValue, weight, weight_unit, height, height_unit, patient_global_id, treatment_id, doctor_id, sales_person_id, duration_of_stay, hospitalization, accommodation, total_price, price_currency, note){
+function saveVoucher(){
+    try {
+        $("#saveVoucher").on("click", function(){
+                setTimeout(() => {
+                    //treatment plan
+                    var mainStep = $("#tab2");
+                    var stepMedicalHistory = $("#tab3");
+                    var treatment_id = mainStep.find('#treatmentId').children("option:selected").val();
+                    $('#doctorID :selected').each(function(i, selected) {
+                        doctor_id[i] = $(selected).val();
+                    });
+                    var clinic              = $('#clinic').children("option:selected").val(),
+                        foreseen_date       = $('#dateOfProcedure').val(),
+                        medical_type        = $('#typeofProcedure').val(),
+                        desc                = $('#description_area').val(),
+                        patient_name        = $('#patientName').val(),
+                        hotel_name          = $('#hotel_voucher').children("option:selected").val(),
+                        room_type           = $('#roomType').children("option:selected").val(),
+                        category            = $('#hotel_category').children("option:selected").val(),
+                        hotel_checkin       = $('#check-in').val(),
+                        hotel_checkout      = $('#check-out').val(),
+                        confirmatiom_num    = $('#confirmation-number').val(),
+                        nights              = $('#nightResult').text(),
+                        arrival_date        = $('#arrivalDate').val(),
+                        departure_date      = $('#departureDate').val(),
+                        arrival_time        = $('#arrivalTime').val(),
+                        departure_time      = $('#departureTime').val(),
+                        pickup_time         = $('#pickupTime').val(),
+                        flight_number       = $('#flightNumber').val(),
+                        arrival_airport     = $('#arrivalAirportVoucher').val(),
+                        departure_airport   = $('#departureAirportVoucher').val(),
+                        airport_code        = $('#airportCode').children("option:selected").val(),
+                        contact_person      = $('#contactPerson').children("option:selected").val(),
+                        payment_detail      = $('#paymentDetail_one').val(),
+                        important_note      = $('#importantNotes').val(),
+                        clinic_balance      = $('#ClinicBalance').val(),
+                        prepayment_received = $('#PrePaymentReceived').val(),
+                        currency            = $('#ClinicBalanceCurrency').val(),
+                        total_package       = $('#TotalPackageRateVal').text();
+
+                        addVoucher(clinic,foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+                }, 500);
+        });
+    }
+    catch(error){ }
+}
+
+//send Voucher
+function addVoucher(clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
     try {
         $.ajaxSetup({
             headers: {
@@ -969,34 +1017,43 @@ function addTreatmentPlan(bmiValue, weight, weight_unit, height, height_unit, pa
             }
         });
         $.ajax({
-            url: '/treatmentplans/store',
+            url: '/vouchers/store',
             type: 'POST',
             data: {
-                'patient_id': patient_global_id,
-                'treatment_id': treatment_id,
-                'doctor_id': doctor_id,
-                'sales_person_id': sales_person_id,
-                'duration_of_stay': duration_of_stay,
-                'hospitalization': hospitalization,
-                'accommodation': accommodation,
-                'total_price': total_price,
-                'price_currency': price_currency,
-                'note': note,
-                'bmiValue': bmiValue,
-                'weight': weight,
-                'weight_unit': weight_unit,
-                'height': height,
-                'height_unit': height_unit
+                'clinic_name'           :clinic,
+                'foreseen_date'         : foreseen_date,
+                'medical_type'          : medical_type,
+                'desc'                  : desc,
+                'patient_name'          : patient_name,
+                'hotel_name'            : hotel_name,
+                'room_type'             : room_type,
+                'category'              : category,
+                'hotel_checkin'         : hotel_checkin,
+                'hotel_checkout'        : hotel_checkout,
+                'confirmatiom_num'      : confirmatiom_num,
+                'nights'                : nights,
+                'arrival_date'          : arrival_date,
+                'departure_date'        : departure_date,
+                'arrival_time'          : arrival_time,
+                'departure_time'        : departure_time,
+                'pickup_time'           : pickup_time,
+                'flight_number'         : flight_number,
+                'arrival_airport'       : arrival_airport,
+                'departure_airport'     : departure_airport,
+                'airport_code'          : airport_code,
+                'contact_person'        : contact_person,
+                'payment_detail'        : payment_detail,
+                'important_note'        : important_note,
+                'clinic_balance'        : clinic_balance,
+                'prepayment_received'   : prepayment_received,
+                'currency'              : currency,
+                'total_package'         : total_package,
             },
             async: false,
             dataType: 'json',
             success: function (response) {
                 if (response) {
-                    swal({ icon: 'success', title: 'Success', text: 'Treatment Plan Added Successfully!', timer: 1000 });
-                    treatment_plan_id = response;
-                     setTimeout(() => {
-                        location.reload();
-                     }, 2000);
+                    swal({ icon: 'success', title: 'Success', text: 'Voucher Added Successfully!'});
                 }
             },
 

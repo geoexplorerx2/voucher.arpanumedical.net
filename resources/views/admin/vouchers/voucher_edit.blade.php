@@ -62,7 +62,7 @@
                                                 <div class="form-group">
                                                     <label for="clinic">Clinic</label>
                                                     <select class="form-control" id="clinic">
-                                                        <option></option>
+                                                        <option value="{{$voucher->clinic_name}}">{{$voucher->clinic_name}}</option>
                                                         @foreach ($hospitals as $hospital)
                                                             <option value="{{$hospital->hospital_id}}">{{$hospital->hospital_name}}</option>
                                                         @endforeach

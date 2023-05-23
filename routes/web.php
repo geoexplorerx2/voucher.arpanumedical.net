@@ -67,4 +67,8 @@ Route::group(['middleware' => ['auth']], function(){
     //Hotels
 
     Route::GET('voucher', 'VoucherController@index')->name('voucher');
+    Route::POST('vouchers/store', 'VoucherController@store')->name('voucher.store');
+    Route::GET('vouchers/list', 'VoucherController@show')->name('voucher.show');
+    Route::GET('vouchers/edit/{id}', 'VoucherController@edit')->name('voucher.edit');
+
 });
