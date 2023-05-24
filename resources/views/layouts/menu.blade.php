@@ -15,10 +15,23 @@
                         </a>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('voucher'); }}">
+                        <a class="nav-link" href="javascript:;">
                             <i class="fa fa-files-o text-primary"></i>
                             <span class="nav-link-text">Voucher</span>
+                            <i class="fa fa-caret-right sub-icon"></i>
                         </a>
+                        <ul class="nav-item_sub">
+                            <li>
+                                <a href="{{ route('voucher'); }}">
+                                    <span>Create Voucher</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('voucher.show'); }}">
+                                    <span>Vouchers List</span>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     @can('show users')
                     <li class="nav-item">

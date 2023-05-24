@@ -64,7 +64,7 @@
                                                     <select class="form-control" id="clinic">
                                                         <option></option>
                                                         @foreach ($hospitals as $hospital)
-                                                            <option value="{{$hospital->hospital_id}}">{{$hospital->hospital_name}}</option>
+                                                            <option value="{{$hospital->id}}">{{$hospital->hospital_name}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -108,7 +108,7 @@
                                                         <select class="form-control" id="hotel_voucher">
                                                             <option></option>
                                                             @foreach ($hotels as $hotel)
-                                                                <option value="{{$hotel->hotel_id}}">{{$hotel->hotel_name}}</option>
+                                                                <option value="{{$hotel->id}}">{{$hotel->hotel_name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>

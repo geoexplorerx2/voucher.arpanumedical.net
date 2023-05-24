@@ -418,10 +418,11 @@ var app = (function() {
     getPatientId();
     completeTreatmentPlan();
     bmiCalculate();
-    getUetdsCities();
-    getUetdsZones();
+    // getUetdsCities();
+    // getUetdsZones();
     getCustomerId();
     saveVoucher();
+    updateVoucher();
     // datePickers();
 
     //api's
@@ -965,13 +966,15 @@ function saveVoucher(){
     try {
         $("#saveVoucher").on("click", function(){
                 setTimeout(() => {
-                    //treatment plan
-                    var mainStep = $("#tab2");
-                    var stepMedicalHistory = $("#tab3");
-                    var treatment_id = mainStep.find('#treatmentId').children("option:selected").val();
-                    $('#doctorID :selected').each(function(i, selected) {
-                        doctor_id[i] = $(selected).val();
-                    });
+                    // Get the img element by its id
+                    var hotelimg = document.getElementById('hotel_img');
+                    var hospitalimg = document.getElementById('clinic_img');
+                    var codeimg = document.getElementById('code_img');
+
+                    // Access the src attribute to get the source content
+                    var hotel_img = hotelimg.outerHTML;
+                    var hospital_img = hospitalimg.outerHTML;
+                    var code_img = codeimg.outerHTML;
                     var clinic              = $('#clinic').children("option:selected").val(),
                         foreseen_date       = $('#dateOfProcedure').val(),
                         medical_type        = $('#typeofProcedure').val(),
@@ -1001,7 +1004,7 @@ function saveVoucher(){
                         currency            = $('#ClinicBalanceCurrency').val(),
                         total_package       = $('#TotalPackageRateVal').text();
 
-                        addVoucher(clinic,foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+                        addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
                 }, 500);
         });
     }
@@ -1009,7 +1012,7 @@ function saveVoucher(){
 }
 
 //send Voucher
-function addVoucher(clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
+function addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
     try {
         $.ajaxSetup({
             headers: {
@@ -1020,12 +1023,14 @@ function addVoucher(clinic, foreseen_date, medical_type, desc, patient_name, hot
             url: '/vouchers/store',
             type: 'POST',
             data: {
-                'clinic_name'           :clinic,
+                'clinic_name'           : clinic,
+                'hospital_img'          : hospital_img,
                 'foreseen_date'         : foreseen_date,
                 'medical_type'          : medical_type,
                 'desc'                  : desc,
                 'patient_name'          : patient_name,
                 'hotel_name'            : hotel_name,
+                'hotel_img'             : hotel_img,
                 'room_type'             : room_type,
                 'category'              : category,
                 'hotel_checkin'         : hotel_checkin,
@@ -1041,6 +1046,7 @@ function addVoucher(clinic, foreseen_date, medical_type, desc, patient_name, hot
                 'arrival_airport'       : arrival_airport,
                 'departure_airport'     : departure_airport,
                 'airport_code'          : airport_code,
+                'code_img'              : code_img,
                 'contact_person'        : contact_person,
                 'payment_detail'        : payment_detail,
                 'important_note'        : important_note,
@@ -1064,6 +1070,112 @@ function addVoucher(clinic, foreseen_date, medical_type, desc, patient_name, hot
     } finally { }
 }
 
+function updateVoucher(){
+    try {
+        $("#updateVoucher").on("click", function(){
+                setTimeout(() => {
+                    var hotelimg     = document.getElementById('hotel_img');
+                    var hospitalimg  = document.getElementById('clinic_img');
+                    var codeimg      = document.getElementById('code_img');
+                    var hotel_img    = hotelimg.outerHTML;
+                    var hospital_img = hospitalimg.outerHTML;
+                    var code_img     = codeimg.outerHTML;
+
+                    var clinic              = $('#clinic').children("option:selected").val(),
+                        foreseen_date       = $('#dateOfProcedure').val(),
+                        id                  = $('#voucher_id').val(),
+                        medical_type        = $('#typeofProcedure').val(),
+                        desc                = $('#description_area').val(),
+                        patient_name        = $('#patientName').val(),
+                        hotel_name          = $('#hotel_voucher').children("option:selected").val(),
+                        room_type           = $('#roomType').children("option:selected").val(),
+                        category            = $('#hotel_category').children("option:selected").val(),
+                        hotel_checkin       = $('#check-in').val(),
+                        hotel_checkout      = $('#check-out').val(),
+                        confirmatiom_num    = $('#confirmation-number').val(),
+                        nights              = $('#nightResult').text(),
+                        arrival_date        = $('#arrivalDate').val(),
+                        departure_date      = $('#departureDate').val(),
+                        arrival_time        = $('#arrivalTime').val(),
+                        departure_time      = $('#departureTime').val(),
+                        pickup_time         = $('#pickupTime').val(),
+                        flight_number       = $('#flightNumber').val(),
+                        arrival_airport     = $('#arrivalAirportVoucher').val(),
+                        departure_airport   = $('#departureAirportVoucher').val(),
+                        airport_code        = $('#airportCode').children("option:selected").val(),
+                        contact_person      = $('#contactPerson').children("option:selected").val(),
+                        payment_detail      = $('#paymentDetail_one').val(),
+                        important_note      = $('#importantNotes').val(),
+                        clinic_balance      = $('#ClinicBalance').val(),
+                        prepayment_received = $('#PrePaymentReceived').val(),
+                        currency            = $('#ClinicBalanceCurrency').val(),
+                        total_package       = $('#TotalPackageRateVal').text();
+
+                        saveUpdateVoucher(id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+                }, 500);
+        });
+    }
+    catch(error){ }
+}
+
+//Update Voucher
+function saveUpdateVoucher(id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
+    try {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: '/vouchers/update/'+id,
+            type: 'POST',
+            data: {
+                'clinic_name'           : clinic,
+                'hospital_img'          : hospital_img,
+                'foreseen_date'         : foreseen_date,
+                'medical_type'          : medical_type,
+                'desc'                  : desc,
+                'patient_name'          : patient_name,
+                'hotel_name'            : hotel_name,
+                'hotel_img'             : hotel_img,
+                'room_type'             : room_type,
+                'category'              : category,
+                'hotel_checkin'         : hotel_checkin,
+                'hotel_checkout'        : hotel_checkout,
+                'confirmatiom_num'      : confirmatiom_num,
+                'nights'                : nights,
+                'arrival_date'          : arrival_date,
+                'departure_date'        : departure_date,
+                'arrival_time'          : arrival_time,
+                'departure_time'        : departure_time,
+                'pickup_time'           : pickup_time,
+                'flight_number'         : flight_number,
+                'arrival_airport'       : arrival_airport,
+                'departure_airport'     : departure_airport,
+                'airport_code'          : airport_code,
+                'code_img'              : code_img,
+                'contact_person'        : contact_person,
+                'payment_detail'        : payment_detail,
+                'important_note'        : important_note,
+                'clinic_balance'        : clinic_balance,
+                'prepayment_received'   : prepayment_received,
+                'currency'              : currency,
+                'total_package'         : total_package,
+            },
+            async: false,
+            dataType: 'json',
+            success: function (response) {
+                if (response) {
+                    swal({ icon: 'success', title: 'Success', text: 'Voucher Updated Successfully!'});
+                }
+            },
+
+            error: function () { },
+        });
+    } catch (error) {
+        console.log(error);
+    } finally { }
+}
 
 $("#tab2").find("#treatmentId").on("change", function(){
     var treatmentId = $(this).children("option:selected").val();
@@ -1301,27 +1413,27 @@ function selectedValues() {
             $("#innercity_reservations_section").find("input[name='marketleaderId']").val(marketLeaderId);
         });
 
-        $("#clinic").on("change", function () {
+        $("#clinic").on("input", function () {
             let clinic = $(this).children("option:selected").text();
             let clinicVal = $(this).children("option:selected").val();
             $("#clinicText").html('<p class="data-desc" style="margin-bottom:0px;">' + clinic + '</p>');
             //Doku
             if (clinicVal == 1) {
-                $("#clinicImage").html('<img src="/images/doku-logo.png" style="width: 68px; float: right;">');
+                $("#clinicImage").html('<img src="/images/doku-logo.png" style="width: 68px; float: right;" id="clinic_img">');
             }
             //Dr Serkan
             if (clinicVal == 2) {
-                $("#clinicImage").html('<img src="/images/drserkan-logo.svg" style="width: 130px; float: right;">');
+                $("#clinicImage").html('<img src="/images/drserkan-logo.svg" style="width: 130px; float: right;" id="clinic_img">');
                 $("#treatmentDetail").text("Hair Transplantation, Dermatology Clinic");
                 $("#typeofProcedure").val("Hair Transplantation, Dermatology Clinic");
             }
             //Koc Unı
             if (clinicVal == 3) {
-                $("#clinicImage").html('<img src="/images/koc-universitesi-logo.png" style="width: 117px; float: right;">');
+                $("#clinicImage").html('<img src="/images/koc-universitesi-logo.png" style="width: 117px; float: right;" id="clinic_img">');
             }
             //Ceyhun Aydogan
             if (clinicVal == 24) {
-                $("#clinicImage").html('<img src="/images/ceyhun-logo.png" style="width: 140px;float: right;">');
+                $("#clinicImage").html('<img src="/images/ceyhun-logo.png" style="width: 140px;float: right;" id="clinic_img">');
                 $("#treatmentDetail").text("Bariatrics Surgery");
                 $("#typeofProcedure").val("Bariatrics Surgery");
             }
@@ -1332,21 +1444,21 @@ function selectedValues() {
             let hotelVal = $(this).children("option:selected").val();
             $("#hotelText").html('<p style="font-size: 9px;margin-bottom:0px;">' + hotel + '</p>');
             //nova plaza
-            if (hotelVal == 3) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 4) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 6) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 7) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 8) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 329) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;">');
+            if (hotelVal == 3) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
+            if (hotelVal == 4) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
+            if (hotelVal == 6) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
+            if (hotelVal == 7) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
+            if (hotelVal == 8) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
+            if (hotelVal == 329) $("#hotelImage").html('<img src="/images/nova-plaza-logo.png" style="width: 80px; float: right;" id="hotel_img">');
             //marriot
-            if (hotelVal == 9) $("#hotelImage").html('<img src="/images/marriott-logo.png" style="width: 80px; float: right;">');
-            if (hotelVal == 163) $("#hotelImage").html('<img src="/images/hilton-logo.png" style="width: 80px; float: right;">');
+            if (hotelVal == 9) $("#hotelImage").html('<img src="/images/marriott-logo.png" style="width: 55px; float: right;" id="hotel_img">');
+            if (hotelVal == 163) $("#hotelImage").html('<img src="/images/hilton-logo.png" style="width: 50px; float: right;" id="hotel_img">');
         });
 
         $("#airportCode").on("change", function () {
             let airportCode = $(this).children("option:selected").val();
-            if (airportCode == "IST") $("#airportImage").html('<img src="/images/d10.png" style="width: 75px;margin-top: 25px;">');
-            if (airportCode == "SAW") $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;">');
+            if (airportCode == "IST") $("#airportImage").html('<img src="/images/d10.png" style="width: 75px;margin-top: 25px;" id="code_img">');
+            if (airportCode == "SAW") $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;"  id="code_img">');
         });
 
         $("#hotel_category").on("change", function () {
@@ -1554,60 +1666,60 @@ function clockPickers() {
     }
     finally { }
 }
-function getUetdsCities() {
-    try {
-        $.ajax({
-            url: '/getUetdsCities',
-            type: 'get',
-            dataType: 'json',
-            success: function (response) {
-                if (response) {
-                    $.each(response, function (key, value) {
-                        $("#uetdsCities").append('<option id="' + key + '" value="' + key + '-' + value + '">' + value + '</option>');
-                    });
-                }
-            },
+// function getUetdsCities() {
+//     try {
+//         $.ajax({
+//             url: '/getUetdsCities',
+//             type: 'get',
+//             dataType: 'json',
+//             success: function (response) {
+//                 if (response) {
+//                     $.each(response, function (key, value) {
+//                         $("#uetdsCities").append('<option id="' + key + '" value="' + key + '-' + value + '">' + value + '</option>');
+//                     });
+//                 }
+//             },
 
-            error: function () {
-                console.log(DEFINITIONS.LOG_SUCCESS);
-            },
-        });
-    } catch (error) {
-        console.info(error);
-    } finally { }
-}
+//             error: function () {
+//                 console.log(DEFINITIONS.LOG_SUCCESS);
+//             },
+//         });
+//     } catch (error) {
+//         console.info(error);
+//     } finally { }
+// }
 
-function getUetdsZones(e) {
-    try {
-        var selectedCity = $(e).children(":selected").attr("id");
-        $.ajax({
-            url: '/getUetdsZones/' + selectedCity,
-            type: 'get',
-            dataType: 'json',
-            success: function (response) {
-                if (response) {
-                    $("#uetdsZones").empty();
-                    $.each(response, function (key, value) {
-                        $("#uetdsZones").append('<option id="' + key + '" value="' + key + '-' + value + '">' + value + '</option>');
-                    });
-                }
-            },
+// function getUetdsZones(e) {
+//     try {
+//         var selectedCity = $(e).children(":selected").attr("id");
+//         $.ajax({
+//             url: '/getUetdsZones/' + selectedCity,
+//             type: 'get',
+//             dataType: 'json',
+//             success: function (response) {
+//                 if (response) {
+//                     $("#uetdsZones").empty();
+//                     $.each(response, function (key, value) {
+//                         $("#uetdsZones").append('<option id="' + key + '" value="' + key + '-' + value + '">' + value + '</option>');
+//                     });
+//                 }
+//             },
 
-            error: function () {
-                console.log(DEFINITIONS.LOG_SUCCESS);
-            },
-        });
-    } catch (error) {
-        console.info(error);
-    } finally { }
-}
-function getInnerCityReservation(elem){
-    try {
-        console.log(elem.id);
-        var passengerName = $(elem).attr("data-name");
-        $("#passengerName").text(passengerName);
+//             error: function () {
+//                 console.log(DEFINITIONS.LOG_SUCCESS);
+//             },
+//         });
+//     } catch (error) {
+//         console.info(error);
+//     } finally { }
+// }
+// function getInnerCityReservation(elem){
+//     try {
+//         console.log(elem.id);
+//         var passengerName = $(elem).attr("data-name");
+//         $("#passengerName").text(passengerName);
 
-    } catch (error) {
-        console.info(error);
-    } finally { }
-}
+//     } catch (error) {
+//         console.info(error);
+//     } finally { }
+// }

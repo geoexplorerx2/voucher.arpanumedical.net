@@ -38,7 +38,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2 mt-3">
                             <div class="col-sm-8">
-                                <h3 class="m-0 text-dark text-center"> Reservation Voucher</h3>
+                                <h3 class="m-0 text-dark text-center">Edit Reservation Voucher</h3>
                             </div>
                             <div class="col-sm-4">
                                 <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
@@ -57,14 +57,15 @@
                                         <div class="col-lg-6 clinic-reservation-section">
                                         <h4>Clinic Appointment Details</h4>
                                         <hr>
+                                        <input type="hidden" id="voucher_id" value="{{ $voucher->id }}">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="clinic">Clinic</label>
                                                     <select class="form-control" id="clinic">
-                                                        <option value="{{$voucher->clinic_name}}">{{$voucher->clinic_name}}</option>
+                                                        <option value="{{$voucher->hospital_id}}" selected>{{$voucher->hospital->hospital_name}}</option>
                                                         @foreach ($hospitals as $hospital)
-                                                            <option value="{{$hospital->hospital_id}}">{{$hospital->hospital_name}}</option>
+                                                            <option value="{{$hospital->id}}">{{$hospital->hospital_name}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -72,13 +73,13 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="dateOfProcedure">Foreseen Date</label>
-                                                    <input type="text" class="form-control" id="dateOfProcedure" autocomplete="off" placeholder="Foreseen Date of Procedure" maxlength="10">
+                                                    <input type="text" class="form-control" id="dateOfProcedure" autocomplete="off" placeholder="Foreseen Date of Procedure" maxlength="10" value="{{ $voucher->foreseen_date}}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="typeofProcedure">Type of Medical Procedure</label>
-                                                    <input type="text" class="form-control" id="typeofProcedure" placeholder="Type of Medical Procedure">
+                                                    <input type="text" class="form-control" id="typeofProcedure" placeholder="Type of Medical Procedure" value="{{ $voucher->medical_type }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
@@ -99,16 +100,16 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="patientName">Patient Name:</label>
-                                                        <input type="text" class="form-control" id="patientName" placeholder="Patient Name">
+                                                        <input type="text" class="form-control" id="patientName" placeholder="Patient Name" value="{{ $voucher->patient_name }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="hotel_voucher">Hotel</label>
                                                         <select class="form-control" id="hotel_voucher">
-                                                            <option></option>
+                                                            <option value="{{ $voucher->hotel_id }}" selected>{{ $voucher->hotel->hotel_name }}</option>
                                                             @foreach ($hotels as $hotel)
-                                                                <option value="{{$hotel->hotel_id}}">{{$hotel->hotel_name}}</option>
+                                                                <option value="{{$hotel->id}}">{{$hotel->hotel_name}}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -117,7 +118,7 @@
                                                     <div class="form-group">
                                                         <label for="roomType">Room Type</label>
                                                         <select class="form-control" id="roomType">
-                                                            <option></option>
+                                                            <option value="{{$voucher->room_type}}">{{$voucher->room_type}}</option>
                                                             <option value="Single">Single</option>
                                                             <option value="Double">Double</option>
                                                             <option value="Triple">Triple</option>
@@ -138,7 +139,7 @@
                                                     <div class="form-group">
                                                         <label for="hotel_category">Category:</label>
                                                         <select class="form-control" id="hotel_category">
-                                                            <option></option>
+                                                            <option value="{{$voucher->category}}">{{$voucher->category}}</option>
                                                             <option value="BB (Bed & Breakfast)">BB (Bed & Breakfast)</option>
                                                             <option value="HF (Half Board)">HF (Half Board)</option>
                                                             <option value="FB (Full Board)">FB (Full Board)</option>
@@ -150,19 +151,19 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="check-in">Check-in:</label>
-                                                        <input type="text" class="form-control" id="check-in" autocomplete="off" placeholder="Check-in" maxlength="10">
+                                                        <input type="text" class="form-control" id="check-in" autocomplete="off" placeholder="Check-in" maxlength="10" value="{{ $voucher->hotel_checkin }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="check-out">Check-out:</label>
-                                                        <input type="text" class="form-control" id="check-out" autocomplete="off" placeholder="Check-out" maxlength="10">
+                                                        <input type="text" class="form-control" id="check-out" autocomplete="off" placeholder="Check-out" maxlength="10"value="{{ $voucher->hotel_checkout }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="confirmation-number">Confirmation Number:</label>
-                                                        <input type="text" class="form-control" id="confirmation-number" autocomplete="off" placeholder="Confirmation Number" maxlength="10">
+                                                        <input type="text" class="form-control" id="confirmation-number" autocomplete="off" placeholder="Confirmation Number" maxlength="10" value="{{ $voucher->confirmation_num }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -201,44 +202,44 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="arrivalTime">Arrival Time</label>
-                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="arrivalTime" autocomplete="off" placeholder="Arrival Time" maxlength="5">
+                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="arrivalTime" autocomplete="off" placeholder="Arrival Time" maxlength="5" value="{{ $voucher->arrival_time }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="departureTime">Departure Time</label>
-                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="departureTime" autocomplete="off" placeholder="Departure Time" maxlength="5">
+                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="departureTime" autocomplete="off" placeholder="Departure Time" maxlength="5" value="{{ $voucher->departure_time }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="flightNumber">Flight Number</label>
-                                                        <input type="text" class="form-control" id="flightNumber" autocomplete="off" placeholder="Flight Number" maxlength="10">
+                                                        <input type="text" class="form-control" id="flightNumber" autocomplete="off" placeholder="Flight Number" maxlength="10" value="{{ $voucher->flight_number }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="pickupTime">**Pick Up Time</label>
-                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="pickupTime" autocomplete="off" placeholder="Pick Up Time" maxlength="5">
+                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="pickupTime" autocomplete="off" placeholder="Pick Up Time" maxlength="5" value="{{ $voucher->pickup_time }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="arrivalAirport">Arrival Airport</label>
-                                                        <input type="text" class="form-control" id="arrivalAirportVoucher" autocomplete="off" placeholder="Arrival Airport" maxlength="10">
+                                                        <input type="text" class="form-control" id="arrivalAirportVoucher" autocomplete="off" placeholder="Arrival Airport" maxlength="10" value="{{ $voucher->arrival_airport }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="airport">Departure Airport</label>
-                                                        <input type="text" class="form-control" id="departureAirportVoucher" autocomplete="off" placeholder="Departure Airport" maxlength="10">
+                                                        <input type="text" class="form-control" id="departureAirportVoucher" autocomplete="off" placeholder="Departure Airport" maxlength="10" value="{{ $voucher->departure_airport }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="contactPerson">Contact Person</label>
                                                         <select class="form-control" name="" id="contactPerson">
-                                                            <option></option>
+                                                            <option value="{{$voucher->contact_person}}">{{$contact_person->name_surname}}</option>
                                                             @foreach ($sales as $sale)
                                                                 <option value="{{$sale->phone_number}}">{{$sale->name_surname}}</option>
                                                             @endforeach
@@ -249,7 +250,7 @@
                                                     <div class="form-group">
                                                         <label for="airportCode">Airport Code</label>
                                                         <select class="form-control" id="airportCode">
-                                                            <option></option>
+                                                            <option value="{{$voucher->airport_code}}" selected>{{$voucher->airport_code}}</option>
                                                             <option value="IST">IST</option>
                                                             <option value="SAW">SAW</option>
                                                         </select>
@@ -278,20 +279,20 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="ClinicBalance">Balance In The Clinic:</label>
-                                                        <input type="text" class="form-control" id="ClinicBalance">
+                                                        <input type="text" class="form-control" id="ClinicBalance" value="{{ $voucher->clinic_balance }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="PrePaymentReceived">Pre-payment Received:</label>
-                                                        <input type="text" class="form-control" id="PrePaymentReceived">
+                                                        <input type="text" class="form-control" id="PrePaymentReceived" value="{{ $voucher->prepayment_received }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="ClinicBalanceCurrency">Currency:</label>
                                                         <select class="form-control" id="ClinicBalanceCurrency">
-                                                            <option></option>
+                                                            <option value="{{ $voucher->currency }}">{{ $voucher->currency }}</option>
                                                             <option value="€">Euro</option>
                                                             <option value="$">Dollar</option>
                                                             <option value="£">Pound</option>
@@ -306,7 +307,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12" style=" margin-top: 50px;">
-                                                    <button class="btn btn-primary float-right" id="saveVoucher">Save <i class="fa fa-check" aria-hidden="true"></i></button>
+                                                    <button class="btn btn-primary float-right" id="updateVoucher">Update <i class="fa fa-check" aria-hidden="true"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -339,15 +340,15 @@
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px" class="data-name">Name of Clinic, Address: </p>
                                                                 </div>
-                                                                <div class="col-lg-7" style="margin-bottom:0px" id="clinicText"></div>
-                                                                <div class="col-lg-2" style="margin-bottom:0px" id="clinicImage"></div>
+                                                                <div class="col-lg-7" style="margin-bottom:0px" id="clinicText"><p class="data-desc" style="margin-bottom:0px;">{{$voucher->hospital->hospital_name}}</p></div>
+                                                                <div class="col-lg-2" style="margin-bottom:0px" id="clinicImage">{!! $voucher->hospital_img !!}</div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px" class="data-name">Type of Medical Procedure: </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
-                                                                    <p  class="data-desc" style=" margin-bottom: 0; " id="treatmentDetail"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " id="treatmentDetail">{{$voucher->medical_type}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row" style="margin-top:2px; padding-bottom:2px;">
@@ -355,6 +356,7 @@
                                                                     <p style="margin-bottom:0px" class="data-name">Foreseen Date of Procedure* </p>
                                                                 </div>
                                                                 <div class="col-lg-7" id="dateOfProcedureText" style="margin-bottom:0px">
+                                                                    <p class="data-desc" style="margin-bottom:0px;">{{$voucher->foreseen_date}}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -372,50 +374,56 @@
                                                                     <p style="margin-bottom:0px"  class="data-name">Hotel: </p>
                                                                 </div>
                                                                 <div class="col-lg-7" id="hotelText">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px">{{$voucher->hotel->hotel_name}}</p>
                                                                     <p id="hotelnametext" style="margin-bottom:0px"></p>
                                                                 </div>
-                                                                <div class="col-lg-2" id="hotelImage"></div>
+                                                                <div class="col-lg-2" id="hotelImage">{!! $voucher->hotel_img !!}</div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p  style="margin-bottom:0px" class="data-name">Name(s): </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">Name(s): </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="passengerName"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="passengerName">{{$voucher->patient_name}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">*Check-in: </p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="checkinDate"></div>
+                                                                <div class="col-lg-3" id="checkinDate">
+                                                                    <p style="margin-bottom:0px"  class="data-desc">{{$voucher->hotel_checkin}}</p>
+                                                                </div>
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">Room Type:</p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="roomTypeText"></div>
+                                                                <div class="col-lg-3" id="roomTypeText">
+                                                                    <p style="margin-bottom:0px"  class="data-desc">{{$voucher->room_type}}</p>
+                                                                </div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">*Check-out: </p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="checkoutDate"></div>
+                                                                <div class="col-lg-3" id="checkoutDate">
+                                                                    <p style="margin-bottom:0px"  class="data-desc">{{$voucher->hotel_checkout}}</p>
+                                                                </div>
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">Nights:</p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="nightResult" style="margin-bottom:0px"></div>
+                                                                <div class="col-lg-3" id="nightResult" style="margin-bottom:0px"><p style="margin-bottom:0px"  class="data-desc">{{$voucher->nights}}</p></div>
                                                             </div>
                                                             <div class="row" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">Confirmation Number: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="confirmationNumberText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="confirmationNumberText">{{$voucher->confirmation_num}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">Category:</p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="hotelCategoryText" style="margin-bottom:0px"></div>
+                                                                <div class="col-lg-3" id="hotelCategoryText" style="margin-bottom:0px"><p style="margin-bottom:0px"  class="data-desc">{{$voucher->category}}</p></div>
                                                             </div>
                                                         </div>
 
@@ -451,13 +459,13 @@
                                                                     <p class="data-name" style="margin-bottom:0px">Arrival Date: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalDateText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalDateText">{{$voucher->arrival_date}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px">Departure Date: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureDateText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureDateText">{{$voucher->departure_date}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
@@ -465,13 +473,13 @@
                                                                     <p class="data-name" style="margin-bottom:0px">Arrival Time: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalTimeText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalTimeText">{{$voucher->arrival_time}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px">Departure Time: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureTimeText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureTimeText">{{$voucher->departure_time}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
@@ -479,13 +487,13 @@
                                                                     <p class="data-name" style="margin-bottom:0px">Flight Number: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="flightNumberText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="flightNumberText">{{$voucher->flight_number}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px">**Pick-up Time: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="pickUpTimeText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="pickUpTimeText">{{$voucher->pickup_time}}</p>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
@@ -493,13 +501,13 @@
                                                                     <p class="data-name" style="margin-bottom:0px">*Airport: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalAirportText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalAirportText">{{$voucher->arrival_airport}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px">Airport: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureAirportText"></p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureAirportText">{{$voucher->departure_airport}}</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -508,7 +516,7 @@
                                                                 <span style="color: #81b9d8; font-size: 10px;">Important Notes</span>
                                                                 <p style="font-size: 9px; font-family: inherit" id="importantNotesText">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 13], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span><br/><span style="color:#b3916e; font-style:italic;">New Istanbul Airport Address: Tayakadın, Terminal Cad No:1, 34283 Arnavutköy/İstanbul</span></p>
                                                             </div>
-                                                            <div class="col-lg-2" id="airportImage">
+                                                            <div class="col-lg-2" id="airportImage">{!! $voucher->code_img !!}
                                                             </div>
                                                         </div>
                                                         <div class="row">
@@ -523,7 +531,7 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Total Package Rate: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <span class="data-desc" id="TotalPackageRateVal"></span>
+                                                                    <span class="data-desc" id="TotalPackageRateVal">{{$voucher->total_package}}</span>
                                                                     <span class="data-desc" id="TotalPackageRateCurrencyText"></span>
                                                                 </div>
                                                             </div>
@@ -532,8 +540,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Pre-payment Received: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <span class="data-desc" id="PrePaymentReceivedVal"></span>
-                                                                    <span class="data-desc" id="PrePaymentReceivedCurrencyText"></span>
+                                                                    <span class="data-desc" id="PrePaymentReceivedVal">{{$voucher->prepayment_received}}</span>
+                                                                    <span class="data-desc" id="PrePaymentReceivedCurrencyText">{{$voucher->currency}}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
@@ -541,8 +549,8 @@
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Balance In The Clinic: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <span class="data-name" id="ClinicBalanceVal"></span>
-                                                                    <span class="data-name" id="ClinicBalanceCurrencyText"></span>
+                                                                    <span class="data-name" id="ClinicBalanceVal">{{$voucher->clinic_balance}}</span>
+                                                                    <span class="data-name" id="ClinicBalanceCurrencyText">{{$voucher->currency}}</span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -563,10 +571,10 @@
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="padding-bottom:2px;">
                                                                 <div class="col-lg-6" >
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName"> </p>
+                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName">{{$contact_person->name_surname}} </p>
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone"> </p>
+                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone">{{$voucher->contact_person}} </p>
                                                                 </div>
                                                             </div>
                                                         </div>

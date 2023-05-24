@@ -11,7 +11,7 @@ class HospitalController extends Controller
     public function index()
     {
         try {
-            $hospitals = Hospital::orderBy('hospital_id', 'asc')->get();
+            $hospitals = Hospital::orderBy('id', 'asc')->get();
             $data = array('hospitals' => $hospitals, 'pageTitle' => 'New Sales Person');
             return view('admin.hospitals.hospitals_list')->with($data);
         }
@@ -83,7 +83,7 @@ class HospitalController extends Controller
     }
 
     public function destroy($id){
-        Hospital::where('hospital',$id)->delete();
+        Hospital::where('id',$id)->delete();
         return redirect()->route('hospital.index')->with('message', 'Hospital Deleted Successfully!');
     }
 }

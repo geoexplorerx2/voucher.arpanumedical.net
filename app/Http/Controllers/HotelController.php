@@ -11,7 +11,7 @@ class HotelController extends Controller
     public function index()
     {
         try {
-            $hotels = Hotel::orderBy('hotel_id', 'asc')->get();
+            $hotels = Hotel::orderBy('id', 'asc')->get();
             $data = array('hotels' => $hotels, 'pageTitle' => 'New Hotel');
             return view('admin.hotels.hotels_list')->with($data);
         }

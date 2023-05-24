@@ -41,8 +41,8 @@
                                 <div class="dropdown">
                                     <button class="btn btn-primary dropdown-toggle action-btn" type="button" data-toggle="dropdown">Actions <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ route('hospital.edit', ['id' => $hospital->hospital_id]) }}" class="btn btn-info edit-btn inline-popups"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
-                                        <li><a href="{{ route('hospital.destroy', ['id' => $hospital->hospital_id]) }}" onclick="return confirm('Are you sure?');" class="btn btn-danger edit-btn"><i class="fa fa-trash"></i> Delete</a></li>
+                                        <li><a href="{{ route('hospital.edit', ['id' => $hospital->id]) }}" class="btn btn-info edit-btn inline-popups"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
+                                        <li><a href="{{ route('hospital.destroy', ['id' => $hospital->id]) }}" onclick="return confirm('Are you sure?');" class="btn btn-danger edit-btn"><i class="fa fa-trash"></i> Delete</a></li>
                                     </ul>
                                 </div>
                             </td>
