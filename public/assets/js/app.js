@@ -999,10 +999,10 @@ function saveVoucher(){
                         contact_person      = $('#contactPerson').children("option:selected").val(),
                         payment_detail      = $('#paymentDetail_one').val(),
                         important_note      = $('#importantNotes').val(),
-                        clinic_balance      = $('#ClinicBalance').val(),
+                        clinic_balance      = $('#ClinicBalanceVal').text(),
                         prepayment_received = $('#PrePaymentReceived').val(),
                         currency            = $('#ClinicBalanceCurrency').val(),
-                        total_package       = $('#TotalPackageRateVal').text();
+                        total_package       = $('#TotalPackageVal').val();
 
                         addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
                 }, 500);
@@ -1106,10 +1106,10 @@ function updateVoucher(){
                         contact_person      = $('#contactPerson').children("option:selected").val(),
                         payment_detail      = $('#paymentDetail_one').val(),
                         important_note      = $('#importantNotes').val(),
-                        clinic_balance      = $('#ClinicBalance').val(),
+                        clinic_balance      = $('#ClinicBalanceVal').text(),
                         prepayment_received = $('#PrePaymentReceived').val(),
                         currency            = $('#ClinicBalanceCurrency').val(),
-                        total_package       = $('#TotalPackageRateVal').text();
+                        total_package       = $('#TotalPackageVal').val();
 
                         saveUpdateVoucher(id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
                 }, 500);
@@ -1465,7 +1465,7 @@ function selectedValues() {
             let hotelCategoryVal = $(this).children("option:selected").val();
             $("#hotelCategoryText").html('<p class="data-desc" style="margin-bottom:0px;">' + hotelCategoryVal + '</p>');
         });
-        $("#TotalPackageRateCurrency").on("change", function () {
+        $("#ClinicBalanceCurrency").on("change", function () {
             let TotalPackageRateCurrency = $(this).children("option:selected").val();
             $("#TotalPackageRateCurrencyText").html(' ' + TotalPackageRateCurrency);
         });
@@ -1477,7 +1477,7 @@ function selectedValues() {
 
         $("#ClinicBalanceCurrency").on("change", function () {
             let ClinicBalanceCurrency = $(this).children("option:selected").val();
-            $("#ClinicBalanceCurrencyText").html(' ' + ClinicBalanceCurrency);
+            $("#TotalPackageCurrencyText").html(' ' + ClinicBalanceCurrency);
         });
 
         $("#contactPerson").on("change", function () {
@@ -1495,9 +1495,8 @@ function selectedValues() {
             $("#PrePaymentReceivedVal").html( $(this).val());
 
         });
-        $("#ClinicBalance").on("input", function () {
-            $("#ClinicBalanceVal").html( $(this).val());
-
+        $("#TotalPackageVal").on("input", function () {
+            $("#TotalPackageRateVal").html( $(this).val());
         });
 
 
@@ -1526,10 +1525,10 @@ function selectedValues() {
         });
         $("#calculateTotalPackageRate").on("click", function(){
             var PrePaymentReceived  = $("#PrePaymentReceived").val();
-            var ClinicBalance       = $("#ClinicBalance").val();
+            var TotalPackageVal       = $("#TotalPackageVal").val();
             var currency            = $('#ClinicBalanceCurrency').val();
-            var total               =  (parseInt(PrePaymentReceived) + parseInt(ClinicBalance));
-            $("#TotalPackageRateVal").html(total +' '+ currency);
+            var total               =  (parseInt(TotalPackageVal) - parseInt(PrePaymentReceived));
+            $("#ClinicBalanceVal").html(total+' '+currency);
         });
         $("#description_area").on("input", function(){
             $("#description_text").text($(this).val());

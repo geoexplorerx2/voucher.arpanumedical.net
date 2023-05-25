@@ -277,8 +277,8 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label for="ClinicBalance">Balance In The Clinic:</label>
-                                                        <input type="text" class="form-control" id="ClinicBalance">
+                                                        <label for="TotalPackageVal">Total Package Rate:</label>
+                                                        <input type="text" class="form-control" id="TotalPackageVal">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -300,7 +300,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <label for="calculateDate">Calculate Total Package Rate:</label>
+                                                    <label for="calculateDate">Calculate Balance In The Clinic:</label>
                                                     <button class="btn btn-success float-right" id="calculateTotalPackageRate">Calculate</button>
                                                 </div>
                                             </div>

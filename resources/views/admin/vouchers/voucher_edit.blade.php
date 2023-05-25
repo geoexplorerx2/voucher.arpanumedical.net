@@ -278,21 +278,21 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
-                                                        <label for="ClinicBalance">Balance In The Clinic:</label>
-                                                        <input type="text" class="form-control" id="ClinicBalance" value="{{ $voucher->clinic_balance }}">
+                                                        <label for="TotalPackageVal">Total Package Rate:</label>
+                                                        <input type="text" class="form-control" id="TotalPackageVal" value="{{$voucher->total_package}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="PrePaymentReceived">Pre-payment Received:</label>
-                                                        <input type="text" class="form-control" id="PrePaymentReceived" value="{{ $voucher->prepayment_received }}">
+                                                        <input type="text" class="form-control" id="PrePaymentReceived" value="{{$voucher->prepayment_received}}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="ClinicBalanceCurrency">Currency:</label>
                                                         <select class="form-control" id="ClinicBalanceCurrency">
-                                                            <option value="{{ $voucher->currency }}">{{ $voucher->currency }}</option>
+                                                            <option></option>
                                                             <option value="€">Euro</option>
                                                             <option value="$">Dollar</option>
                                                             <option value="£">Pound</option>
@@ -301,7 +301,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
-                                                    <label for="calculateDate">Calculate Total Package Rate:</label>
+                                                    <label for="calculateDate">Calculate Balance In The Clinic:</label>
                                                     <button class="btn btn-success float-right" id="calculateTotalPackageRate">Calculate</button>
                                                 </div>
                                             </div>
@@ -532,7 +532,7 @@
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <span class="data-desc" id="TotalPackageRateVal">{{$voucher->total_package}}</span>
-                                                                    <span class="data-desc" id="TotalPackageRateCurrencyText"></span>
+                                                                    <span class="data-desc" id="TotalPackageRateCurrencyText">{{$voucher->currency}}</span>
                                                                 </div>
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
@@ -550,7 +550,7 @@
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <span class="data-name" id="ClinicBalanceVal">{{$voucher->clinic_balance}}</span>
-                                                                    <span class="data-name" id="ClinicBalanceCurrencyText">{{$voucher->currency}}</span>
+                                                                    <span class="data-name" id="ClinicBalanceCurrencyText"></span>
                                                                 </div>
                                                             </div>
                                                         </div>
