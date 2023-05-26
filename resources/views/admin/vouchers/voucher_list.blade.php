@@ -506,7 +506,7 @@
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
                                                                 <span style="color: #81b9d8; font-size: 10px;">Important Notes</span>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 13], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span><br/><span style="color:#b3916e; font-style:italic;">New Istanbul Airport Address: Tayakadın, Terminal Cad No:1, 34283 Arnavutköy/İstanbul</span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span><br/></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">
                                                             </div>
@@ -548,10 +548,10 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0; " style="margin-top: 12px;" id="paymentDetail_oneText">Package fee, including the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers amounts to: [2.500 €] </p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers.</p>
                                                             </div>
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0; "><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 3% for Visa, and Master Card, and 5% for AmEx will be surcharged. </span><br><span><b>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;"><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 5% for Visa, and Master Card, and 8% for AmEx will be surcharged. </span><br><span><b>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
