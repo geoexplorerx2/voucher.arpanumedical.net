@@ -18,8 +18,6 @@
     <link type="text/css" href="{{ asset('assets/css/jquery-ui.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/dropzone.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/daterangepicker.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('assets/css/jquery-steps.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('assets/css/glightbox.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/fullcalendar.min.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -300,6 +298,14 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="dhi-supplement">DHI supplement:</label>
+                                                        <input type="checkbox" class="form-checkbox form-check" id="dhi-supplement">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-lg-12">
                                                     <label for="calculateDate">Calculate Balance In The Clinic:</label>
                                                     <button class="btn btn-success float-right" id="calculateTotalPackageRate">Calculate</button>
@@ -340,7 +346,9 @@
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px" class="data-name">Name of Clinic, Address: </p>
                                                                 </div>
-                                                                <div class="col-lg-7" style="margin-bottom:0px" id="clinicText"><p class="data-desc" style="margin-bottom:0px;">{{$voucher->hospital->hospital_name}}</p></div>
+                                                                <div class="col-lg-7" style="margin-bottom:0px" id="clinicText">
+                                                                    <p class="data-desc" style="margin-bottom:0px;">{{$voucher->hospital->hospital_name}}</p>
+                                                                </div>
                                                                 <div class="col-lg-2" style="margin-bottom:0px" id="clinicImage">{!! $voucher->hospital_img !!}</div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
@@ -348,10 +356,10 @@
                                                                     <p style="margin-bottom:0px" class="data-name">Type of Medical Procedure: </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
-                                                                    <p class="data-desc" style=" margin-bottom: 0; " id="treatmentDetail">{{$voucher->medical_type}}</p>
+                                                                    <p class="data-desc" style=" margin-bottom: 0;" id="treatmentDetail">{{$voucher->medical_type}}</p>
                                                                 </div>
                                                             </div>
-                                                            <div class="row" style="margin-top:2px; padding-bottom:2px;">
+                                                            <div class="row" style="margin-top:2px; padding-bottom: 2px;">
                                                                 <div class="col-lg-4">
                                                                     <p style="margin-bottom:0px" class="data-name">Foreseen Date of Procedure* </p>
                                                                 </div>
@@ -360,14 +368,14 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                         <p style="font-size: 9px; font-family: inherit" id="description_text">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</p>
                                                         <div class="row">
                                                             <div class="col-lg-10">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">HOTEL RESERVATION <span id="type-note"></span></h5></div>
+                                                                <div class="head-text">
+                                                                    <h5 style="margin-bottom:0px">HOTEL RESERVATION <span id="type-note"></span></h5>
+                                                                </div>
                                                             </div>
                                                         </div>
-
                                                         <div class="test">
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
@@ -403,13 +411,13 @@
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">*Check-out: </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">*Check-out: </p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="checkoutDate">
-                                                                    <p style="margin-bottom:0px"  class="data-desc">{{$voucher->hotel_checkout}}</p>
+                                                                    <p style="margin-bottom:0px" class="data-desc">{{$voucher->hotel_checkout}}</p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">Nights:</p>
+                                                                    <p style="margin-bottom:0px" class="data-name">Nights:</p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="nightResult" style="margin-bottom:0px"><p style="margin-bottom:0px"  class="data-desc">{{$voucher->nights}}</p></div>
                                                             </div>
@@ -423,7 +431,9 @@
                                                                 <div class="col-lg-3">
                                                                     <p style="margin-bottom:0px"  class="data-name">Category:</p>
                                                                 </div>
-                                                                <div class="col-lg-3" id="hotelCategoryText" style="margin-bottom:0px"><p style="margin-bottom:0px"  class="data-desc">{{$voucher->category}}</p></div>
+                                                                <div class="col-lg-3" id="hotelCategoryText" style="margin-bottom:0px">
+                                                                    <p style="margin-bottom:0px"  class="data-desc">{{$voucher->category}}</p>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -556,18 +566,22 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0; " style="margin-top: 12px;" id="paymentDetail_oneText">Package fee, including the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers amounts to: [2.500 €] </p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">Package fee, including the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers amounts to: [2.500 €] </p>
+                                                            </div>
+                                                            <div class="col-lg-12 dhi-supplement-section" style="display: none">
+                                                                <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">In case DHi technique will be applied there is a supplement of 600 €.</p>
                                                             </div>
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0; "><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 3% for Visa, and Master Card, and 5% for AmEx will be surcharged. </span><br><span><b>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
+                                                                <p class="data-desc" style="margin-bottom: 0; "><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 3% for Visa, and Master Card, and 5% for AmEx will be surcharged. </span><br><span><b>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5></div>
+                                                                <div class="head-text">
+                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
-
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="padding-bottom:2px;">
                                                                 <div class="col-lg-6" >
@@ -606,14 +620,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/js.cookie.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dropzone.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/chart.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/popover.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/glightbox.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.extension.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.datatable.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -622,15 +629,10 @@
     <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jscolor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-steps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/gijgo.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/rest_api.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/clockpicker.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
-
-
 </body>
 </html>

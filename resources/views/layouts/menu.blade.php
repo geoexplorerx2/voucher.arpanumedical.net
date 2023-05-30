@@ -8,12 +8,6 @@
         <div class="navbar-inner">
             <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home'); }}">
-                            <i class="fa fa-pie-chart text-primary"></i>
-                            <span class="nav-link-text">Dashboard</span>
-                        </a>
-                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:;">
                             <i class="fa fa-files-o text-primary"></i>
