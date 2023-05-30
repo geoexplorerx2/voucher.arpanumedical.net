@@ -299,6 +299,12 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label for="dhi-supplement">DHI supplement:</label>
+                                                        <input type="checkbox" class="form-checkbox form-check" id="dhi-supplement">
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-12">
                                                     <label for="calculateDate">Calculate Balance In The Clinic:</label>
                                                     <button class="btn btn-success float-right" id="calculateTotalPackageRate">Calculate</button>
@@ -352,7 +358,7 @@
                                                             </div>
                                                             <div class="row" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-4">
-                                                                    <p style="margin-bottom:0px" class="data-name">Foreseen Date of Procedure* </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">*Foreseen Date of Procedure </p>
                                                                 </div>
                                                                 <div class="col-lg-7" id="dateOfProcedureText" style="margin-bottom:0px">
                                                                 </div>
@@ -397,7 +403,7 @@
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">*Check-out: </p>
+                                                                    <p style="margin-bottom:0px"  class="data-name">**Check-out: </p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="checkoutDate"></div>
                                                                 <div class="col-lg-3">
@@ -421,7 +427,7 @@
 
                                                         <div class="row hotel-voucher-note">
                                                             <div class="col-lg-12">
-                                                                <span style="color: #81b9d8; font-size: 10px;" class="important-note">Important Notes</span>
+                                                                <span class="important-note"><b style="color: #81b9d8; font-size: 10px;">Important Notes</b></span>
                                                                 <p style="font-size: 9px; font-family: inherit" class="important-desc-1">* For check-in procedures before 15:00, depending on the availability of vacant rooms, you may have to wait for a short while.</span><br><span>** You are required to check out by 12:00.</span></p>
                                                                 <p style="font-size: 9px; font-family: inherit" class="important-desc-2"></p>
                                                             </div>
@@ -505,8 +511,8 @@
                                                         </div>
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
-                                                                <span style="color: #81b9d8; font-size: 10px;">Important Notes</span>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span><br/></p>
+                                                                <span><b style="color: #81b9d8; font-size: 10px;">Important Notes</b></span>
+                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span><br/></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">
                                                             </div>
@@ -550,8 +556,11 @@
                                                             <div class="col-lg-12">
                                                                 <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers.</p>
                                                             </div>
+                                                            <div class="col-lg-12 dhi-supplement-section" style="display: none">
+                                                                <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">In case DHi technique will be applied there is a supplement of 600 €.</p>
+                                                            </div>
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0;"><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 5% for Visa, and Master Card, and 8% for AmEx will be surcharged. </span><br><span><b>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;"><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 5% for Visa, and Master Card, and 8% for AmEx will be surcharged. </span><br><span>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">

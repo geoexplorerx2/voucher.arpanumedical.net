@@ -18,7 +18,6 @@
     <link type="text/css" href="{{ asset('assets/css/dropzone.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/daterangepicker.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/jquery-steps.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('assets/css/glightbox.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/fullcalendar.min.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -58,14 +57,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/js.cookie.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dropzone.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/chart.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/popover.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/glightbox.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.extension.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.datatable.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -74,42 +66,11 @@
     <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jscolor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-steps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/gijgo.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
-    <script>
-        $('.inline-popups').magnificPopup({
-            removalDelay: 500,
-            callbacks: {
-                beforeOpen: function () {
-                    this.st.mainClass = this.st.el.attr('data-effect');
-                }
-            },
-            type: 'ajax',
-            midClick: true
-        });
-    </script>
-    <script type="text/javascript">
-        try {
-            Dropzone.autoDiscover = false;
-            var myDropzone = new Dropzone(".dropzone", {
-                autoProcessQueue: false,
-                maxFilesize: 30,
-                resizeQuality: 1.0,
-                parallelUploads: 100,
-                acceptedFiles: ".jpeg,.jpg,.png,.gif",
-                addRemoveLinks: true
-            });
-
-            $('#uploadFile').click(function(){
-                myDropzone.processQueue();
-            });
-        }
-        catch (error) {   }
-    </script>
     @yield('footer')
 </body>
 </html>
