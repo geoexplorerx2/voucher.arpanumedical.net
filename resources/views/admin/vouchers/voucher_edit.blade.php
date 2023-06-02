@@ -290,7 +290,7 @@
                                                     <div class="form-group">
                                                         <label for="ClinicBalanceCurrency">Currency:</label>
                                                         <select class="form-control" id="ClinicBalanceCurrency">
-                                                            <option></option>
+                                                            <option value="{{$voucher->currency}}" selected>{{$voucher->currency}}</option>
                                                             <option value="€">Euro</option>
                                                             <option value="$">Dollar</option>
                                                             <option value="£">Pound</option>
@@ -524,7 +524,7 @@
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
                                                                 <b style="color: #81b9d8; font-size: 10px;">Important Notes</b>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">{!! $voucher->code_img !!}
                                                             </div>

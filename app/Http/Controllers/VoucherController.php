@@ -88,7 +88,7 @@ class VoucherController extends Controller
     {
         try {
             $user = auth()->user();
-            $vouchers = Voucher::with('hospital','hotel')->orderBy('id', 'asc')->get();
+            $vouchers = Voucher::with('hospital','hotel')->orderBy('created_at', 'desc')->get();
             $data = array('vouchers' => $vouchers);
             return view('admin.vouchers.voucher_all')->with($data);
         }
