@@ -30,7 +30,6 @@ var app = (function() {
         select2Init();
         dataTableInit();
         selectedValues();
-        clockPickers();
 
         $('[data-toggle="popover"]').ggpopover();
 
@@ -564,8 +563,14 @@ function selectedValues() {
 
         $("#airportCode").on("change", function () {
             let airportCode = $(this).children("option:selected").val();
-            if (airportCode == "IST") $("#airportImage").html('<img src="/images/d10.png" style="width: 75px;margin-top: 25px;" id="code_img">');
-            if (airportCode == "SAW") $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;"  id="code_img">');
+            if (airportCode == "IST"){
+                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Istanbul Airport: you will be greeted by our driver just outside, at Exit 14, holding a board with D10.</span><br>');
+                $("#airportImage").html('<img src="/images/d10.png" style="width: 75px;margin-top: 25px;" id="code_img">');
+            }
+            if (airportCode == "SAW"){
+                $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;"  id="code_img">');
+                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Göçken: you will be greeted by our driver just outside, at Culomn 13, holding a board with 3E.</span><br>');
+            }
         });
 
         $("#hotel_category").on("change", function () {
@@ -595,17 +600,26 @@ function selectedValues() {
             $("#contactPersonPhone").html( contactPersonPhone);
         });
 
+        $("#airportCode").on("change", function () {
+            let selectedAirport = $(this).children("option:selected").val();
+            if(selectedAirport == "IST"){
+                
+            }
+            else {
+                console.log("saw");
+            }
+        });
+
         $("#patientName").on("input", function () {
-            $("#passengerName").html( $(this).val());
+            $("#passengerName").html($(this).val());
         });
 
         $("#PrePaymentReceived").on("input", function () {
-            $("#PrePaymentReceivedVal").html( $(this).val());
-
+            $("#PrePaymentReceivedVal").html($(this).val());
         });
 
         $("#TotalPackageVal").on("input", function () {
-            $("#TotalPackageRateVal").html( $(this).val());
+            $("#TotalPackageRateVal").html($(this).val());
         });
 
         $("#dateOfProcedure").on("change", function(){
@@ -618,6 +632,14 @@ function selectedValues() {
 
         $("#check-out").on("change", function(){
             $("#checkoutDate").html('<p style="margin-bottom:0px;font-size: 9px; font-family: "Gotham Rounded Medium"; font-weight: 100;">' + $(this).val() + '</p>');
+        });
+
+        $("#check-in").on("change", function(){
+            $("#arrivalDate").val($(this).val());
+        });
+
+        $("#check-out").on("change", function(){
+            $("#departureDate").val($(this).val());
         });
 
         $("#calculateDate").on("click", function(){
@@ -733,14 +755,35 @@ function voucherPdf() {
     }
 }
 
-function clockPickers() {
+function timeFormat(timeInput) {
     try {
-        $('#arrivalTime').clockpicker({autoclose: true, donetext: 'Done', placement: 'left', align: 'top'});
-        $('#departureTime').clockpicker({autoclose: true, donetext: 'Done', placement: 'left', align: 'top'});
-        $('#pickupTime').clockpicker({autoclose: true, donetext: 'Done', placement: 'left', align: 'top'});
-    }
-    catch (error) {
+        validTime = timeInput.value;
+        if (validTime < 24 && validTime.length == 2) {
+            timeInput.value = timeInput.value + ":";
+            return false;
+        }
+        if (validTime == 24 && validTime.length == 2) {
+            timeInput.value = timeInput.value.length - 2 + "0:";
+            return false;
+        }
+        if (validTime > 24 && validTime.length == 2) {
+            timeInput.value = "";
+            return false;
+        }
+        if (validTime.length == 5 && validTime.slice(-2) < 60) {
+            timeInput.value = timeInput.value + "";
+            return false;
+        }
+        if (validTime.length == 5 && validTime.slice(-2) > 60) {
+            timeInput.value = timeInput.value.slice(0, 2) + "";
+            return false;
+        }
+        if (validTime.length == 5 && validTime.slice(-2) == 60) {
+            timeInput.value = timeInput.value.slice(0, 2) + ":00";
+            return false;
+        }
+    } catch (error) {
         console.info(error);
+    } finally {
     }
-    finally { }
 }
