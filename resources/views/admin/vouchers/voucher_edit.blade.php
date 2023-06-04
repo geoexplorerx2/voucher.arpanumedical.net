@@ -83,7 +83,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</textarea>
+                                                    <textarea class="form-control" id="description_area">{{$voucher->desc}}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="check-out">Check-out:</label>
-                                                        <input type="text" class="form-control" id="check-out" autocomplete="off" placeholder="Check-out" maxlength="10"value="{{ $voucher->hotel_checkout }}">
+                                                        <input type="text" class="form-control" id="check-out" autocomplete="off" placeholder="Check-out" maxlength="10" value="{{ $voucher->hotel_checkout }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -188,13 +188,13 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="arrivalDate">Arrival Date</label>
-                                                        <input type="text" class="form-control" id="arrivalDate" placeholder="Arrival Date" autocomplete="off">
+                                                        <input type="text" class="form-control" id="arrivalDate" autocomplete="off" placeholder="Arrival Date" maxlength="10" value="{{ $voucher->arrival_date }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="departureDate">Departure Date</label>
-                                                        <input type="text" class="form-control" id="departureDate" autocomplete="off" placeholder="Departure Date" maxlength="10">
+                                                        <input type="text" class="form-control" id="departureDate" autocomplete="off" placeholder="Departure Date" maxlength="10" value="{{ $voucher->departure_date }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
@@ -263,13 +263,13 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one">{{$voucher->payment_detail}}</textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="importantNotes">Important Notes</label>
-                                                        <textarea class="form-control" id="importantNotes">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</textarea>
+                                                        <textarea class="form-control" id="importantNotes">{{$voucher->important_note}}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -368,7 +368,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <p style="font-size: 9px; font-family: inherit" id="description_text">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</p>
+                                                        <p style="font-size: 9px; font-family: inherit" id="description_text">{{$voucher->desc}}</p>
                                                         <div class="row">
                                                             <div class="col-lg-10">
                                                                 <div class="head-text">
@@ -524,7 +524,7 @@
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
                                                                 <b style="color: #81b9d8; font-size: 10px;">Important Notes</b>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">{{$voucher->important_note}}</span><br><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">{!! $voucher->code_img !!}
                                                             </div>
@@ -566,7 +566,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">Package fee, including the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers.</p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">{{$voucher->payment_detail}}</p>
                                                             </div>
                                                             <div class="col-lg-12 dhi-supplement-section" style="display: none">
                                                                 <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">In case DHi technique will be applied there is a supplement of 600 €.</p>
