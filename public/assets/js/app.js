@@ -563,7 +563,7 @@ function selectedValues() {
             }
             if (airportCode == "SAW"){
                 $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;"  id="code_img">');
-                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Göçken: you will be greeted by our driver just outside, at Culomn 13, holding a board with 3E.</span><br>');
+                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Gökçen: you will be greeted by our driver just outside, at Culomn 13, holding a board with 3E.</span><br>');
             }
         });
 

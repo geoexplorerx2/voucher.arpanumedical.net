@@ -218,7 +218,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="pickupTime">**Pick Up Time</label>
-                                                        <input type="text" class="form-control" onkeypress="timeFormat(this);" id="pickupTime" autocomplete="off" placeholder="Pick Up Time" maxlength="5" value="{{ $voucher->pickup_time }}">
+                                                        <input type="text" class="form-control"  id="pickupTime" autocomplete="off" placeholder="Pick Up Time" value="{{ $voucher->pickup_time }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
