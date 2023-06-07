@@ -266,12 +266,12 @@
                                                         <textarea class="form-control" id="paymentDetail_one">{{$voucher->payment_detail}}</textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12">
+                                                {{-- <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="importantNotes">Important Notes</label>
                                                         <textarea class="form-control" id="importantNotes">{{$voucher->important_note}}</textarea>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">

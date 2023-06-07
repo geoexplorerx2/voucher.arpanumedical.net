@@ -195,16 +195,14 @@ var Layout = (function() {
     var userFormat = "DD.MM.YYYY";
 
     $('#arrivalDate').daterangepicker({
-        "autoApply": true,
+        "autoApply": false,
         "singleDatePicker": true,
         "showDropdowns": true,
-        "autoUpdateInput": true,
+        "autoUpdateInput": false,
         locale: {
             firstDay: 1,
             format: userFormat
         },
-        minDate: moment().add(0, 'days'),
-        maxDate: moment().add(359, 'days'),
     });
 
     $('#dateOfProcedure').daterangepicker({
@@ -249,21 +247,17 @@ var Layout = (function() {
             firstDay: 1,
             format: userFormat
         },
-        minDate: moment().add(1, 'days'),
-        maxDate: moment().add(359, 'days'),
     });
 
     $('#departureDate').daterangepicker({
-        "autoApply": true,
+        "autoApply": false,
         "singleDatePicker": true,
         "showDropdowns": true,
-        "autoUpdateInput": true,
+        "autoUpdateInput": false,
         locale: {
             firstDay: 1,
             format: userFormat
         },
-        minDate: moment().add(0, 'days'),
-        maxDate: moment().add(359, 'days'),
     });
 
     $('[data-toggle="popover"]').ggpopover();
@@ -603,7 +597,7 @@ function selectedValues() {
         $("#airportCode").on("change", function () {
             let selectedAirport = $(this).children("option:selected").val();
             if(selectedAirport == "IST"){
-                
+
             }
             else {
                 console.log("saw");
@@ -636,12 +630,15 @@ function selectedValues() {
 
         $("#check-in").on("change", function(){
             $("#arrivalDate").val($(this).val());
+            $("#arrivalDateText").text($(this).val());
+
         });
 
         $("#check-out").on("change", function(){
             $("#departureDate").val($(this).val());
-        });
+            $("#departureDateText").text($(this).val());
 
+        });
         $("#calculateDate").on("click", function(){
             var checkIn = $("#check-in").val();
             var arrival = checkIn.split('.');

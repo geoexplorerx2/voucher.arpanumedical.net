@@ -267,12 +267,12 @@
                                                         <textarea class="form-control" id="paymentDetail_one">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12">
+                                                {{-- <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="importantNotes">Important Notes</label>
                                                         <textarea class="form-control" id="importantNotes">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</textarea>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-6">
