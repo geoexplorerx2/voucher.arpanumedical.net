@@ -32,12 +32,10 @@
                             <tr>
                                 <th scope="col">Operation</th>
                                 <th scope="col">Clinic Name</th>
-                                <th scope="col">Foreseen_date</th>
                                 <th scope="col">Patient Name</th>
-                                <th scope="col">Hotel Name</th>
                                 <th scope="col">Arrival Date</th>
-                                <th scope="col">Departure Date</th>
-                                <th scope="col">Contact Person</th>
+                                <th scope="col">Created User</th>
+                                <th scope="col">Created Time</th>
                             </tr>
                         </thead>
                         @foreach ($vouchers as $voucher)
@@ -56,12 +54,10 @@
                                 </div>
                             </td>
                             <td>{{ $voucher->hospital->hospital_name }}</td>
-                            <td>{{ $voucher->foreseen_date }}</td>
                             <td>{{ $voucher->patient_name }}</td>
-                            <td>{{ $voucher->hotel->hotel_name }}</td>
                             <td>{{ $voucher->arrival_date }}</td>
-                            <td>{{ $voucher->departure_date }}</td>
-                            <td>{{ $voucher->contact_person }}</td>
+                            <td>{{ $voucher->user->name }}</td>
+                            <td>{{ now()->diffInHours($voucher->created_at) }} Hrs</td>
                         </tr>
                         @endforeach
                     </table>
