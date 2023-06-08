@@ -57,7 +57,7 @@
                             <td>{{ $voucher->patient_name }}</td>
                             <td>{{ $voucher->arrival_date }}</td>
                             <td>{{ $voucher->user->name }}</td>
-                            <td>{{ now()->diffInHours($voucher->created_at) }} Hrs</td>
+                            <td>{{ $voucher->created_at }}</td>
                         </tr>
                         @endforeach
                     </table>

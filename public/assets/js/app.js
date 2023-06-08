@@ -274,113 +274,118 @@ function previousPage() {
     history.go(-1);
 }
 
-function saveVoucher(){
+function saveVoucher() {
     try {
-        $("#saveVoucher").on("click", function(){
-                setTimeout(() => {
-                    // Get the img element by its id
-                    var hotelimg = document.getElementById('hotel_img');
-                    var hospitalimg = document.getElementById('clinic_img');
-                    var codeimg = document.getElementById('code_img');
+        $("#saveVoucher").on("click", function() {
+            setTimeout(() => {
+                var hotelimg = document.getElementById('hotel_img');
+                var hospitalimg = document.getElementById('clinic_img');
+                var codeimg = document.getElementById('code_img');
 
-                    // Access the src attribute to get the source content
-                    var hotel_img = hotelimg.outerHTML;
-                    var hospital_img = hospitalimg.outerHTML;
-                    var code_img = codeimg.outerHTML;
-                    var clinic              = $('#clinic').children("option:selected").val(),
-                        foreseen_date       = $('#dateOfProcedure').val(),
-                        medical_type        = $('#typeofProcedure').val(),
-                        desc                = $('#description_area').val(),
-                        patient_name        = $('#patientName').val(),
-                        hotel_name          = $('#hotel_voucher').children("option:selected").val(),
-                        room_type           = $('#roomType').children("option:selected").val(),
-                        category            = $('#hotel_category').children("option:selected").val(),
-                        hotel_checkin       = $('#check-in').val(),
-                        hotel_checkout      = $('#check-out').val(),
-                        confirmatiom_num    = $('#confirmation-number').val(),
-                        nights              = $('#nightResult').text(),
-                        arrival_date        = $('#arrivalDate').val(),
-                        departure_date      = $('#departureDate').val(),
-                        arrival_time        = $('#arrivalTime').val(),
-                        departure_time      = $('#departureTime').val(),
-                        pickup_time         = $('#pickupTime').val(),
-                        flight_number       = $('#flightNumber').val(),
-                        arrival_airport     = $('#arrivalAirportVoucher').val(),
-                        departure_airport   = $('#departureAirportVoucher').val(),
-                        airport_code        = $('#airportCode').children("option:selected").val(),
-                        contact_person      = $('#contactPerson').children("option:selected").val(),
-                        payment_detail      = $('#paymentDetail_one').val(),
-                        important_note      = $('#importantNotes').val(),
-                        clinic_balance      = $('#ClinicBalanceVal').text(),
-                        prepayment_received = $('#PrePaymentReceived').val(),
-                        currency            = $('#ClinicBalanceCurrency').val(),
-                        total_package       = $('#TotalPackageVal').val();
+                var hotel_img = hotelimg.outerHTML;
+                var hospital_img = hospitalimg.outerHTML;
+                var code_img = codeimg.outerHTML;
+                var clinic = $('#clinic').children("option:selected").val();
+                var foreseen_date = $('#dateOfProcedure').val();
+                var medical_type = $('#typeofProcedure').val();
+                var desc = $('#description_area').val();
+                var patient_name = $('#patientName').val();
+                var hotel_name = $('#hotel_voucher').children("option:selected").val();
+                var room_type = $('#roomType').children("option:selected").toArray().map(option => $(option).val());
+                var category = $('#hotel_category').children("option:selected").val();
+                var hotel_checkin = $('#check-in').val();
+                var hotel_checkout = $('#check-out').val();
+                var confirmatiom_num = $('#confirmation-number').val();
+                var nights = $('#nightResult').text();
+                var arrival_date = $('#arrivalDate').val();
+                var departure_date = $('#departureDate').val();
+                var arrival_time = $('#arrivalTime').val();
+                var departure_time = $('#departureTime').val();
+                var pickup_time = $('#pickupTime').val();
+                var flight_number = $('#flightNumber').val();
+                var arrival_airport = $('#arrivalAirportVoucher').val();
+                var departure_airport = $('#departureAirportVoucher').val();
+                var airport_code = $('#airportCode').children("option:selected").val();
+                var contact_person = $('#contactPerson').children("option:selected").toArray().map(option => $(option).val());
+                var payment_detail = $('#paymentDetail_one').val();
+                var important_note = $('#importantNotes').val();
+                var clinic_balance = $('#ClinicBalanceVal').text();
+                var prepayment_received = $('#PrePaymentReceived').val();
+                var currency = $('#ClinicBalanceCurrency').val();
+                var total_package = $('#TotalPackageVal').val();
 
-                        addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
-                }, 500);
+                addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+            }, 500);
         });
-    }
-    catch(error){ }
+    } catch (error) {}
 }
 
-//send Voucher
-function addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
+function addVoucher(code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package) {
     try {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        var roomTypeArray = room_type.join(' - ');
+        var contactPersonArray = contact_person.join(' - ');
+
+
         $.ajax({
             url: '/vouchers/store',
             type: 'POST',
             data: {
-                'clinic_name'           : clinic,
-                'hospital_img'          : hospital_img,
-                'foreseen_date'         : foreseen_date,
-                'medical_type'          : medical_type,
-                'desc'                  : desc,
-                'patient_name'          : patient_name,
-                'hotel_name'            : hotel_name,
-                'hotel_img'             : hotel_img,
-                'room_type'             : room_type,
-                'category'              : category,
-                'hotel_checkin'         : hotel_checkin,
-                'hotel_checkout'        : hotel_checkout,
-                'confirmatiom_num'      : confirmatiom_num,
-                'nights'                : nights,
-                'arrival_date'          : arrival_date,
-                'departure_date'        : departure_date,
-                'arrival_time'          : arrival_time,
-                'departure_time'        : departure_time,
-                'pickup_time'           : pickup_time,
-                'flight_number'         : flight_number,
-                'arrival_airport'       : arrival_airport,
-                'departure_airport'     : departure_airport,
-                'airport_code'          : airport_code,
-                'code_img'              : code_img,
-                'contact_person'        : contact_person,
-                'payment_detail'        : payment_detail,
-                'important_note'        : important_note,
-                'clinic_balance'        : clinic_balance,
-                'prepayment_received'   : prepayment_received,
-                'currency'              : currency,
-                'total_package'         : total_package,
+                'clinic_name': clinic,
+                'hospital_img': hospital_img,
+                'foreseen_date': foreseen_date,
+                'medical_type': medical_type,
+                'desc': desc,
+                'patient_name': patient_name,
+                'hotel_name': hotel_name,
+                'hotel_img': hotel_img,
+                'room_type': roomTypeArray, // Pass as JSON string
+                'category': category,
+                'hotel_checkin': hotel_checkin,
+                'hotel_checkout': hotel_checkout,
+                'confirmatiom_num': confirmatiom_num,
+                'nights': nights,
+                'arrival_date': arrival_date,
+                'departure_date': departure_date,
+                'arrival_time': arrival_time,
+                'departure_time': departure_time,
+                'pickup_time': pickup_time,
+                'flight_number': flight_number,
+                'arrival_airport': arrival_airport,
+                'departure_airport': departure_airport,
+                'airport_code': airport_code,
+                'code_img': code_img,
+                'contact_person': contactPersonArray, // Pass as JSON string
+                'payment_detail': payment_detail,
+                'important_note': important_note,
+                'clinic_balance': clinic_balance,
+                'prepayment_received': prepayment_received,
+                'currency': currency,
+                'total_package': total_package,
             },
             async: false,
             dataType: 'json',
-            success: function (response) {
+            success: function(response) {
                 if (response) {
-                    swal({ icon: 'success', title: 'Success', text: 'Voucher Added Successfully!'});
+                    swal({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Voucher Added Successfully!'
+                    });
                 }
             },
-
-            error: function () { },
+            error: function() {},
         });
     } catch (error) {
         console.log(error);
-    } finally { }
+    } finally {}
 }
+
 
 function updateVoucher(){
     try {
@@ -489,14 +494,14 @@ function saveUpdateVoucher(id, code_img, hotel_img, hospital_img, clinic, forese
     } finally { }
 }
 
-$("#roomType").select2({placeholder: "Select Room Type", dropdownAutoWidth: true, allowClear: true});
+$("#roomType").select2({placeholder: "Select Room Type", dropdownAutoWidth: true, allowClear: false,multiple:true});
 $("#clinic").select2({placeholder: "Select Clinic", dropdownAutoWidth: true, allowClear: true});
 $("#hotel_voucher").select2({placeholder: "Select Hotel", dropdownAutoWidth: true, allowClear: true});
 $("#TotalPackageRateCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
 $("#PrePaymentReceivedCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
 $("#ClinicBalanceCurrency").select2({placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true});
 $("#hotel_category").select2({placeholder: "Select Category", dropdownAutoWidth: true, allowClear: true});
-$("#contactPerson").select2({placeholder: "Select Contact Person", dropdownAutoWidth: true, allowClear: true});
+$("#contactPerson").select2({placeholder: "Select Contact Person", dropdownAutoWidth: true, allowClear: false,multiple:true});
 $("#airportCode").select2({placeholder: "Select Airport Code", dropdownAutoWidth: true, allowClear: true});
 
 function dayDifference(d0, d1) {
@@ -587,13 +592,34 @@ function selectedValues() {
             $("#TotalPackageCurrencyText").html(' ' + ClinicBalanceCurrency);
         });
 
-        $("#contactPerson").on("change", function () {
-            let contactPersonVal = $(this).children("option:selected").text();
-            let contactPersonPhone = $(this).children("option:selected").val();
-            $("#contactPersonName").html( contactPersonVal);
-            $("#contactPersonPhone").html( contactPersonPhone);
-        });
+        $("#contactPerson").on("change", function() {
+            $("#contactPersonName").html("");
+            $("#contactPersonPhone").html("");
 
+            let selectedOptions = $(this).children("option:selected");
+
+            selectedOptions.each(function(index) {
+              let contactPersonVal = $(this).text();
+              let contactPersonPhone = $(this).val();
+
+              if (contactPersonVal !== "" && contactPersonPhone !== "") {
+                if (index !== 0) {
+                  $("#contactPersonName").append("<br>");
+                  $("#contactPersonPhone").append("<br>");
+                }
+                $("#contactPersonName").append(contactPersonVal);
+                $("#contactPersonPhone").append(contactPersonPhone);
+              }
+            });
+
+            // Remove trailing <br> tags
+            $("#contactPersonName br:first-child").remove();
+            $("#contactPersonPhone br:first-child").remove();
+
+            // Apply border to the second child
+            $("#contactPersonName br:nth-child(2)").css("border-bottom", "#00000040 solid 1px");
+            $("#contactPersonPhone br:nth-child(2)").css("border-bottom", "#00000040 solid 1px");
+          });
         $("#airportCode").on("change", function () {
             let selectedAirport = $(this).children("option:selected").val();
             if(selectedAirport == "IST"){
@@ -712,9 +738,15 @@ function selectedValues() {
         });
 
         $("#roomType").on("change", function () {
-            let roomType = $(this).children("option:selected").val();
+            let selectedOptions = $(this).children("option:selected");
+            let roomType = "";
+
+            if (selectedOptions.length > 0) {
+              roomType = selectedOptions.toArray().map(option => $(option).val()).join(" - ");
+            }
+
             $("#roomTypeText").html('<p class="data-desc" style="margin-bottom:0px;">' + roomType + '</p>');
-        });
+          });
     } catch (error) {
         console.info(error);
     } finally {

@@ -116,7 +116,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="roomType">Room Type</label>
-                                                        <select class="form-control" id="roomType">
+                                                        <select class="form-control" name="roomType[]" id="roomType" multiple>
                                                             <option></option>
                                                             <option value="Single">Single</option>
                                                             <option value="Double">Double</option>
@@ -237,7 +237,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="contactPerson">Contact Person</label>
-                                                        <select class="form-control" name="" id="contactPerson">
+                                                        <select class="form-control" name="contactPerson[]" id="contactPerson" data-placeholder="Select Contact Person">
                                                             <option></option>
                                                             @foreach ($sales as $sale)
                                                                 <option value="{{$sale->phone_number}}">{{$sale->name_surname}}</option>
@@ -571,7 +571,7 @@
                                                         </div>
 
                                                         <div class="test">
-                                                            <div class="row transfer-voucher" style="padding-bottom:2px;">
+                                                            <div class="row transfer-voucher" style="padding-bottom:2px;border-bottom #00000040 solid 1px;">
                                                                 <div class="col-lg-6" >
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName"> </p>
                                                                 </div>
