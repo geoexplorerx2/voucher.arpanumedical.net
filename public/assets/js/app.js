@@ -511,6 +511,10 @@ $("#ClinicBalanceCurrency").select2({placeholder: "Select Currency", dropdownAut
 $("#hotel_category").select2({placeholder: "Select Category", dropdownAutoWidth: true, allowClear: true});
 $("#contactPerson").select2({placeholder: "Select Contact Person", dropdownAutoWidth: true, allowClear: false,tags: true,multiple:true});
 $("#airportCode").select2({placeholder: "Select Airport Code", dropdownAutoWidth: true, allowClear: true});
+$("#gender").select2({ placeholder: "select gender", dropdownAutoWidth: true, allowClear: true });
+$("#surchargepaymentValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
+$("#DHIValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
+$("#surchargepaymentValue2").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
 
 function dayDifference(d0, d1) {
     try {
@@ -807,10 +811,42 @@ function selectedValues() {
 
     }
 }
+const getURL = () => {
+    var origin = window.location.origin;
+    var pathname = window.location.pathname;
+    return origin;
+}
+const fixLayout = (data) => {
+    $('#root').removeClass('.content');
+    $('#root').addClass('result-content');
+    $('#temContainer').removeClass('templateContainer');
+    $('#temContainer').addClass('result-templateContainer');
+    $('#formContainerId').removeClass('formContainer');
+    $('#formContainerId').addClass('result-formContainer');
 
-function voucherPdf() {
+    $.post(getURL() + `${data==null?'/api/create/proformainvoice':'/api/proforma/update/'+data[0].id}`,
+        {
+            dateValue: $('#dateValue').val(),
+            gender: $('#gender').val(),
+            fullname:$('#fullname').val(),
+            city:$('#city').val(),
+            PerNight: $('#PerNight').val(),
+            ReceiptNo: $('#ReceiptNo').val(),
+            surchargepayment: $('#surchargepayment').val(),
+            surchargepaymentValue: $('#surchargepaymentValue').val(),
+            surchargepayment2: $('#surchargepayment2').val(),
+            surchargepaymentValue2: $('#surchargepaymentValue2').val(),
+            DHI: $('#DHI').val(),
+            DHIValue: $('#DHIValue').val(),
+        },
+        function (response) {
+            console.log(response)
+        });
+}
+function voucherPdf(data) {
     try {
-        var elem = document.getElementById('root');
+        fixLayout(data==undefined?null:data);
+        var elem = document.getElementById('formContainerId');
         let date_ob = new Date();
         let date = ("0" + date_ob.getDate()).slice(-2);
         let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);

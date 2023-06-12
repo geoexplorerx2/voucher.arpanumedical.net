@@ -77,4 +77,10 @@ Route::group(['middleware' => ['auth']], function(){
     Route::POST('vouchers/update/{id}', 'VoucherController@update')->middleware(['middleware' => 'permission:edit sales person'])->name('voucher.update');
     Route::GET('vouchers/destroy/{id}', 'VoucherController@destroy')->middleware(['middleware' => 'permission:delete sales person'])->name('voucher.destroy');
 
+    // PROFORMA INVOICE REQUESTS
+    Route::GET('/voucher/proforma', 'VoucherController@proforma')->name('vocher.proforma');
+    Route::GET('/proforma/list', 'VoucherController@proformaList')->name('proforma.List');
+    Route::GET('/proforma/edit/{id}', 'VoucherController@proformaEdit')->name('proforma.edit');
+    Route::GET('/proforma/destroy/{id}', 'VoucherController@destroyperforma')->name('proforma.destroy');
+
 });

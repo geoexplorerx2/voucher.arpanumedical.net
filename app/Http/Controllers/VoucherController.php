@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use Yajra\DataTables\Html\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\PerformInvoiceListModel;
 
 class VoucherController extends Controller
 {
@@ -25,12 +26,11 @@ class VoucherController extends Controller
         try {
             $hotels     = Hotel::orderBy('id', 'asc')->get();
             $hospitals  = Hospital::orderBy('id', 'asc')->get();
-            $sales      = SalesPerson::orderBy('name_surname','asc')->get();
+            $sales      = SalesPerson::orderBy('name_surname', 'asc')->get();
             $data       = array('hotels' => $hotels, 'hospitals' => $hospitals, 'sales' => $sales);
             $user       = auth()->user();
             return view('admin.vouchers.voucher_list')->with($data);
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
@@ -39,12 +39,11 @@ class VoucherController extends Controller
         try {
             $hotels     = Hotel::orderBy('id', 'asc')->get();
             $hospitals  = Hospital::orderBy('id', 'asc')->get();
-            $sales      = SalesPerson::orderBy('name_surname','asc')->get();
+            $sales      = SalesPerson::orderBy('name_surname', 'asc')->get();
             $data       = array('hotels' => $hotels, 'hospitals' => $hospitals, 'sales' => $sales);
             $user       = auth()->user();
             return view('admin.vouchers.voucher_it')->with($data);
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
@@ -53,12 +52,11 @@ class VoucherController extends Controller
         try {
             $hotels     = Hotel::orderBy('id', 'asc')->get();
             $hospitals  = Hospital::orderBy('id', 'asc')->get();
-            $sales      = SalesPerson::orderBy('name_surname','asc')->get();
+            $sales      = SalesPerson::orderBy('name_surname', 'asc')->get();
             $data       = array('hotels' => $hotels, 'hospitals' => $hospitals, 'sales' => $sales);
             $user       = auth()->user();
             return view('admin.vouchers.voucher_es')->with($data);
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
@@ -104,12 +102,10 @@ class VoucherController extends Controller
 
             if ($result) {
                 return response($newData->id, 200);
-            }
-            else {
+            } else {
                 return response(false, 500);
             }
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
@@ -117,11 +113,10 @@ class VoucherController extends Controller
     {
         try {
             $user = auth()->user();
-            $vouchers = Voucher::with('hospital','hotel')->orderBy('created_at', 'desc')->get();
+            $vouchers = Voucher::with('hospital', 'hotel')->orderBy('created_at', 'desc')->get();
             $data = array('vouchers' => $vouchers);
             return view('admin.vouchers.voucher_all')->with($data);
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
@@ -130,8 +125,8 @@ class VoucherController extends Controller
     {
         $hotels         = Hotel::orderBy('id', 'asc')->get();
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
-        $sales          = SalesPerson::orderBy('name_surname','asc')->get();
-        $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
+        $sales          = SalesPerson::orderBy('name_surname', 'asc')->get();
+        $voucher        = Voucher::where('id', '=', $id)->with('hospital', 'hotel')->first();
         $names = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
@@ -140,7 +135,7 @@ class VoucherController extends Controller
                 $contactPersons[] = $contactPerson;
             }
         }
-        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales' => $sales, 'hospitals' => $hospitals, 'hotels' => $hotels);
 
         return view('admin.vouchers.voucher_edit')->with($data);
     }
@@ -148,8 +143,8 @@ class VoucherController extends Controller
     {
         $hotels         = Hotel::orderBy('id', 'asc')->get();
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
-        $sales          = SalesPerson::orderBy('name_surname','asc')->get();
-        $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
+        $sales          = SalesPerson::orderBy('name_surname', 'asc')->get();
+        $voucher        = Voucher::where('id', '=', $id)->with('hospital', 'hotel')->first();
         $names = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
@@ -158,7 +153,7 @@ class VoucherController extends Controller
                 $contactPersons[] = $contactPerson;
             }
         }
-        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales' => $sales, 'hospitals' => $hospitals, 'hotels' => $hotels);
 
         return view('admin.vouchers.voucher_edit_es')->with($data);
     }
@@ -167,8 +162,8 @@ class VoucherController extends Controller
     {
         $hotels         = Hotel::orderBy('id', 'asc')->get();
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
-        $sales          = SalesPerson::orderBy('name_surname','asc')->get();
-        $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
+        $sales          = SalesPerson::orderBy('name_surname', 'asc')->get();
+        $voucher        = Voucher::where('id', '=', $id)->with('hospital', 'hotel')->first();
         $names = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
@@ -177,7 +172,7 @@ class VoucherController extends Controller
                 $contactPersons[] = $contactPerson;
             }
         }
-        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales' => $sales, 'hospitals' => $hospitals, 'hotels' => $hotels);
 
         return view('admin.vouchers.voucher_edit_it')->with($data);
     }
@@ -220,17 +215,35 @@ class VoucherController extends Controller
 
             if (Voucher::where('id', '=', $id)->update($temp)) {
                 return response($id, 200);
-            }
-            else {
+            } else {
                 return response(false, 500);
             }
-        }
-        catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
-    public function destroy($id){
-        Voucher::where('id', '=',$id)->delete();
+    public function destroy($id)
+    {
+        Voucher::where('id', '=', $id)->delete();
         return redirect()->route('voucher.show')->with('message', 'Voucher Deleted Successfully!');
+    }
+    public function proforma()
+    {
+        return view('admin.vouchers.voucher_proforma');
+    }
+    public function proformaList()
+    {
+        $data = PerformInvoiceListModel::all();
+        return view('admin.vouchers.voucher_proforma_list', ['data' => $data]);
+    }
+    public function proformaEdit($id)
+    {
+        $data = PerformInvoiceListModel::where('id', $id)->get();
+        return view('admin.vouchers.voucher_proforma', ['data' => $data]);
+    }
+    public function destroyperforma($id)
+    {
+        PerformInvoiceListModel::findorfail($id)->delete();
+        return back();
     }
 }
