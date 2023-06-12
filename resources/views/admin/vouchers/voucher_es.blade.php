@@ -92,7 +92,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</textarea>
+                                                    <textarea class="form-control" id="description_area">*Su asistente de atención clínica organizará un horario preciso de consulta, operación y control postoperatorio, además de la programación de recogida en su hotel, según sean los horarios de llegada y operación.</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,12 +272,12 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one">El paquete incluye la intervención [FUE],el alojamiento [3 noches],y todos los traslados entre hotel-clínica y aeropuerto.</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">
                                                     <div class="form-group">
-                                                        <label for="importantNotes">Important Notes</label>
+                                                        <label for="importantNotes">Notas importantes</label>
                                                         <textarea class="form-control" id="importantNotes">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</textarea>
                                                     </div>
                                                 </div> --}}
@@ -340,25 +340,25 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-name" style="border-bottom: 1px solid black;">Address: Merkez Mah. Abide-i Hürriye Cad. No: 171/8 Aykaç Apt. Kat:2 Şişli/İSTANBUL - TURKEY</p>
+                                                                <p class="data-name" style="border-bottom: 1px solid black;">Dirección: Merkez Mah. Abide-i Hürriye Cad. No: 171/8 Aykaç Apt. Kat:2 Şişli/İSTANBUL - TURKEY</p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-10">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">CLINIC APPOINTMENT DETAILS</h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">DETALLES DE LA CITA MÉDICA</h5></div>
                                                             </div>
                                                         </div>
                                                         <div class="test">
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top: 2px; padding-bottom: 2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px" class="data-name">Name of Clinic, Address: </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">Nombre de la clínica, Dirección: </p>
                                                                 </div>
                                                                 <div class="col-lg-7" style="margin-bottom:0px" id="clinicText"></div>
                                                                 <div class="col-lg-2" style="margin-bottom:0px" id="clinicImage"></div>
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px" class="data-name">Type of Medical Procedure: </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">Tipo de intervención médica: </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
                                                                     <p  class="data-desc" style=" margin-bottom: 0; " id="treatmentDetail"></p>
@@ -366,17 +366,17 @@
                                                             </div>
                                                             <div class="row" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-4">
-                                                                    <p style="margin-bottom:0px" class="data-name">*Foreseen Date of Procedure </p>
+                                                                    <p style="margin-bottom:0px" class="data-name">*Fecha prevista de la intervención: </p>
                                                                 </div>
                                                                 <div class="col-lg-7" id="dateOfProcedureText" style="margin-bottom:0px">
                                                                 </div>
                                                             </div>
                                                         </div>
 
-                                                        <p style="font-size: 9px; font-family: inherit" id="description_text">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</p>
+                                                        <p style="font-size: 9px; font-family: inherit" id="description_text">*Su asistente de atención clínica organizará un horario preciso de consulta, operación y control postoperatorio, además de la programación de recogida en su hotel, según sean los horarios de llegada y operación.</p>
                                                         <div class="row">
                                                             <div class="col-lg-10">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">HOTEL RESERVATION <span id="type-note"></span></h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">RESERVA DE HOTEL <span id="type-note"></span></h5></div>
                                                             </div>
                                                         </div>
 
@@ -393,7 +393,7 @@
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p  style="margin-bottom:0px" class="data-name">Name(s): </p>
+                                                                    <p  style="margin-bottom:0px" class="data-name">Nombre: </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="passengerName"></p>
@@ -405,7 +405,7 @@
                                                                 </div>
                                                                 <div class="col-lg-3" id="checkinDate"></div>
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">Room Type:</p>
+                                                                    <p style="margin-bottom:0px"  class="data-name">Tipo de habitación:</p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="roomTypeText"></div>
                                                             </div>
@@ -415,19 +415,19 @@
                                                                 </div>
                                                                 <div class="col-lg-3" id="checkoutDate"></div>
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">Nights:</p>
+                                                                    <p style="margin-bottom:0px"  class="data-name">Noches:</p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="nightResult" style="margin-bottom:0px"></div>
                                                             </div>
                                                             <div class="row" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">Confirmation Number: </p>
+                                                                    <p style="margin-bottom:0px"  class="data-name">Número de confirmación: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="confirmationNumberText"></p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p style="margin-bottom:0px"  class="data-name">Category:</p>
+                                                                    <p style="margin-bottom:0px"  class="data-name">Categoría:</p>
                                                                 </div>
                                                                 <div class="col-lg-3" id="hotelCategoryText" style="margin-bottom:0px"></div>
                                                             </div>
@@ -435,25 +435,25 @@
 
                                                         <div class="row hotel-voucher-note">
                                                             <div class="col-lg-12">
-                                                                <span class="important-note"><b style="color: #81b9d8; font-size: 10px;">Important Notes</b></span>
-                                                                <p style="font-size: 9px; font-family: inherit" class="important-desc-1">* For check-in procedures before 15:00, depending on the availability of vacant rooms, you may have to wait for a short while.</span><br><span>** You are required to check out by 12:00.</span></p>
+                                                                <span class="important-note"><b style="color: #81b9d8; font-size: 10px;">Notas importantes</b></span>
+                                                                <p style="font-size: 9px; font-family: inherit" class="important-desc-1">*En caso de efectuar el check-in antes de las 14:00, dependiendo de la disponibilidad de las habitaciones libres, puede que tenga que esperar hasta que la habitación quede disponible.</span><br><span>**La hora de check-out son las 12 del mediodía.</span></p>
                                                                 <p style="font-size: 9px; font-family: inherit" class="important-desc-2"></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-10">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">TRANSPORTATION DETAILS <span id="self-transfer"></span></h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">DETALLE DE VUELOS Y TRASLADOS <span id="self-transfer"></span></h5></div>
                                                             </div>
                                                         </div>
                                                         <div class="row transfer-voucher" style="margin-top:2px;">
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVAL </p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">LLEGADA </p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">DEPARTURE</p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">SALIDA</p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
@@ -462,13 +462,13 @@
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Arrival Date: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Fecha de llegada: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalDateText"></p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Departure Date: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Fecha de salida: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureDateText"></p>
@@ -476,13 +476,13 @@
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Arrival Time: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Hora de llegada: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalTimeText"></p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Departure Time: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Horario de salida: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureTimeText"></p>
@@ -490,13 +490,13 @@
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Flight Number: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Número de vuelo: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="flightNumberText"></p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">**Pick-up Time: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">** Horario de recogida en hotel: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="pickUpTimeText"></p>
@@ -504,13 +504,13 @@
                                                             </div>
                                                             <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">*Airport: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">*Aeropuerto: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="arrivalAirportText"></p>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px">Airport: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px">Aeropuerto: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="departureAirportText"></p>
@@ -519,23 +519,23 @@
                                                         </div>
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
-                                                                <span><b style="color: #81b9d8; font-size: 10px;">Important Notes</b></span>
+                                                                <span><b style="color: #81b9d8; font-size: 10px;">Notas importantes</b></span>
                                                                 <p style="font-size: 9px; font-family: inherit" id="importantNotesText"></p>
-                                                                <p style="font-size: 9px; font-family: inherit"><span>** According to your schedule at the clinic, you will be informed about the exact time for pick-up by your Clinical Care Assistant.</span><br><span>*** According to the government’s policies concerning the patient transfers, you are required to provide the ID information of those who will use the transportation services along with you, before your arrival. </span></p>
+                                                                <p style="font-size: 9px; font-family: inherit"><span>** Acorde con su horario en la clínica, se le informará sobre el momento exacto para la recogida en el hotel.</span><br><span>*** Para cumplir con la legislación del gobierno sobre los traslados de pacientes en suelo turco, debe proporcionar la información de identificación personal de aquellas personas que utilizarán los servicios de transporte junto con usted, antes de su llegada a Estambul.</span></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">PAYMENT DETAILS</h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">DETALLES DEL PAGO</h5></div>
                                                             </div>
                                                         </div>
 
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Total Package Rate: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Tarifa Total del Paquete: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <span class="data-desc" id="TotalPackageRateVal"></span>
@@ -544,7 +544,7 @@
                                                             </div>
                                                             <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Pre-payment Received: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Pago por adelantado recibido: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <span class="data-desc" id="PrePaymentReceivedVal"></span>
@@ -553,7 +553,7 @@
                                                             </div>
                                                             <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Balance In The Clinic: </p>
+                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Importe a pagar en clínica: </p>
                                                                 </div>
                                                                 <div class="col-lg-3">
                                                                     <span class="data-name" id="ClinicBalanceVal"></span>
@@ -563,18 +563,18 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers.</p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">El paquete incluye la intervención [FUE],el alojamiento [3 noches],y todos los traslados entre hotel-clínica y aeropuerto.</p>
                                                             </div>
                                                             <div class="col-lg-12 dhi-supplement-section" style="display: none">
-                                                                <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">In case DHi technique will be applied there is a supplement of 600 €.</p>
+                                                                <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">En el caso de utilizar la técnica DHI se aplicará un suplemento de 600€.</p>
                                                             </div>
                                                             <div class="col-lg-12">
-                                                                <p class="data-desc" style=" margin-bottom: 0;"><span>*The price specified is valid for cash payments. Note that for payments made by a Credit Card, a service charge of 5% for Visa, and Master Card, and 8% for AmEx will be surcharged. </span><br><span>* Note that AmEx only accepts payments made in Turkish Liras (TRY).</b></span></p>
+                                                                <p class="data-desc" style=" margin-bottom: 0;"><span>*El importe especificado es válido para pagos en efectivo. Tenga en cuenta que para los pagos realizados con tarjeta de crédito o débito, se cobrará un cargo por servicio del 5% para tarjetas Visa y Master Card, y del 8% para American Express. </span><br><span>*Tenga en cuenta que American Express solo acepta pagos realizados en liras turcas (TRY)</b></span></p>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5></div>
+                                                                <div class="head-text"><h5 style="margin-bottom:0px">DETALLES DE CONTACTO</h5></div>
                                                             </div>
                                                         </div>
 
@@ -590,7 +590,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <p style="text-align:center; color:red; font-size:10px; font-weight:bold;margin-bottom:0px;">In case of cancellation, you are supposed to inform us with written note minimum 48 hours before your arrival time.</p>
+                                                                <p style="text-align:center; color:red; font-size:10px; font-weight:bold;margin-bottom:0px;">En caso de cancelación, debe informarnos mediante una nota escrita mínimo 48 horas antes de su hora de llegada a Estambul.</p>
                                                             </div>
                                                         </div>
                                                     </div>

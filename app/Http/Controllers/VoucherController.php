@@ -34,6 +34,34 @@ class VoucherController extends Controller
             throw $th;
         }
     }
+    public function indexIT(Builder $builder)
+    {
+        try {
+            $hotels     = Hotel::orderBy('id', 'asc')->get();
+            $hospitals  = Hospital::orderBy('id', 'asc')->get();
+            $sales      = SalesPerson::orderBy('name_surname','asc')->get();
+            $data       = array('hotels' => $hotels, 'hospitals' => $hospitals, 'sales' => $sales);
+            $user       = auth()->user();
+            return view('admin.vouchers.voucher_it')->with($data);
+        }
+        catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+    public function indexES(Builder $builder)
+    {
+        try {
+            $hotels     = Hotel::orderBy('id', 'asc')->get();
+            $hospitals  = Hospital::orderBy('id', 'asc')->get();
+            $sales      = SalesPerson::orderBy('name_surname','asc')->get();
+            $data       = array('hotels' => $hotels, 'hospitals' => $hospitals, 'sales' => $sales);
+            $user       = auth()->user();
+            return view('admin.vouchers.voucher_es')->with($data);
+        }
+        catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 
     public function store(Request $request)
     {

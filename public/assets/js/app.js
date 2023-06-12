@@ -570,15 +570,46 @@ function selectedValues() {
 
         $("#airportCode").on("change", function () {
             let airportCode = $(this).children("option:selected").val();
-            if (airportCode == "IST"){
-                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Istanbul Airport: you will be greeted by our driver just outside, at Exit 14, holding a board with D10.</span><br>');
+            let language = getLanguageFromURL(); // Get the language from the URL
+
+            if (airportCode == "IST") {
+                let importantNotesText = '';
+
+                if (language == "es") {
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">*A su llegada al aeropuerto, después de haber pasado por el punto de control de pasaportes y la recogida de equipajes, se dirigirá a la puerta de salida donde una persona le estará esperando al lado de un cartel donde se muestra un código. En [ el aeropuerto Istanbul Airport ], deberá salir de la terminal por la [ puerta 14 ], y buscará la persona con el cartel [D10]</span><br>';
+                } else if (language == "it") {
+                    importantNotesText = "<span style='font-size: 11px' id='important-note-airport'>*Dopo aver completato il controllo passaporti e ritirato i bagagli, dovrai dirigerti verso l'uscita, dove il personale incaricato all'accoglienza aspetta con cartelli contenenti  nomi e/o numeri.  All'[Aeroporto di Istanbul], verrai accolto dal personale designato proprio all'esterno, presso la [porta 14], dove vedrai un cartello con scritto [D10].</span><br>";
+                } else {
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">*After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At [Istanbul Airport]: you will be greeted by our driver just outside, at [door 14], holding a board with [D10].</span><br>';
+                }
+
+                $("#importantNotesText").html(importantNotesText);
                 $("#airportImage").html('<img src="/images/d10.png" style="width: 75px;margin-top: 25px;" id="code_img">');
             }
-            if (airportCode == "SAW"){
-                $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;"  id="code_img">');
-                $("#importantNotesText").html('<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Gökçen: you will be greeted by our driver just outside, at Culomn 13, holding a board with 3E.</span><br>');
+
+            if (airportCode == "SAW") {
+                let importantNotesText = '';
+
+                if (language == "es") {
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">Después de pasar por el control de pasaportes y recoger su equipaje, deberá dirigirse a la puerta de salida, donde habrá personas esperando con carteles con nombres escritos en ellos. En el Aeropuerto de Sabiha Gökçen: nuestro conductor lo recibirá justo afuera, en la Columna 13, sosteniendo un cartel con 3E.</span><br>';
+                } else if (language == "it") {
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">Dopo aver superato il controllo passaporti e il ritiro bagagli, dovrai recarti alla porta di uscita, dove le persone aspettano tenendo in alto cartelli con i nomi scritti. All\'aeroporto di Sabiha Gökçen: il nostro autista ti accoglierà appena fuori, alla Colonna 13, tenendo un cartello con 3E.</span><br>';
+                } else {
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Gökçen: you will be greeted by our driver just outside, at Column 13, holding a board with 3E.</span><br>';
+                }
+
+                $("#importantNotesText").html(importantNotesText);
+                $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;" id="code_img">');
             }
         });
+
+        // Function to get the language from the URL
+        function getLanguageFromURL() {
+            let url = window.location.href;
+            let language = url.substr(url.lastIndexOf("/") + 1);
+            return language;
+        }
+
 
         $("#hotel_category").on("change", function () {
             let hotelCategoryVal = $(this).children("option:selected").val();
