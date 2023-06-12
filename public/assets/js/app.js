@@ -601,15 +601,38 @@ function selectedValues() {
                 $("#importantNotesText").html(importantNotesText);
                 $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;" id="code_img">');
             }
+            console.log(language);
+
         });
 
-        // Function to get the language from the URL
         function getLanguageFromURL() {
             let url = window.location.href;
-            let language = url.substr(url.lastIndexOf("/") + 1);
+            let language = "en";
+
+            let urlSegments = url.split("/");
+
+            let editIndex = urlSegments.findIndex(segment => segment === "edit");
+
+            if (editIndex !== -1 && editIndex >= 4) {
+            let languageSegment = urlSegments[editIndex - 1];
+
+            if (languageSegment === "es") {
+                language = "es";
+            } else if (languageSegment === "it") {
+                language = "it";
+            }
+            } else if (urlSegments.length >= 4) {
+            let languageSegment = urlSegments[urlSegments.length - 1];
+
+            if (languageSegment === "es") {
+                language = "es";
+            } else if (languageSegment === "it") {
+                language = "it";
+            }
+            }
+
             return language;
         }
-
 
         $("#hotel_category").on("change", function () {
             let hotelCategoryVal = $(this).children("option:selected").val();

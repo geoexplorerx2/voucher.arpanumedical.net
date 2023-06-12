@@ -41,15 +41,15 @@
                                 <h3 class="m-0 text-dark text-center"> Reservation Voucher</h3>
                             </div>
                             <div class="col-sm-4">
-                                <div class="dropdown">
-                                    <button class="btn btn-primary dropdown-toggle action-btn" type="button" data-toggle="dropdown">Language</button>
+                                <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
+                                <div class="dropdown float-right">
+                                    <button class="btn btn-success dropdown-toggle action-btn" type="button" data-toggle="dropdown">Language</button>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ route("voucher") }}">English</a></li>
                                         <li><a href="{{ route("es.voucher") }}">Spanish</a></li>
                                         <li><a href="{{ route("it.voucher") }}">Italian</a></li>
                                     </ul>
                                 </div>
-                                <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
                             </div>
                         </div>
                         <hr>

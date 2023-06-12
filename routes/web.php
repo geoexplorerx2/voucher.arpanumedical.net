@@ -72,6 +72,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::POST('vouchers/store', 'VoucherController@store')->name('voucher.store');
     Route::GET('vouchers/list', 'VoucherController@show')->name('voucher.show');
     Route::GET('vouchers/edit/{id}', 'VoucherController@edit')->name('voucher.edit');
+    Route::GET('vouchers/es/edit/{id}', 'VoucherController@editES')->name('voucher_es.edit');
+    Route::GET('vouchers/it/edit/{id}', 'VoucherController@editIT')->name('voucher_it.edit');
     Route::POST('vouchers/update/{id}', 'VoucherController@update')->middleware(['middleware' => 'permission:edit sales person'])->name('voucher.update');
     Route::GET('vouchers/destroy/{id}', 'VoucherController@destroy')->middleware(['middleware' => 'permission:delete sales person'])->name('voucher.destroy');
 

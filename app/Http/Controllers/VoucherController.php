@@ -144,6 +144,43 @@ class VoucherController extends Controller
 
         return view('admin.vouchers.voucher_edit')->with($data);
     }
+    public function editES($id)
+    {
+        $hotels         = Hotel::orderBy('id', 'asc')->get();
+        $hospitals      = Hospital::orderBy('id', 'asc')->get();
+        $sales          = SalesPerson::orderBy('name_surname','asc')->get();
+        $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
+        $names = explode(' - ', $voucher->contact_person);
+        $contactPersons = [];
+        foreach ($names as $name) {
+            $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
+            if ($contactPerson) {
+                $contactPersons[] = $contactPerson;
+            }
+        }
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+
+        return view('admin.vouchers.voucher_edit_es')->with($data);
+    }
+
+    public function editIT($id)
+    {
+        $hotels         = Hotel::orderBy('id', 'asc')->get();
+        $hospitals      = Hospital::orderBy('id', 'asc')->get();
+        $sales          = SalesPerson::orderBy('name_surname','asc')->get();
+        $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
+        $names = explode(' - ', $voucher->contact_person);
+        $contactPersons = [];
+        foreach ($names as $name) {
+            $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
+            if ($contactPerson) {
+                $contactPersons[] = $contactPerson;
+            }
+        }
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+
+        return view('admin.vouchers.voucher_edit_it')->with($data);
+    }
     public function update(Request $request, $id)
     {
         try {

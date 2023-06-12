@@ -40,6 +40,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
+                                <div class="dropdown float-right">
+                                    <button class="btn btn-success dropdown-toggle action-btn" type="button" data-toggle="dropdown">Language</button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{route('voucher.edit', ['id'=> $voucher->id])}}">English</a></li>
+                                        <li><a href="{{route('voucher_es.edit', ['id'=> $voucher->id])}}">Spanish</a></li>
+                                        <li><a href="{{route('voucher_it.edit', ['id'=> $voucher->id])}}">Italian</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -585,7 +593,8 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <div class="head-text">
-                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>                                                               </div>
+                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="test">
