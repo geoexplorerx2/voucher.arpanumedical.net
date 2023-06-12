@@ -539,7 +539,7 @@
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
                                                                 <b style="color: #81b9d8; font-size: 10px;">NOTE IMPORTANTI</b>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">{{$voucher->important_note}}</span><br><span>** In base al tuo programma presso la clinica, il tuo assistente ti fornirà gli orari precisi dei tuoi pick-up giorno per giorno.</span><br><span>*** Secondo le politiche governative turche riguardanti i traporti privati, ti chiediamo di fornire un documento di identità tuo e di chiunque viaggi con te, prima del tuo arrivo in Turchia.</span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">{{$voucher->important_note}}</span><br><span>** In base al tuo programma presso la clinica, il tuo assistente ti fornirà gli orari precisi dei tuoi pick-up giorno per giorno.</span><br><span>*** Secondo le politiche governative turche riguardanti i traporti, ti chiediamo di fornire un documento di identità tuo e di chiunque viaggi con te, prima del tuo arrivo in Turchia.</span></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">{!! $voucher->code_img !!}
                                                             </div>
