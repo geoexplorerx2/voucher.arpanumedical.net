@@ -13,13 +13,13 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\VoucherController::class, 'index'])->name('home');
-Route::get('/clear-cache', function() {
+Route::get('/clear-cache', function () {
     $exitCode = Artisan::call('cache:clear');
     $exitCode = Artisan::call('config:cache');
     return 'DONE';
 });
 
-Route::group(['middleware' => ['auth']], function(){
+Route::group(['middleware' => ['auth']], function () {
 
     Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
     Route::GET('getCurrencies', 'CurrencyController@getCurrencies');
@@ -78,9 +78,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::GET('vouchers/destroy/{id}', 'VoucherController@destroy')->middleware(['middleware' => 'permission:delete sales person'])->name('voucher.destroy');
 
     // PROFORMA INVOICE REQUESTS
-    Route::GET('/voucher/proforma', 'VoucherController@proforma')->name('vocher.proforma');
-    Route::GET('/proforma/list', 'VoucherController@proformaList')->name('proforma.List');
-    Route::GET('/proforma/edit/{id}', 'VoucherController@proformaEdit')->name('proforma.edit');
-    Route::GET('/proforma/destroy/{id}', 'VoucherController@destroyperforma')->name('proforma.destroy');
 
+    Route::GET('/proforma', 'proformaController@show')->name('proforma.show');
+    Route::GET('/proforma/list', 'proformaController@proformaList')->name('proforma.List');
+    Route::GET('/proforma/edit/{id}', 'proformaController@proformaEdit')->name('proforma.edit');
+    Route::GET('/proforma/destroy/{id}', 'proformaController@destroyperforma')->name('proforma.destroy');
 });

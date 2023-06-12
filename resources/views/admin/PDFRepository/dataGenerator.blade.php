@@ -47,10 +47,10 @@
                     <div class="col-lg-8"><input id="surchargepayment" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="surchargepaymentValue">
-                            <option value="€" selected> € (Euro) </option>
-                            <option value="$"> $ (USD) </option>
-                            <option value="₺"> ₺ (Lira) </option>
-                            <option value="£"> £ (Pound) </option>
+                            <option value="€" selected> € </option>
+                            <option value="$"> $ </option>
+                            <option value="₺"> ₺ </option>
+                            <option value="£"> £ </option>
                         </select>
                     </div>
                 </div>
@@ -63,10 +63,10 @@
                     <div class="col-lg-8"><input id="DHI" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="DHIValue">
-                            <option value="€" selected> € (Euro) </option>
-                            <option value="$"> $ (USD) </option>
-                            <option value="₺"> ₺ (Lira) </option>
-                            <option value="£"> £ (Pound) </option>
+                            <option value="€" selected> € </option>
+                            <option value="$"> $ </option>
+                            <option value="₺"> ₺ </option>
+                            <option value="£"> £ </option>
                         </select>
                     </div>
                 </div>
@@ -79,13 +79,18 @@
                     <div class="col-lg-8"><input id="surchargepayment2" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="surchargepaymentValue2">
-                            <option value="€" selected> € (Euro) </option>
-                            <option value="$"> $ (USD) </option>
-                            <option value="₺"> ₺ (Lira) </option>
-                            <option value="£"> £ (Pound) </option>
+                            <option value="€" selected> € </option>
+                            <option value="$"> $ </option>
+                            <option value="₺"> ₺ </option>
+                            <option value="£"> £ </option>
                         </select>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="btnContainer">
+            <div class="btnBox">
+                <button id="save-btn" onclick="saveInformation(null)" class="btn btn-primary btn-lg">Save</button>
             </div>
         </div>
     </div>

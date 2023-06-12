@@ -35,7 +35,7 @@
                         </a>
                         <ul class="nav-item_sub">
                             <li>
-                                <a href="{{ route('vocher.proforma') }}">
+                                <a href="{{ route('proforma.show') }}">
                                     <span>Create Proforma Invoice</span>
                                 </a>
                             </li>

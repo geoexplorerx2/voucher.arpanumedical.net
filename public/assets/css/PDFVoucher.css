@@ -335,10 +335,11 @@
 .dataGeneratorContainer {
     width: 100%;
     padding: 10px;
-    min-height: 70vh;
+    min-height: 64vh;
     margin-top: 50px;
     border: 1px solid #555;
     border-radius: 8px;
+    position: relative;
 }
 
 .select {
@@ -349,11 +350,27 @@
     text-align: center;
 }
 
-.transformation{
+.transformation {
     transform: translateX(-8px);
 }
 
-label{
+label {
     font-size: 14px !important;
 }
 
+.btnContainer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    bottom: 0;
+}
+
+.btnBox {
+    width: 20%;
+    margin: 20px 30px;
+}
+
+.btn-lg {
+    width: 100%;
+}
