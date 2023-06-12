@@ -591,7 +591,7 @@ function selectedValues() {
                 let importantNotesText = '';
 
                 if (language == "es") {
-                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">Después de pasar por el control de pasaportes y recoger su equipaje, deberá dirigirse a la puerta de salida, donde habrá personas esperando con carteles con nombres escritos en ellos. En el Aeropuerto de Sabiha Gökçen: nuestro conductor lo recibirá justo afuera, en la Columna 13, sosteniendo un cartel con 3E.</span><br>';
+                    importantNotesText = '<span style="font-size: 11px" id="important-note-airport">A su llegada al aeropuerto, después de haber pasado por el punto de control de pasaportes y la recogida de equipajes, se dirigirá a la puerta de salida.  En el aeropuerto de Sabiha Gökçen nuestro conductor le estará esperando en la columna 13 bajo un cartel con el código 3E.</span><br>';
                 } else if (language == "it") {
                     importantNotesText = '<span style="font-size: 11px" id="important-note-airport">Dopo aver superato il controllo passaporti e il ritiro bagagli, dovrai recarti alla porta di uscita, dove le persone aspettano tenendo in alto cartelli con i nomi scritti. All\'aeroporto di Sabiha Gökçen: il nostro autista ti accoglierà appena fuori, alla Colonna 13, tenendo un cartello con 3E.</span><br>';
                 } else {
