@@ -81,7 +81,6 @@
 }
 
 .proformaInvoice {
-    font-family: "Roobert";
     font-size: 24px;
     font-weight: normal;
     font-style: normal;
@@ -91,7 +90,6 @@
 }
 
 .proformaInvoiceDescription {
-    font-family: "Roobert";
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
@@ -117,7 +115,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    font-family: "Roobert";
     font-size: 15px;
     font-weight: normal;
     font-style: normal;
@@ -129,7 +126,6 @@
 
 .services>div:nth-child(2) {
     width: 30%;
-    font-family: "Roobert";
     font-size: 12px;
     font-weight: 500;
     font-style: normal;
@@ -144,7 +140,6 @@
 }
 
 .dataValue {
-    font-family: "Roobert";
     font-size: 12px;
     font-weight: normal;
     font-style: normal;
@@ -170,7 +165,6 @@
 }
 
 .row1>div:nth-child(1) {
-    font-family: "Roobert";
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -180,7 +174,6 @@
 
 .row1>div:nth-child(2) {
     opacity: 0.50;
-    font-family: "Roobert";
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -195,7 +188,7 @@
 }
 
 .row2>div:nth-child(1) {
-    font-family: "Roobert";
+    
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -204,7 +197,7 @@
 }
 
 .row2>div:nth-child(2) {
-    font-family: "Roobert";
+   
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -220,7 +213,7 @@
 }
 
 .row3>div:nth-child(1) {
-    font-family: "Roobert";
+    
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -229,7 +222,7 @@
 }
 
 .row3>div:nth-child(2) {
-    font-family: "Roobert";
+    
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -257,7 +250,7 @@
 }
 
 .textCustomizing {
-    font-family: "Roobert";
+    
     font-size: 15px;
     font-weight: normal;
     font-style: normal;
@@ -311,7 +304,7 @@
 }
 
 .tutar {
-    font-family: "Roobert";
+   
     font-size: 14px;
     font-weight: 500;
     font-style: normal;
@@ -320,7 +313,7 @@
 }
 
 .value {
-    font-family: "Roobert";
+   
     font-size: 20px;
     font-weight: normal;
     font-style: normal;
