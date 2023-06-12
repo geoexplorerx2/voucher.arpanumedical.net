@@ -393,7 +393,7 @@
                                                             </div>
                                                             <div class="row" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
                                                                 <div class="col-lg-3">
-                                                                    <p  style="margin-bottom:0px" class="data-name">Name/i: </p>
+                                                                    <p  style="margin-bottom:0px" class="data-name">Nome/i: </p>
                                                                 </div>
                                                                 <div class="col-lg-7">
                                                                     <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px" id="passengerName"></p>
