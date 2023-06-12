@@ -57,7 +57,7 @@
                             <td>{{ $voucher->patient_name }}</td>
                             <td>{{ $voucher->arrival_date }}</td>
                             <td>{{ $voucher->user->name }}</td>
-                            <td>{{ $voucher->created_at }}</td>
+                            <td>{{ date('d-m-Y / H:i', strtotime($voucher->created_at))}}</td>
                         </tr>
                         @endforeach
                     </table>

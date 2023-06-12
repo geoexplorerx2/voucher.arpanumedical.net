@@ -234,11 +234,11 @@
                                                         <input type="text" class="form-control" id="departureAirportVoucher" autocomplete="off" placeholder="Departure Airport" maxlength="10">
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="contactPerson">Contact Person</label>
-                                                        <select class="form-control" name="contactPerson[]" id="contactPerson" data-placeholder="Select Contact Person">
-                                                            <option></option>
+                                                        <select class="form-control" name="contactPerson[]" id="contactPerson" multiple>
                                                             @foreach ($sales as $sale)
                                                                 <option value="{{$sale->phone_number}}">{{$sale->name_surname}}</option>
                                                             @endforeach

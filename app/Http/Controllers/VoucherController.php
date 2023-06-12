@@ -70,6 +70,7 @@ class VoucherController extends Controller
             $newData->total_package         = $request->input('total_package');
             $newData->flight_number         = $request->input('flight_number');
             $newData->code_img              = $request->input('code_img');
+            $newData->dhi_supplement        = $request->input('dhi_supplement');
             $newData->user_id               = auth()->user()->id;
             $result                         = $newData->save();
 
@@ -103,8 +104,15 @@ class VoucherController extends Controller
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
         $sales          = SalesPerson::orderBy('name_surname','asc')->get();
         $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
-        $contact_person = SalesPerson::where('phone_number', '=', $voucher->contact_person)->first();
-        $data           = array('contact_person' => $contact_person, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
+        $names = explode(' - ', $voucher->contact_person);
+        $contactPersons = [];
+        foreach ($names as $name) {
+            $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
+            if ($contactPerson) {
+                $contactPersons[] = $contactPerson;
+            }
+        }
+        $data = array('contactPersons' => $contactPersons, 'voucher' => $voucher, 'sales'=>$sales, 'hospitals'=>$hospitals, 'hotels'=>$hotels);
 
         return view('admin.vouchers.voucher_edit')->with($data);
     }
@@ -142,6 +150,7 @@ class VoucherController extends Controller
             $temp['total_package']         = $request->input('total_package');
             $temp['flight_number']         = $request->input('flight_number');
             $temp['code_img']              = $request->input('code_img');
+            $temp['dhi_supplement']        = $request->input('dhi_supplement');
             $temp['user_id']               = auth()->user()->id;
 
             if (Voucher::where('id', '=', $id)->update($temp)) {

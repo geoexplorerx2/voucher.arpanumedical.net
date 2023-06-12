@@ -115,8 +115,13 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="roomType">Room Type</label>
-                                                        <select class="form-control" id="roomType">
-                                                            <option value="{{$voucher->room_type}}">{{$voucher->room_type}}</option>
+                                                        <select class="form-control" id="roomType" name="roomType[]" multiple>
+                                                            @php
+                                                                $roomtypes = explode(' - ', $voucher->room_type);
+                                                            @endphp
+                                                            @foreach ($roomtypes as $roomtype)
+                                                                <option value="{{$roomtype}}" selected>{{$roomtype}}</option>
+                                                            @endforeach
                                                             <option value="Single">Single</option>
                                                             <option value="Double">Double</option>
                                                             <option value="Triple">Triple</option>
@@ -236,8 +241,10 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="contactPerson">Contact Person</label>
-                                                        <select class="form-control" name="" id="contactPerson">
-                                                            <option value="{{$voucher->contact_person}}">{{$contact_person->name_surname}}</option>
+                                                        <select class="form-control" name="contactPerson[]" id="contactPerson" multiple>
+                                                            @foreach ($contactPersons as $contactPerson)
+                                                                <option value="{{ $contactPerson->phone_number }}" selected>{{ $contactPerson->name_surname }}</option>
+                                                            @endforeach
                                                             @foreach ($sales as $sale)
                                                                 <option value="{{$sale->phone_number}}">{{$sale->name_surname}}</option>
                                                             @endforeach
@@ -301,7 +308,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label for="dhi-supplement">DHI supplement:</label>
-                                                        <input type="checkbox" class="form-checkbox form-check" id="dhi-supplement">
+                                                        <input type="checkbox" class="form-checkbox form-check" id="dhi-supplement" {{ $voucher->dhi_supplement == 1 ? 'checked' : '' }}>
                                                     </div>
                                                 </div>
                                             </div>
@@ -568,7 +575,7 @@
                                                             <div class="col-lg-12">
                                                                 <p class="data-desc" style=" margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">{{$voucher->payment_detail}}</p>
                                                             </div>
-                                                            <div class="col-lg-12 dhi-supplement-section" style="display: none">
+                                                            <div class="col-lg-12 dhi-supplement-section" {{ $voucher->dhi_supplement != 1 ? 'style=display:none' : '' }}>
                                                                 <p class="data-desc" style="margin-bottom: 0;" style="margin-top: 12px;" id="paymentDetail_oneText">In case DHi technique will be applied there is a supplement of 600 €.</p>
                                                             </div>
                                                             <div class="col-lg-12">
@@ -578,18 +585,19 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <div class="head-text">
-                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>
-                                                                </div>
+                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>                                                               </div>
                                                             </div>
                                                         </div>
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="padding-bottom:2px;">
+                                                                @foreach ($contactPersons as $contactPerson)
                                                                 <div class="col-lg-6" >
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName">{{$contact_person->name_surname}} </p>
+                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName">{{ $contactPerson->name_surname }}</p>
                                                                 </div>
                                                                 <div class="col-lg-6">
-                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone">{{$voucher->contact_person}} </p>
+                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone">{{ $contactPerson->phone_number }} </p>
                                                                 </div>
+                                                                @endforeach
                                                             </div>
                                                         </div>
                                                         <div class="row">
