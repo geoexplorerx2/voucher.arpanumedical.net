@@ -41,7 +41,7 @@
                                 <h3 class="m-0 text-dark text-center"> Reservation Voucher</h3>
                             </div>
                             <div class="col-sm-4">
-                                <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
+                                {{-- <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button> --}}
                                 <div class="dropdown float-right">
                                     <button class="btn btn-success dropdown-toggle action-btn" type="button" data-toggle="dropdown">Language</button>
                                     <ul class="dropdown-menu">
@@ -92,7 +92,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Il tuo assistente in clinica si occuperà di pianificare la tua visita, l'operazione e la medicazione,  compresi gli orari di pick-up dal tuo hotel. Tutto sarà organizzato in base ai dettagli del tuo arrivo e del piano dell'intervento.</textarea>
+                                                    <textarea class="form-control" id="description_area" rows="6">*Il tuo assistente in clinica si occuperà di pianificare la tua visita, l'operazione e la medicazione,  compresi gli orari di pick-up dal tuo hotel. Tutto sarà organizzato in base ai dettagli del tuo arrivo e del piano dell'intervento.</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Il pacchetto include: - Voli A/R dall’Italia - Pernottamento di 3 notti in un hotel a 4/5 stelle con colazione inclusa -Transfer interni (aeroporto, hotel e clinica) - Servizio di interpretariato - Visita pre-operatoria - Anestesia indolore (anestesia locale e sedazione cosciente) - Operazione con tecnica FUE - Fornitura di farmaci post-intervento (antibiotico, antidolorifico, antinfiammatorio, gastroprotettore) - Medicazione post-operatoria - Trattamento laser a bassa intensità - Garanzia - Servizio di assistenza post-operatoria</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one" rows="10">Il pacchetto include: - Voli A/R dall’Italia - Pernottamento di 3 notti in un hotel a 4/5 stelle con colazione inclusa -Transfer interni (aeroporto, hotel e clinica) - Servizio di interpretariato - Visita pre-operatoria - Anestesia indolore (anestesia locale e sedazione cosciente) - Operazione con tecnica FUE - Fornitura di farmaci post-intervento (antibiotico, antidolorifico, antinfiammatorio, gastroprotettore) - Medicazione post-operatoria - Trattamento laser a bassa intensità - Garanzia - Servizio di assistenza post-operatoria</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">
@@ -447,13 +447,13 @@
                                                         </div>
                                                         <div class="row transfer-voucher" style="margin-top:2px;">
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVO </p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVO </p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">PARTENZA</p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">PARTENZA</p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
@@ -574,17 +574,16 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">DETTAGLI DEI CONTATTI DI EMERGENZA</h5></div>
+                                                                <div class="head-text">
+                                                                    <h5 style="margin-bottom:0px">DETTAGLI DEI CONTATTI DI EMERGENZA</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="test">
-                                                            <div class="row transfer-voucher" style="padding-bottom:2px;border-bottom #00000040 solid 1px;">
-                                                                <div class="col-lg-6" >
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName"> </p>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone"> </p>
+                                                            <div class="row transfer-voucher" style="padding-bottom:2px;">
+                                                                <div class="col-lg-12" >
+                                                                    <p class="data-name" style="margin-bottom:0px;" id="contactPersonName"> </p>
                                                                 </div>
                                                             </div>
                                                         </div>

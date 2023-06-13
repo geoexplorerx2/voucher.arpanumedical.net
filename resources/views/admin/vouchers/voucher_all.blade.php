@@ -45,7 +45,13 @@
                                     <button class="btn btn-primary dropdown-toggle action-btn" type="button" data-toggle="dropdown">Actions <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         @can('edit sales person')
-                                        <li><a href="{{route('voucher.edit', ['id'=> $voucher->id])}}" class="btn btn-info edit-btn"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
+                                        @if ($voucher->language == "es")
+                                            <li><a href="{{route('voucher_es.edit', ['id'=> $voucher->id])}}" class="btn btn-info edit-btn"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
+                                        @elseif ($voucher->language == "es")
+                                            <li><a href="{{route('voucher_it.edit', ['id'=> $voucher->id])}}" class="btn btn-info edit-btn"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
+                                        @else
+                                            <li><a href="{{route('voucher.edit', ['id'=> $voucher->id])}}" class="btn btn-info edit-btn"><i class="fa fa-pencil-square-o"></i> Edit / Show</a></li>
+                                        @endif
                                         @endcan
                                         @can('delete sales person')
                                         <li><a href="{{route('voucher.destroy', ['id'=> $voucher->id])}}" onclick="return confirm('Are you sure?');" class="btn btn-danger edit-btn"><i class="fa fa-trash"></i> Delete</a></li>
