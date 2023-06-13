@@ -21,4 +21,4 @@ header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Autho
 
 Route::POST('/login', 'Api\AuthController@login');
 Route::POST('/create/proformainvoice', [proformaController::class,'Create']);
-Route::POST('/proforma/update/{id}', 'proformaController@Update');
+Route::POST('/proforma/update/{id}', [proformaController::class,'Update']);

@@ -842,22 +842,22 @@ const saveInformation = (data) => {
             DHIValue: $('#DHIValue').val(),
         },
         function (response) {
-            if(response.status){
+            if (response.status) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Ok',
-                    text: 'Information Recorded Successfully',
+                    text: response.data,
                 })
                 $('#save-btn').show();
-            }else{
+            } else {
                 Swal.fire({
                     icon: 'error',
                     title: 'oops ...',
-                    text: 'Opration Failed',
+                    text: response.data,
                 })
                 $('#save-btn').show();
             }
-            
+
         });
 }
 function voucherPdf() {

@@ -49,10 +49,10 @@
                     <div class="col-lg-8"><input id="surchargepayment" value="{{ $item->surchargepayment }}" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="surchargepaymentValue">
-                            <option value="€" {{ $item->surchargePaymentUnit=="€"?'selected':'' }}> € (Euro) </option>
-                            <option value="$" {{ $item->surchargePaymentUnit=="$"?'selected':'' }}> $ (USD) </option>
-                            <option value="₺" {{ $item->surchargePaymentUnit=="₺"?'selected':'' }}> ₺ (Lira) </option>
-                            <option value="£" {{ $item->surchargePaymentUnit=="£"?'selected':'' }}> £ (Pound) </option>
+                            <option value="€" {{ $item->surchargePaymentUnit=="€"?'selected':'' }}> € </option>
+                            <option value="$" {{ $item->surchargePaymentUnit=="$"?'selected':'' }}> $ </option>
+                            <option value="₺" {{ $item->surchargePaymentUnit=="₺"?'selected':'' }}> ₺ </option>
+                            <option value="£" {{ $item->surchargePaymentUnit=="£"?'selected':'' }}> £ </option>
                         </select>
                     </div>
                 </div>
@@ -65,10 +65,10 @@
                     <div class="col-lg-8"><input id="DHI" value="{{ $item->DHI }}" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="DHIValue">
-                            <option value="€" {{ $item->DHIUnit=="€"?'selected':'' }}> € (Euro) </option>
-                            <option value="$" {{ $item->DHIUnit=="$"?'selected':'' }}> $ (USD) </option>
-                            <option value="₺" {{ $item->DHIUnit=="₺"?'selected':'' }}> ₺ (Lira) </option>
-                            <option value="£" {{ $item->DHIUnit=="£"?'selected':'' }}> £ (Pound) </option>
+                            <option value="€" {{ $item->DHIUnit=="€"?'selected':'' }}> € </option>
+                            <option value="$" {{ $item->DHIUnit=="$"?'selected':'' }}> $ </option>
+                            <option value="₺" {{ $item->DHIUnit=="₺"?'selected':'' }}> ₺ </option>
+                            <option value="£" {{ $item->DHIUnit=="£"?'selected':'' }}> £ </option>
                         </select>
                     </div>
                 </div>
@@ -81,13 +81,18 @@
                     <div class="col-lg-8"><input id="surchargepayment2" value="{{ $item->surchargepayment2 }}" type="number" class="form-control" style="transform: translateX(-10px)"></div>
                     <div class="col-lg-4">
                         <select class="form-control select" id="surchargepaymentValue2">
-                            <option value="€" {{ $item->surchargePaymentUnit2=="€"?'selected':'' }}> € (Euro) </option>
-                            <option value="$" {{ $item->surchargePaymentUnit2=="$"?'selected':'' }}> $ (USD) </option>
-                            <option value="₺" {{ $item->surchargePaymentUnit2=="₺"?'selected':'' }}> ₺ (Lira) </option>
-                            <option value="£" {{ $item->surchargePaymentUnit2=="£"?'selected':'' }}> £ (Pound) </option>
+                            <option value="€" {{ $item->surchargePaymentUnit2=="€"?'selected':'' }}> € </option>
+                            <option value="$" {{ $item->surchargePaymentUnit2=="$"?'selected':'' }}> $ </option>
+                            <option value="₺" {{ $item->surchargePaymentUnit2=="₺"?'selected':'' }}> ₺ </option>
+                            <option value="£" {{ $item->surchargePaymentUnit2=="£"?'selected':'' }}> £ </option>
                         </select>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="btnContainer">
+            <div class="btnBox">
+                <button id="save-btn" onclick="saveInformation({{ $data }})" class="btn btn-primary btn-lg">Save</button>
             </div>
         </div>
     </div>
