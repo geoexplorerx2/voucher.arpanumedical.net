@@ -63,7 +63,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.responsive.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/query.magnific-popup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>

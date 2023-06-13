@@ -314,14 +314,15 @@ function saveVoucher() {
                 var prepayment_received = $('#PrePaymentReceived').val();
                 var currency = $('#ClinicBalanceCurrency').val();
                 var total_package = $('#TotalPackageVal').val();
+                let language = getLanguageFromURL(); // Get the language from the URL
 
-                addVoucher(dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+                addVoucher(language,dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
             }, 500);
         });
     } catch (error) {}
 }
 
-function addVoucher(dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package) {
+function addVoucher(language,dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package) {
     try {
         $.ajaxSetup({
             headers: {
@@ -337,38 +338,39 @@ function addVoucher(dhi_supplement, code_img, hotel_img, hospital_img, clinic, f
             url: '/vouchers/store',
             type: 'POST',
             data: {
-                'clinic_name': clinic,
-                'hospital_img': hospital_img,
-                'foreseen_date': foreseen_date,
-                'medical_type': medical_type,
-                'desc': desc,
-                'patient_name': patient_name,
-                'hotel_name': hotel_name,
-                'hotel_img': hotel_img,
-                'room_type': roomTypeArray, // Pass as JSON string
-                'category': category,
-                'hotel_checkin': hotel_checkin,
-                'hotel_checkout': hotel_checkout,
-                'confirmatiom_num': confirmatiom_num,
-                'nights': nights,
-                'arrival_date': arrival_date,
-                'departure_date': departure_date,
-                'arrival_time': arrival_time,
-                'departure_time': departure_time,
-                'pickup_time': pickup_time,
-                'flight_number': flight_number,
-                'arrival_airport': arrival_airport,
-                'departure_airport': departure_airport,
-                'airport_code': airport_code,
-                'code_img': code_img,
-                'contact_person': contactPersonArray, // Pass as JSON string
-                'payment_detail': payment_detail,
-                'important_note': important_note,
-                'clinic_balance': clinic_balance,
-                'prepayment_received': prepayment_received,
-                'currency': currency,
-                'total_package': total_package,
-                'dhi_supplement':dhi_supplement,
+                'clinic_name'           : clinic,
+                'hospital_img'          : hospital_img,
+                'foreseen_date'         : foreseen_date,
+                'medical_type'          : medical_type,
+                'desc'                  : desc,
+                'patient_name'          : patient_name,
+                'hotel_name'            : hotel_name,
+                'hotel_img'             : hotel_img,
+                'room_type'             : roomTypeArray,
+                'category'              : category,
+                'hotel_checkin'         : hotel_checkin,
+                'hotel_checkout'        : hotel_checkout,
+                'confirmatiom_num'      : confirmatiom_num,
+                'nights'                : nights,
+                'arrival_date'          : arrival_date,
+                'departure_date'        : departure_date,
+                'arrival_time'          : arrival_time,
+                'departure_time'        : departure_time,
+                'pickup_time'           : pickup_time,
+                'flight_number'         : flight_number,
+                'arrival_airport'       : arrival_airport,
+                'departure_airport'     : departure_airport,
+                'airport_code'          : airport_code,
+                'code_img'              : code_img,
+                'contact_person'        : contactPersonArray,
+                'payment_detail'        : payment_detail,
+                'important_note'        : important_note,
+                'clinic_balance'        : clinic_balance,
+                'prepayment_received'   : prepayment_received,
+                'currency'              : currency,
+                'total_package'         : total_package,
+                'dhi_supplement'        : dhi_supplement,
+                'language'              : language,
             },
             async: false,
             dataType: 'json',
@@ -379,6 +381,16 @@ function addVoucher(dhi_supplement, code_img, hotel_img, hospital_img, clinic, f
                         title: 'Success',
                         text: 'Voucher Added Successfully!'
                     });
+
+                    setTimeout(function() {
+                        if (language == "es") {
+                            window.location.href = '/vouchers/es/edit/' + response;
+                        } else if (language == "it") {
+                            window.location.href = '/vouchers/it/edit/' + response;
+                        } else {
+                            window.location.href = '/vouchers/edit/' + response;
+                        }
+                    }, 1000); // 1000 milliseconds = 1 second
                 }
             },
             error: function() {},
@@ -430,8 +442,9 @@ function updateVoucher(){
                         currency            = $('#ClinicBalanceCurrency').val(),
                         total_package       = $('#TotalPackageVal').val();
                         dhi_supplement      = $('#dhi-supplement').is(':checked') ? 1 : 0;
+                        let language = getLanguageFromURL();
 
-                        saveUpdateVoucher(dhi_supplement,id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
+                        saveUpdateVoucher(language,dhi_supplement,id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
                 }, 500);
         });
     }
@@ -439,7 +452,7 @@ function updateVoucher(){
 }
 
 //Update Voucher
-function saveUpdateVoucher(dhi_supplement,id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
+function saveUpdateVoucher(language,dhi_supplement,id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package){
     try {
         $.ajaxSetup({
             headers: {
@@ -486,6 +499,7 @@ function saveUpdateVoucher(dhi_supplement,id, code_img, hotel_img, hospital_img,
                 'currency'              : currency,
                 'total_package'         : total_package,
                 'dhi_supplement'        : dhi_supplement,
+                'language'              : language,
             },
             async: false,
             dataType: 'json',
@@ -808,7 +822,34 @@ function selectedValues() {
 
     }
 }
+function getLanguageFromURL() {
+    let url = window.location.href;
+    let language = "en";
 
+    let urlSegments = url.split("/");
+
+    let editIndex = urlSegments.findIndex(segment => segment === "edit");
+
+    if (editIndex !== -1 && editIndex >= 4) {
+    let languageSegment = urlSegments[editIndex - 1];
+
+    if (languageSegment === "es") {
+        language = "es";
+    } else if (languageSegment === "it") {
+        language = "it";
+    }
+    } else if (urlSegments.length >= 4) {
+    let languageSegment = urlSegments[urlSegments.length - 1];
+
+    if (languageSegment === "es") {
+        language = "es";
+    } else if (languageSegment === "it") {
+        language = "it";
+    }
+    }
+
+    return language;
+}
 function voucherPdf() {
     try {
         var elem = document.getElementById('root');

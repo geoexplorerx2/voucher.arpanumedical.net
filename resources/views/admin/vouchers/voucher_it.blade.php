@@ -92,7 +92,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Il tuo assistente in clinica si occuperà di pianificare la tua visita, l'operazione e la medicazione,  compresi gli orari di pick-up dal tuo hotel. Tutto sarà organizzato in base ai dettagli del tuo arrivo e del piano dell'intervento.</textarea>
+                                                    <textarea class="form-control" id="description_area" rows="6">*Il tuo assistente in clinica si occuperà di pianificare la tua visita, l'operazione e la medicazione,  compresi gli orari di pick-up dal tuo hotel. Tutto sarà organizzato in base ai dettagli del tuo arrivo e del piano dell'intervento.</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Il pacchetto include: - Voli A/R dall’Italia - Pernottamento di 3 notti in un hotel a 4/5 stelle con colazione inclusa -Transfer interni (aeroporto, hotel e clinica) - Servizio di interpretariato - Visita pre-operatoria - Anestesia indolore (anestesia locale e sedazione cosciente) - Operazione con tecnica FUE - Fornitura di farmaci post-intervento (antibiotico, antidolorifico, antinfiammatorio, gastroprotettore) - Medicazione post-operatoria - Trattamento laser a bassa intensità - Garanzia - Servizio di assistenza post-operatoria</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one" rows="10">Il pacchetto include: - Voli A/R dall’Italia - Pernottamento di 3 notti in un hotel a 4/5 stelle con colazione inclusa -Transfer interni (aeroporto, hotel e clinica) - Servizio di interpretariato - Visita pre-operatoria - Anestesia indolore (anestesia locale e sedazione cosciente) - Operazione con tecnica FUE - Fornitura di farmaci post-intervento (antibiotico, antidolorifico, antinfiammatorio, gastroprotettore) - Medicazione post-operatoria - Trattamento laser a bassa intensità - Garanzia - Servizio di assistenza post-operatoria</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">

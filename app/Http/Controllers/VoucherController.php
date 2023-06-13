@@ -99,6 +99,7 @@ class VoucherController extends Controller
             $newData->flight_number         = $request->input('flight_number');
             $newData->code_img              = $request->input('code_img');
             $newData->dhi_supplement        = $request->input('dhi_supplement');
+            $newData->language              = $request->input('language');
             $newData->user_id               = auth()->user()->id;
             $result                         = $newData->save();
 

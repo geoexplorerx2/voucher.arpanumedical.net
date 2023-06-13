@@ -92,7 +92,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Su asistente de atención clínica organizará un horario preciso de consulta, operación y control postoperatorio, además de la programación de recogida en su hotel, según sean los horarios de llegada y operación.</textarea>
+                                                    <textarea class="form-control" id="description_area" rows="7">*Su asistente de atención clínica organizará un horario preciso de consulta, operación y control postoperatorio, además de la programación de recogida en su hotel, según sean los horarios de llegada y operación.</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +272,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">El paquete incluye la intervención [FUE],el alojamiento [3 noches],y todos los traslados entre hotel-clínica y aeropuerto.</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one" rows="4">El paquete incluye la intervención [FUE],el alojamiento [3 noches],y todos los traslados entre hotel-clínica y aeropuerto.</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">

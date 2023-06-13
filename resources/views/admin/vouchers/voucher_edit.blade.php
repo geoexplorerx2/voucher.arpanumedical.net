@@ -35,7 +35,10 @@
                 <div class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2 mt-3">
-                            <div class="col-sm-8">
+                            <div class="col-sm-4">
+                                <button class="btn btn-primary" onclick="previousPage();"><i class="fa fa-chevron-left"></i> Previous Page</button>
+                            </div>
+                            <div class="col-sm-4">
                                 <h3 class="m-0 text-dark text-center">Edit Reservation Voucher</h3>
                             </div>
                             <div class="col-sm-4">
@@ -91,7 +94,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">{{$voucher->desc}}</textarea>
+                                                    <textarea class="form-control" id="description_area" rows="7">{{$voucher->desc}}</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -278,7 +281,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">{{$voucher->payment_detail}}</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one" rows="4">{{$voucher->payment_detail}}</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">

@@ -19,7 +19,6 @@
     <link type="text/css" href="{{ asset('assets/css/dropzone.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/daterangepicker.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/jquery-steps.css') }}" rel="stylesheet">
-    <link type="text/css" href="{{ asset('assets/css/glightbox.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('assets/css/fullcalendar.min.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -92,7 +91,7 @@
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <label for="description_area">Description</label>
-                                                    <textarea class="form-control" id="description_area">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</textarea>
+                                                    <textarea class="form-control" id="description_area" rows="6">*Your Clinical Care Assistant will arrange a precise schedule of consultation, operation and cleaning processes including pick-up times from your hotel, according to the details of your arrival and operation plan.</textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -272,7 +271,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group">
                                                         <label for="paymentDetail_one">Payment Detail</label>
-                                                        <textarea class="form-control" id="paymentDetail_one">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
+                                                        <textarea class="form-control" id="paymentDetail_one" rows="3">Package fee includes the operation [FUE], [3-nights] accommodation, airport-hotel-clinic transfers</textarea>
                                                     </div>
                                                 </div>
                                                 {{-- <div class="col-lg-12">
@@ -615,28 +614,19 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/js.cookie.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dropzone.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/chart.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/popover.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/glightbox.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/Chart.extension.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.datatable.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.responsive.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jscolor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery-steps.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/gijgo.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/rest_api.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/clockpicker.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
 
