@@ -117,9 +117,9 @@ class VoucherController extends Controller
     public function show()
     {
         try {
-            $user = auth()->user();
+            $user       = auth()->user();
             $vouchers = Voucher::with('hospital','hotel')->orderBy('created_at', 'desc')->get();
-            $data = array('vouchers' => $vouchers);
+            $data     = array('vouchers' => $vouchers);
             return view('admin.vouchers.voucher_all')->with($data);
         }
         catch (\Throwable $th) {
@@ -133,7 +133,7 @@ class VoucherController extends Controller
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
         $sales          = SalesPerson::orderBy('name_surname','asc')->get();
         $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
-        $names = explode(' - ', $voucher->contact_person);
+        $names          = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
             $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
@@ -151,7 +151,7 @@ class VoucherController extends Controller
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
         $sales          = SalesPerson::orderBy('name_surname','asc')->get();
         $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
-        $names = explode(' - ', $voucher->contact_person);
+        $names          = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
             $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
@@ -170,7 +170,7 @@ class VoucherController extends Controller
         $hospitals      = Hospital::orderBy('id', 'asc')->get();
         $sales          = SalesPerson::orderBy('name_surname','asc')->get();
         $voucher        = Voucher::where('id', '=', $id)->with('hospital','hotel')->first();
-        $names = explode(' - ', $voucher->contact_person);
+        $names          = explode(' - ', $voucher->contact_person);
         $contactPersons = [];
         foreach ($names as $name) {
             $contactPerson = SalesPerson::where('phone_number', '=', $name)->first();
@@ -217,6 +217,7 @@ class VoucherController extends Controller
             $temp['flight_number']         = $request->input('flight_number');
             $temp['code_img']              = $request->input('code_img');
             $temp['dhi_supplement']        = $request->input('dhi_supplement');
+            $temp['language']              = $request->input('language');
             $temp['user_id']               = auth()->user()->id;
 
             if (Voucher::where('id', '=', $id)->update($temp)) {
