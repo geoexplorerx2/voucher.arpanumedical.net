@@ -39,11 +39,8 @@
                                     <th scope="col">Per Night</th>
                                     <th scope="col">ReceiptNo</th>
                                     <th scope="col">surchargepayment</th>
-                                    <th scope="col">surchargepayment Currency</th>
                                     <th scope="col">surchargepayment2</th>
-                                    <th scope="col">surchargepayment Currency2</th>
                                     <th scope="col">DHI</th>
-                                    <th scope="col">DHI Currency</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,12 +65,9 @@
                                         <td>{{ $item->city }}</td>
                                         <td>{{ $item->perNight }}</td>
                                         <td>{{ $item->ReceiptNo }}</td>
-                                        <td>{{ $item->surchargepayment }}</td>
-                                        <td>{{ $item->surchargePaymentUnit }}</td>
-                                        <td>{{ $item->surchargepayment2 }}</td>
-                                        <td>{{ $item->surchargePaymentUnit2 }}</td>
-                                        <td>{{ $item->DHI }}</td>
-                                        <td>{{ $item->DHIUnit }}</td>
+                                        <td>{{ $item->surchargepayment.' '.$item->surchargePaymentUnit }}</td>
+                                        <td>{{ $item->surchargepayment2.' '.$item->surchargePaymentUnit2 }}</td>
+                                        <td>{{ $item->DHI.' '.$item->DHIUnit }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
