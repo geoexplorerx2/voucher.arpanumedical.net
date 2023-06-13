@@ -447,13 +447,13 @@
                                                         </div>
                                                         <div class="row transfer-voucher" style="margin-top:2px;">
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVAL </p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVAL </p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">DEPARTURE</p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">DEPARTURE</p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
@@ -574,17 +574,16 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-lg-12">
-                                                                <div class="head-text"><h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5></div>
+                                                                <div class="head-text">
+                                                                    <h5 style="margin-bottom:0px">CONTACT DETAILS FOR EMERGENCY</h5>
+                                                                </div>
                                                             </div>
                                                         </div>
 
                                                         <div class="test">
-                                                            <div class="row transfer-voucher" style="padding-bottom:2px;border-bottom #00000040 solid 1px;">
-                                                                <div class="col-lg-6" >
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName"> </p>
-                                                                </div>
-                                                                <div class="col-lg-6">
-                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone"> </p>
+                                                            <div class="row transfer-voucher" style="padding-bottom:2px;">
+                                                                <div class="col-lg-12" >
+                                                                    <p class="data-name" style="margin-bottom:0px;" id="contactPersonName"> </p>
                                                                 </div>
                                                             </div>
                                                         </div>

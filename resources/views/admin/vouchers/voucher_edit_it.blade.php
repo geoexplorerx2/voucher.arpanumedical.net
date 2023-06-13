@@ -337,7 +337,7 @@
                                     <div class="col-lg-6">
                                         <div id="root">
                                         <div class="card" style="background-image:url(/images/background-voucher.png);background-repeat: round; background-size: cover;">
-                                            <div class="card-body">
+                                            <div class="card-body" style=" padding-bottom: 0; ">
                                                 <div class="container" >
                                                     <div class="main voucher-section">
                                                         <div class="row">
@@ -466,13 +466,13 @@
                                                         </div>
                                                         <div class="row transfer-voucher" style="margin-top:2px;">
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVO </p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">ARRIVO </p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 10px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">PARTENZA</p>
+                                                                <p class="data-name" style="background: #b3916e; width: fit-content; padding: 6px; border-radius: 6px; color: #fff;margin-bottom: 0px; margin-top: 4px;">PARTENZA</p>
                                                             </div>
                                                             <div class="col-lg-3">
                                                                 <p class="data-desc" style=" margin-bottom: 0; " style="margin-bottom:0px"></p>
@@ -539,7 +539,7 @@
                                                         <div class="row transfer-voucher">
                                                             <div class="col-lg-10">
                                                                 <b style="color: #81b9d8; font-size: 10px;">NOTE IMPORTANTI</b>
-                                                                <p style="font-size: 9px; font-family: inherit" id="importantNotesText"><span style="font-size: 11px" id="important-note-airport">{{$voucher->important_note}}</span><br><span>** In base al tuo programma presso la clinica, il tuo assistente ti fornirà gli orari precisi dei tuoi pick-up giorno per giorno.</span><br><span>*** Secondo le politiche governative turche riguardanti i traporti, ti chiediamo di fornire un documento di identità tuo e di chiunque viaggi con te, prima del tuo arrivo in Turchia.</span></p>
+                                                                <p style="font-size: 9px; font-family: inherit" id="important-note-airport"><span style="font-size: 11px" id="importantNotesText">{{$voucher->important_note}}</span><span>** In base al tuo programma presso la clinica, il tuo assistente ti fornirà gli orari precisi dei tuoi pick-up giorno per giorno.</span><br><span>*** Secondo le politiche governative turche riguardanti i traporti, ti chiediamo di fornire un documento di identità tuo e di chiunque viaggi con te, prima del tuo arrivo in Turchia.</span></p>
                                                             </div>
                                                             <div class="col-lg-2" id="airportImage">{!! $voucher->code_img !!}
                                                             </div>
@@ -551,7 +551,7 @@
                                                         </div>
 
                                                         <div class="test">
-                                                            <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
+                                                            <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;">
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Prezzo Totale: </p>
                                                                 </div>
@@ -560,7 +560,7 @@
                                                                     <span class="data-desc" id="TotalPackageRateCurrencyText">{{$voucher->currency}}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;margin-top:2px; padding-bottom:2px;">
+                                                            <div class="row transfer-voucher" style="border-bottom: #00000040 solid 1px;">
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Deposito ricevuto: </p>
                                                                 </div>
@@ -569,7 +569,7 @@
                                                                     <span class="data-desc" id="PrePaymentReceivedCurrencyText">{{$voucher->currency}}</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="row transfer-voucher" style="margin-top:2px; padding-bottom:2px;">
+                                                            <div class="row transfer-voucher">
                                                                 <div class="col-lg-3">
                                                                     <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid">Saldo in clinica: </p>
                                                                 </div>
@@ -593,20 +593,19 @@
                                                         <div class="row">
                                                             <div class="col-lg-12">
                                                                 <div class="head-text">
-                                                                    <div class="head-text"><h5 style="margin-bottom:0px">DETTAGLI DEI CONTATTI DI EMERGENZA</h5></div>
+                                                                    <h5 style="margin-bottom:0px">DETTAGLI DEI CONTATTI DI EMERGENZA</h5>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="test">
                                                             <div class="row transfer-voucher" style="padding-bottom:2px;">
-                                                                @foreach ($contactPersons as $contactPerson)
-                                                                <div class="col-lg-6" >
-                                                                    <p class="data-name" style="margin-bottom:0px;border-right: 1px #00000040  solid" id="contactPersonName">{{ $contactPerson->name_surname }}</p>
+                                                                <div class="col-lg-12" >
+                                                                    <p class="data-name" style="margin-bottom:0px;" id="contactPersonName">
+                                                                        @foreach ($contactPersons as $contactPerson)
+                                                                            {{ $contactPerson->name_surname }} - {{ $contactPerson->phone_number }}@if (!$loop->last) / @endif
+                                                                        @endforeach
+                                                                    </p>
                                                                 </div>
-                                                                <div class="col-lg-6">
-                                                                    <p class="data-name" style="margin-bottom:0px" id="contactPersonPhone">{{ $contactPerson->phone_number }} </p>
-                                                                </div>
-                                                                @endforeach
                                                             </div>
                                                         </div>
                                                         <div class="row">

@@ -63,6 +63,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/dataTables.responsive.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/query.magnific-popup.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/html2pdf.bundle.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/intlTelInput.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/datatable.js') }}"></script>
@@ -72,5 +73,17 @@
     <script type="text/javascript" src="{{ asset('assets/js/daterangepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/app.js') }}" defer></script>
     @yield('footer')
+    <script>
+        $('.inline-popups').magnificPopup({
+            removalDelay: 500,
+            callbacks: {
+                beforeOpen: function () {
+                    this.st.mainClass = this.st.el.attr('data-effect');
+                }
+            },
+            type: 'ajax',
+            midClick: true
+        });
+    </script>
 </body>
 </html>

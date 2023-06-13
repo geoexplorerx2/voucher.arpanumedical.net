@@ -39280,7 +39280,7 @@ only screen and (min-resolution:2dppx) {
 }
 
 #root .data-name {
-    font-size: 9px;
+    font-size: 9px; /*8*/
     font-family: Montserrat;
     font-weight: 600;
 }
@@ -39297,7 +39297,7 @@ only screen and (min-resolution:2dppx) {
     color: #fff;
     background: linear-gradient(260deg, rgba(4, 0, 77, 1) 0%, rgba(9, 9, 121, 1) 63%, rgba(2, 138, 166, 1) 100%);
     font-family: Montserrat;
-    padding: 0.5rem 0.5rem 0.5rem;
+    padding: 0.4rem 0.4rem 0.4rem;
 }
 
 #root .head-text h5 {
