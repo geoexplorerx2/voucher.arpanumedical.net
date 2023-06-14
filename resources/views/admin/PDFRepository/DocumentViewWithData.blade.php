@@ -12,7 +12,7 @@
 </div>
 <div class="services">
     <div>HİZMET / SERVICE:</div>
-    <div>Tarih / Date:<span class="dataValue">{{ $item->date }}</span></div>
+    <div>Tarih / Date:<span class="dataValue">{{ date('d-m-Y', strtotime($item->date)) }}</span></div>
 </div>
 <div class="table">
     <div class="row1">
