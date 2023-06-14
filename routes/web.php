@@ -83,4 +83,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::GET('/proforma/list', 'ProformaController@proformaList')->name('proforma.List');
     Route::GET('/proforma/edit/{id}', 'ProformaController@proformaEdit')->name('proforma.edit');
     Route::GET('/proforma/destroy/{id}', 'ProformaController@destroyperforma')->name('proforma.destroy');
+    Route::GET('/proforma/getid/{receiptno}', 'ProformaController@getID')->name('proforma.getID');
 });

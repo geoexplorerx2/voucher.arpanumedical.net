@@ -895,8 +895,14 @@ const saveInformation = (data) => {
                     title: 'Ok',
                     text: response.data,
                 }).then(function (result) {
-                    if (true) {
-                        console.log('welocme')
+                    if (result) {
+                        if (data == undefined) {
+                            $.get(getURL() + '/proforma/getid/' + $('#ReceiptNo').val(), function (response) {
+                                window.location.href = getURL() + '/proforma/edit/' + response
+                            })
+                        } else {
+                            console.log(data[0].id)
+                        }
                     }
                 })
                 $('#save-btn').show();
