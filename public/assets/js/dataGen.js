@@ -1,4 +1,4 @@
-$('#dateValue').datepicker({ format: 'mm-dd-yyyy' })
+$('#dateValue').datepicker({ format: 'dd-mm-yyyy' })
 $('#dateValue').on('change', function () {
     $('.dataValue').text($('#dateValue').val())
 })
