@@ -894,6 +894,10 @@ const saveInformation = (data) => {
                     icon: 'success',
                     title: 'Ok',
                     text: response.data,
+                }).then(function (result) {
+                    if (true) {
+                        console.log('welocme')
+                    }
                 })
                 $('#save-btn').show();
             } else {
