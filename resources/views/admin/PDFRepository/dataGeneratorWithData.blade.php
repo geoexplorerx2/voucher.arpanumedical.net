@@ -92,7 +92,7 @@
         </div>
         <div class="btnContainer">
             <div class="btnBox">
-                <button id="save-btn" onclick="saveInformation({{ $data }})" class="btn btn-primary btn-lg">Save</button>
+                <button id="save-btn" onclick="saveInformation({{ $data }})" class="btn btn-primary btn-lg">Update</button>
             </div>
         </div>
     </div>

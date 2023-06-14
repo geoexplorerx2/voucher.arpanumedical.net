@@ -33,7 +33,6 @@
                                 <tr>
                                     <th scope="col">Operation</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Gender</th>
                                     <th scope="col">fullname</th>
                                     <th scope="col">city</th>
                                     <th scope="col">Per Night</th>
@@ -59,9 +58,8 @@
                                                 </ul>
                                             </div>
                                         </td>
-                                        <td>{{ str_replace('-',' ',date('d-M-Y', strtotime($item->date))) }}</td>
-                                        <td>{{ $item->gender }}</td>
-                                        <td>{{ $item->fullname }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($item->date)) }}</td>
+                                        <td>{{ $item->gender.' '.$item->fullname }}</td>
                                         <td>{{ $item->city }}</td>
                                         <td>{{ $item->perNight }}</td>
                                         <td>{{ $item->ReceiptNo }}</td>

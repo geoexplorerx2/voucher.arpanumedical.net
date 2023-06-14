@@ -150,4 +150,8 @@ class ProformaController extends Controller
             return "Ops ... , Creating Perform Invoice Failed";
         }
     }
+    public function getID($ReceiptNo){
+        $response = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->first();
+        return $response->id;
+    }
 }
