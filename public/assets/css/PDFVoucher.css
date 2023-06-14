@@ -370,3 +370,6 @@ label {
 .form-control{
     font-weight: 500 !important;
 }
+.select2-selection__rendered{
+    color:#000 !important;
+}
