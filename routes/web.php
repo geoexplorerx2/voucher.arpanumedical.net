@@ -79,8 +79,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     // PROFORMA INVOICE REQUESTS
 
-    Route::GET('/proforma', 'proformaController@show')->name('proforma.show');
-    Route::GET('/proforma/list', 'proformaController@proformaList')->name('proforma.List');
-    Route::GET('/proforma/edit/{id}', 'proformaController@proformaEdit')->name('proforma.edit');
-    Route::GET('/proforma/destroy/{id}', 'proformaController@destroyperforma')->name('proforma.destroy');
+    Route::GET('/proforma', 'ProformaController@show')->name('proforma.show');
+    Route::GET('/proforma/list', 'ProformaController@proformaList')->name('proforma.List');
+    Route::GET('/proforma/edit/{id}', 'ProformaController@proformaEdit')->name('proforma.edit');
+    Route::GET('/proforma/destroy/{id}', 'ProformaController@destroyperforma')->name('proforma.destroy');
 });

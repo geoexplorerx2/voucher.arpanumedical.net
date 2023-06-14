@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\PerformInvoiceListModel;
 use Illuminate\Support\Carbon;
 
-class proformaController extends Controller
+class ProformaController extends Controller
 {
     public function show()
     {

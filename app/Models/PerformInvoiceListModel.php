@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class PerformInvoiceListModel extends Model
 {
     use HasFactory;
-    protected $table = "proformainvoice";
+    protected $table = "proforma";
     protected $fillable = [
         'date',
         'gender',
