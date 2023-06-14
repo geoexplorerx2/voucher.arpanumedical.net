@@ -27,6 +27,25 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:;">
+                            <i class="fa fa-files-o text-primary"></i>
+                            <span class="nav-link-text">Proforma Invoice</span>
+                            <i class="fa fa-caret-right sub-icon"></i>
+                        </a>
+                        <ul class="nav-item_sub">
+                            <li>
+                                <a href="{{ route('proforma.show') }}">
+                                    <span>Create Proforma Invoice</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('proforma.List') }}">
+                                    <span>Pro-forma invoice List</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     @can('show users')
                     <li class="nav-item">
                         <a class="nav-link" href="javascript:;">
