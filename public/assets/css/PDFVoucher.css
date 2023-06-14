@@ -367,3 +367,6 @@ label {
 .btn-lg {
     width: 100%;
 }
+.form-control{
+    font-weight: 500 !important;
+}
