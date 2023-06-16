@@ -28,12 +28,12 @@
                 <input type="city" class="form-control" id="city">
             </div>
         </div>
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
             <div class="mb-3">
                 <label class="form-label">Per Night</label>
                 <input type="number" class="form-control" id="PerNight">
             </div>
-        </div>
+        </div> --}}
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="form-label">Receipt No</label>
