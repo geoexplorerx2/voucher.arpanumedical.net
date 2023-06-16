@@ -18,10 +18,10 @@
         <div><span class="gender">Mr</span> . <span class="fullname">Ruben Tamboleo Garcia</span></div>
         <div class="city">Spain</div>
     </div>
-    <div class="row2">
+    {{-- <div class="row2">
         <div>Per Night</div>
         <div class="PerNightValue"></div>
-    </div>
+    </div> --}}
     <div class="row3">
         <div>Receipt No</div>
         <div class="ReceiptNo"></div>

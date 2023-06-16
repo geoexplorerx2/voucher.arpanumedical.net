@@ -1,3 +1,5 @@
+
+
 $('#dateValue').datepicker({ format: 'dd-mm-yyyy' })
 $('#dateValue').on('change', function () {
     $('.dataValue').text($('#dateValue').val())
@@ -52,4 +54,10 @@ $('#fullname').on('keyup', function () {
 
 $('#city').on('keyup', function () {
     $('.city').text($('#city').val())
+})
+
+$('#ReceiptNo').click(function(){
+    let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
+    $('#ReceiptNo').val(ReceiptNo);
+    $('.ReceiptNo').text(ReceiptNo);
 })
