@@ -19,10 +19,10 @@
         <div><span class="gender">{{ $item->gender }}</span> . <span class="fullname">{{ $item->fullname }}</span></div>
         <div class="city">{{ $item->city }}</div>
     </div>
-    <div class="row2">
+    {{-- <div class="row2">
         <div>Per Night</div>
         <div class="PerNightValue">{{ $item->perNight }}</div>
-    </div>
+    </div> --}}
     <div class="row3">
         <div>Receipt No</div>
         <div class="ReceiptNo">{{ $item->ReceiptNo }}</div>
