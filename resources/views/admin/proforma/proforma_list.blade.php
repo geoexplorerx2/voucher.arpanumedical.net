@@ -34,8 +34,8 @@
                                     <th scope="col">Operation</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">fullname</th>
-                                    <th scope="col">city</th>
-                                    <th scope="col">Per Night</th>
+                                    <th scope="col">Country</th>
+                                    {{-- <th scope="col">Per Night</th> --}}
                                     <th scope="col">ReceiptNo</th>
                                     <th scope="col">surchargepayment</th>
                                     <th scope="col">surchargepayment2</th>
@@ -61,7 +61,7 @@
                                         <td>{{ date('d-m-Y', strtotime($item->date)) }}</td>
                                         <td>{{ $item->gender.' '.$item->fullname }}</td>
                                         <td>{{ $item->city }}</td>
-                                        <td>{{ $item->perNight }}</td>
+                                        {{-- <td>{{ $item->perNight }}</td> --}}
                                         <td>{{ $item->ReceiptNo }}</td>
                                         <td>{{ $item->surchargepayment.' '.$item->surchargePaymentUnit }}</td>
                                         <td>{{ $item->surchargepayment2.' '.$item->surchargePaymentUnit2 }}</td>
