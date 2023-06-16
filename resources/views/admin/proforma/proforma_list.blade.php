@@ -22,7 +22,7 @@
                                 @can('create sales person')
                                     <a href="{{ route('proforma.show') }}"><button type="button"
                                             class="btn btn-primary float-right"> <i class="fa fa-plus" aria-hidden="true"></i>
-                                            New Proforma</button></a>
+                                            New Pro-forma</button></a>
                                 @endcan
                             </div>
                         </div>

@@ -42,7 +42,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2 mt-3">
                             <div class="col-sm-8">
-                                <h3 class="m-0 text-dark text-center"> Reservation Proforma Invoice</h3>
+                                <h3 class="m-0 text-dark text-center"> Reservation Pro-forma</h3>
                             </div>
                             <div class="col-sm-4">
                                 <button class="btn btn-primary float-right" onclick="voucherPdf();">Download PDF <i class="fa fa-download"></i></button>
