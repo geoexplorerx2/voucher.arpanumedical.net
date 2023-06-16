@@ -24,7 +24,7 @@
     </div> --}}
     <div class="row3">
         <div>Receipt No</div>
-        <div class="ReceiptNo"></div>
+        <div class="ReceiptNo">{{ $ReceiptNo }}</div>
     </div>
 </div>
 <div class="services">

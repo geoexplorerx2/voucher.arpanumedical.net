@@ -11,7 +11,20 @@ class ProformaController extends Controller
 {
     public function show()
     {
-        return view('admin.proforma.proforma_all');
+        $characters = '123456789';
+
+        // generate a pin based on 2 * 7 digits + a random character
+        $pin = mt_rand(100, 999) . mt_rand(100, 999) . $characters[rand(0, strlen($characters) - 1)];
+
+        while (1) {
+            if (PerformInvoiceListModel::where('ReceiptNo', $pin)->count() == 0) {
+                break;
+            } else {
+                $pin = mt_rand(100, 999) . mt_rand(100, 999) . $characters[rand(0, strlen($characters) - 1)];
+            }
+        }
+
+        return view('admin.proforma.proforma_all', ['ReceiptNo'=> $pin]);
     }
     public function proformaList()
     {
@@ -148,7 +161,8 @@ class ProformaController extends Controller
             return "Ops ... , Creating Perform Invoice Failed";
         }
     }
-    public function getID($ReceiptNo){
+    public function getID($ReceiptNo)
+    {
         $response = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->first();
         return $response->id;
     }
