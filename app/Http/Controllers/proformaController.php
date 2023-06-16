@@ -48,7 +48,6 @@ class ProformaController extends Controller
             && $gender
             && $fullname
             && $city
-            && $perNight
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
@@ -64,7 +63,7 @@ class ProformaController extends Controller
                     'gender' => $gender,
                     'fullname' => $fullname,
                     'city' => $city,
-                    'perNight' => $perNight,
+                    'perNight' => 0,
                     'ReceiptNo' => $ReceiptNo,
                     'surchargepayment' => $surchargepayment,
                     'surchargepaymentUnit' => $surchargepaymentValue,
@@ -113,7 +112,6 @@ class ProformaController extends Controller
             && $gender
             && $fullname
             && $city
-            && $perNight
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
@@ -127,7 +125,7 @@ class ProformaController extends Controller
             $updatingRecord->gender = $gender;
             $updatingRecord->fullname = $fullname;
             $updatingRecord->city = $city;
-            $updatingRecord->perNight = $perNight;
+            $updatingRecord->perNight = 0;
             $updatingRecord->ReceiptNo = $ReceiptNo;
             $updatingRecord->surchargepayment = $surchargepayment;
             $updatingRecord->surchargePaymentUnit = $surchargepaymentValue;

@@ -26,7 +26,7 @@
         </div>
         <div class="col-lg-6">
             <div class="mb-3">
-                <label class="form-label">City</label>
+                <label class="form-label">Country</label>
                 <input type="city" class="form-control" id="city" value="{{ $item->city }}">
             </div>
         </div>
