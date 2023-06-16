@@ -8,9 +8,9 @@ $('#PerNight').on('keyup', function () {
     $('.PerNightValue').text($('#PerNight').val())
 })
 
-$('#ReceiptNo').on('keyup', function () {
-    $('.ReceiptNo').text($('#ReceiptNo').val())
-})
+// $('#ReceiptNo').on('keyup', function () {
+//      $('.ReceiptNo').text($('#ReceiptNo').val())
+// })
 
 $('#surchargepayment').on('keyup', function () {
     $('.ReceiptNo').text($('#ReceiptNo').val())
@@ -56,8 +56,8 @@ $('#city').on('keyup', function () {
     $('.city').text($('#city').val())
 })
 
-$('#ReceiptNo').click(function(){
-    let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
-    $('#ReceiptNo').val(ReceiptNo);
-    $('.ReceiptNo').text(ReceiptNo);
-})
+// $('#ReceiptNo').click(function(){
+//     let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
+//     $('#ReceiptNo').val(ReceiptNo);
+//     $('.ReceiptNo').text(ReceiptNo);
+// })

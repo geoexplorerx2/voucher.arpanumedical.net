@@ -24,7 +24,7 @@ class ProformaController extends Controller
             }
         }
 
-        return view('admin.proforma.proforma_all', ['ReceiptNo'=> $pin]);
+        return view('admin.proforma.proforma_all', ['ReceiptNo' => $pin]);
     }
     public function proformaList()
     {
@@ -43,7 +43,7 @@ class ProformaController extends Controller
     }
     public function Create(Request $request)
     {
-        $date = isset($request->dateValue) ? Carbon::createFromFormat('m-d-Y', $request->dateValue) : false;
+        $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
         $city = isset($request->city) ? $request->city : false;
@@ -107,7 +107,7 @@ class ProformaController extends Controller
     }
     public function Update(Request $request, $id)
     {
-        $date = isset($request->dateValue) ? Carbon::createFromFormat('m-d-Y', $request->dateValue) : false;
+        $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
         $city = isset($request->city) ? $request->city : false;

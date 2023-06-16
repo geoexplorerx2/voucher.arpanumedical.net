@@ -872,7 +872,8 @@ const fixLayout = () => {
     $('#formContainerId').addClass('result-formContainer');
 }
 const saveInformation = (data) => {
-    $('#save-btn').hide();
+    // $('#save-btn').hide();
+    console.log(data)
     $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`,
         {
             dateValue: $('#dateValue').val(),
@@ -889,6 +890,7 @@ const saveInformation = (data) => {
             DHIValue: $('#DHIValue').val(),
         },
         function (response) {
+            console.log(response)
             if (response.status) {
                 Swal.fire({
                     icon: 'success',

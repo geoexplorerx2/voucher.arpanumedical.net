@@ -5,7 +5,7 @@
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="form-label">Tarih / Date</label>
-                <input class="form-control" id="dateValue" value="{{ date('d-m-Y', strtotime($item->date)) }}">
+                <input class="form-control" id="dateValue" value="{{ \Carbon\Carbon::parse($item->date)->format('d-m-Y') }}">
             </div>
         </div>
         <div class="col-lg-6">
