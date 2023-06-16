@@ -909,7 +909,7 @@ const saveInformation = (data) => {
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'oops ...',
+                    title: 'Please fill all fields',
                     text: response.data,
                 })
                 $('#save-btn').show();
