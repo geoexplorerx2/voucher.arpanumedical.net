@@ -25,10 +25,14 @@
         <div class="col-lg-6">
             <div class="mb-3">
                 <label class="form-label">Country</label>
-                <input type="city" class="form-control" id="city">
+                <select class="form-control select" id="countries">
+                    @foreach($countries as $country)
+                    <option value="{{ $country->name }}">{{ $country->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
-        {{-- <div class="col-lg-6">
+        {{-- <div class="col-lg-6" countries>
             <div class="mb-3">
                 <label class="form-label">Per Night</label>
                 <input type="number" class="form-control" id="PerNight">
