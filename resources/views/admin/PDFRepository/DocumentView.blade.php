@@ -24,7 +24,7 @@
     </div> --}}
     <div class="row3">
         <div>Receipt No</div>
-        <div class="ReceiptNo"></div>
+        <div class="ReceiptNo">{{ $ReceiptNo }}</div>
     </div>
 </div>
 <div class="services">
@@ -34,23 +34,20 @@
     <div class="t2row1">
         <div>
             <div class="textCustomizing">5 % surcharge for payment by credit card:</div>
-            <div class="textCustomizing mt-1"><span class="surchargepayment"></span><span
-                    class="surchargepaymentValue mx-1">€</span></div>
+            <div class="textCustomizing mt-1"><span class="surchargepayment"></span><span class="surchargepaymentValue mx-1">€</span></div>
         </div>
     </div>
     <div class="t2row2">
         <div>
-            <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span
-                    class="DHI"></span><span class="DHIValue mx-1">€</span></div>
+            <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span class="DHI"></span><span class="DHIValue mx-1">€</span></div>
         </div>
     </div>
-    <div class="t2row3">
+    {{-- <div class="t2row3">
         <div>
             <div class="textCustomizing">5 % surcharge for payment by credit card:</div>
-            <div class="textCustomizing mt-1"><span class="surchargepayment2"></span><span
-                    class="surchargepaymentValue2 mx-1">€</span></div>
+            <div class="textCustomizing mt-1"><span class="surchargepayment2"></span><span class="surchargepaymentValue2 mx-1">€</span></div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <div class="sectionAmount">
     <div class="amountContainer">

@@ -8,18 +8,20 @@ $('#PerNight').on('keyup', function () {
     $('.PerNightValue').text($('#PerNight').val())
 })
 
-$('#ReceiptNo').on('keyup', function () {
-    $('.ReceiptNo').text($('#ReceiptNo').val())
-})
+// $('#ReceiptNo').on('keyup', function () {
+//      $('.ReceiptNo').text($('#ReceiptNo').val())
+// })
 
 $('#surchargepayment').on('keyup', function () {
     $('.ReceiptNo').text($('#ReceiptNo').val())
 })
 
 $('#surchargepayment').on('keyup', function () {
+    let total = parseFloat($('#surchargepayment').val()) + (parseFloat($('#surchargepayment').val()) * 0.05)
+    let check = isNaN(total);
     $('.surchargepayment').text($('#surchargepayment').val())
-    $('.amount').text($('#surchargepayment').val())
-    $('.amount2').text($('#surchargepayment').val())
+    $('.amount').text(check ? 0 : total)
+    $('.amount2').text(check ? 0 : total)
 })
 
 $('#surchargepaymentValue').on('change', function () {
@@ -56,8 +58,8 @@ $('#city').on('keyup', function () {
     $('.city').text($('#city').val())
 })
 
-$('#ReceiptNo').click(function(){
-    let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
-    $('#ReceiptNo').val(ReceiptNo);
-    $('.ReceiptNo').text(ReceiptNo);
-})
+// $('#ReceiptNo').click(function(){
+//     let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
+//     $('#ReceiptNo').val(ReceiptNo);
+//     $('.ReceiptNo').text(ReceiptNo);
+// })

@@ -11,7 +11,20 @@ class ProformaController extends Controller
 {
     public function show()
     {
-        return view('admin.proforma.proforma_all');
+        $characters = '123456789';
+
+        // generate a pin based on 2 * 7 digits + a random character
+        $pin = mt_rand(100, 999) . mt_rand(100, 999) . $characters[rand(0, strlen($characters) - 1)];
+
+        while (1) {
+            if (PerformInvoiceListModel::where('ReceiptNo', $pin)->count() == 0) {
+                break;
+            } else {
+                $pin = mt_rand(100, 999) . mt_rand(100, 999) . $characters[rand(0, strlen($characters) - 1)];
+            }
+        }
+
+        return view('admin.proforma.proforma_all', ['ReceiptNo' => $pin]);
     }
     public function proformaList()
     {
@@ -30,7 +43,7 @@ class ProformaController extends Controller
     }
     public function Create(Request $request)
     {
-        $date = isset($request->dateValue) ? Carbon::createFromFormat('m-d-Y', $request->dateValue) : false;
+        $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
         $city = isset($request->city) ? $request->city : false;
@@ -51,8 +64,8 @@ class ProformaController extends Controller
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
-            && $surchargepayment2
-            && $surchargepaymentValue2
+            // && $surchargepayment2
+            // && $surchargepaymentValue2
             && $DHI
             && $DHIValue
         ) {
@@ -67,8 +80,8 @@ class ProformaController extends Controller
                     'ReceiptNo' => $ReceiptNo,
                     'surchargepayment' => $surchargepayment,
                     'surchargepaymentUnit' => $surchargepaymentValue,
-                    'surchargepayment2' => $surchargepayment2,
-                    'surchargepaymentUnit2' => $surchargepaymentValue2,
+                    'surchargepayment2' => 0,
+                    'surchargepaymentUnit2' => '',
                     'DHI' => $DHI,
                     'DHIUnit' => $DHIValue,
                 ])) {
@@ -94,7 +107,7 @@ class ProformaController extends Controller
     }
     public function Update(Request $request, $id)
     {
-        $date = isset($request->dateValue) ? Carbon::createFromFormat('m-d-Y', $request->dateValue) : false;
+        $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
         $city = isset($request->city) ? $request->city : false;
@@ -115,8 +128,8 @@ class ProformaController extends Controller
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
-            && $surchargepayment2
-            && $surchargepaymentValue2
+            // && $surchargepayment2
+            // && $surchargepaymentValue2
             && $DHI
             && $DHIValue
         ) {
@@ -129,8 +142,8 @@ class ProformaController extends Controller
             $updatingRecord->ReceiptNo = $ReceiptNo;
             $updatingRecord->surchargepayment = $surchargepayment;
             $updatingRecord->surchargePaymentUnit = $surchargepaymentValue;
-            $updatingRecord->surchargepayment2 = $surchargepayment2;
-            $updatingRecord->surchargePaymentUnit2 = $surchargepaymentValue2;
+            $updatingRecord->surchargepayment2 = 0;
+            $updatingRecord->surchargePaymentUnit2 = '';
             $updatingRecord->DHI = $DHI;
             $updatingRecord->DHIUnit = $DHIValue;
             if ($updatingRecord->save()) {
@@ -148,7 +161,8 @@ class ProformaController extends Controller
             return "Ops ... , Creating Perform Invoice Failed";
         }
     }
-    public function getID($ReceiptNo){
+    public function getID($ReceiptNo)
+    {
         $response = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->first();
         return $response->id;
     }

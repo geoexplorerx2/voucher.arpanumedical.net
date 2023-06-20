@@ -43,12 +43,12 @@
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span class="DHI">{{ $item->DHI }}</span><span class="DHIValue mx-1">{{ $item->DHIUnit }}</span></div>
         </div>
     </div>
-    <div class="t2row3">
+    {{-- <div class="t2row3">
         <div>
             <div class="textCustomizing">5 % surcharge for payment by credit card:</div>
             <div class="textCustomizing mt-1"><span class="surchargepayment2">{{ $item->surchargepayment2 }}</span><span class="surchargepaymentValue2 mx-1">{{ $item->surchargePaymentUnit2 }}</span></div>
         </div>
-    </div>
+    </div> --}}
 </div>
 <div class="sectionAmount">
     <div class="amountContainer">

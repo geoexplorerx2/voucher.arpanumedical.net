@@ -56,8 +56,8 @@
                     <div id="temContainer" class="templateContainer">@include('admin/PDFRepository/dataGeneratorWithData',['data'=>$data])</div>
                     <div id="formContainerId" class="formContainer">@include('admin/PDFRepository/DocumentViewWithData',['data'=>$data])</div>
                     @else
-                    <div id="temContainer" class="templateContainer">@include('admin/PDFRepository/dataGenerator')</div>
-                    <div id="formContainerId" class="formContainer">@include('admin/PDFRepository/DocumentView')</div>
+                    <div id="temContainer" class="templateContainer">@include('admin/PDFRepository/dataGenerator',['ReceiptNo'=>$ReceiptNo])</div>
+                    <div id="formContainerId" class="formContainer">@include('admin/PDFRepository/DocumentView',['ReceiptNo'=>$ReceiptNo])</div>
                     @endif
                 </section>
             </div>
