@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        {{-- <div class="col-lg-6">
             <div class="mb-3">
                 <label class="form-label">surcharge for payment by credit card</label>
                 <div class="row">
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="btnContainer">
             <div class="btnBox">
                 <button id="save-btn" onclick="saveInformation({{ $data }})" class="btn btn-primary btn-lg">Update</button>
