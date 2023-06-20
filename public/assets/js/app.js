@@ -872,8 +872,8 @@ const fixLayout = () => {
     $('#formContainerId').addClass('result-formContainer');
 }
 const saveInformation = (data) => {
-    // $('#save-btn').hide();
-    console.log(data)
+    $('#save-btn').hide();
+    // console.log(data)
     $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`,
         {
             dateValue: $('#dateValue').val(),
