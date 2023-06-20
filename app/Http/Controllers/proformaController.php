@@ -64,8 +64,8 @@ class ProformaController extends Controller
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
-            && $surchargepayment2
-            && $surchargepaymentValue2
+            // && $surchargepayment2
+            // && $surchargepaymentValue2
             && $DHI
             && $DHIValue
         ) {
@@ -80,8 +80,8 @@ class ProformaController extends Controller
                     'ReceiptNo' => $ReceiptNo,
                     'surchargepayment' => $surchargepayment,
                     'surchargepaymentUnit' => $surchargepaymentValue,
-                    'surchargepayment2' => $surchargepayment2,
-                    'surchargepaymentUnit2' => $surchargepaymentValue2,
+                    'surchargepayment2' => 0,
+                    'surchargepaymentUnit2' => '',
                     'DHI' => $DHI,
                     'DHIUnit' => $DHIValue,
                 ])) {
@@ -128,8 +128,8 @@ class ProformaController extends Controller
             && $ReceiptNo
             && $surchargepayment
             && $surchargepaymentValue
-            && $surchargepayment2
-            && $surchargepaymentValue2
+            // && $surchargepayment2
+            // && $surchargepaymentValue2
             && $DHI
             && $DHIValue
         ) {
@@ -142,8 +142,8 @@ class ProformaController extends Controller
             $updatingRecord->ReceiptNo = $ReceiptNo;
             $updatingRecord->surchargepayment = $surchargepayment;
             $updatingRecord->surchargePaymentUnit = $surchargepaymentValue;
-            $updatingRecord->surchargepayment2 = $surchargepayment2;
-            $updatingRecord->surchargePaymentUnit2 = $surchargepaymentValue2;
+            $updatingRecord->surchargepayment2 = 0;
+            $updatingRecord->surchargePaymentUnit2 = '';
             $updatingRecord->DHI = $DHI;
             $updatingRecord->DHIUnit = $DHIValue;
             if ($updatingRecord->save()) {

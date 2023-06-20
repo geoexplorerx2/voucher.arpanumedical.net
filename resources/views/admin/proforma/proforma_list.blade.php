@@ -38,7 +38,7 @@
                                     {{-- <th scope="col">Per Night</th> --}}
                                     <th scope="col">ReceiptNo</th>
                                     <th scope="col">surchargepayment</th>
-                                    <th scope="col">surchargepayment2</th>
+                                    {{-- <th scope="col">surchargepayment2</th> --}}
                                     <th scope="col">DHI</th>
                                 </tr>
                             </thead>
@@ -64,7 +64,7 @@
                                         {{-- <td>{{ $item->perNight }}</td> --}}
                                         <td>{{ $item->ReceiptNo }}</td>
                                         <td>{{ $item->surchargepayment.' '.$item->surchargePaymentUnit }}</td>
-                                        <td>{{ $item->surchargepayment2.' '.$item->surchargePaymentUnit2 }}</td>
+                                        {{-- <td>{{ $item->surchargepayment2.' '.$item->surchargePaymentUnit2 }}</td> --}}
                                         <td>{{ $item->DHI.' '.$item->DHIUnit }}</td>
                                     </tr>
                                 @endforeach
