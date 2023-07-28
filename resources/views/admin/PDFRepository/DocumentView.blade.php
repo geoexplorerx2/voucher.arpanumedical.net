@@ -37,7 +37,14 @@
         </div>
     </div>
 </div>
-
+<div class="LayoutContainer" style="height: 150px;">
+    <div class="Layout">
+        <label>Service</label>
+        <div class="subLayout">
+            
+        </div>
+    </div>
+</div>
 <!-- <div class="table">
     <div class="row1">
         <div><span class="gender">Mr</span> . <span class="fullname">Ruben Tamboleo Garcia</span></div>
