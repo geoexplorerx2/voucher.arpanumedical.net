@@ -373,7 +373,7 @@ label {
 .select2-selection__rendered{
     color:#000 !important;
 }
-.countryContainer{
+.LayoutContainer{
     margin-top: 10px;
     width: 100%;
     height: 50px;
@@ -384,11 +384,11 @@ label {
     
 }
 
-.countryBox{
+.Layout{
     width: 95%;
     height: 100%;
 }
-.country{
+.subLayout{
     width: 100%;
     height: 100%;
     border: 1px solid gray;
