@@ -373,3 +373,28 @@ label {
 .select2-selection__rendered{
     color:#000 !important;
 }
+.countryContainer{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    
+}
+
+.countryBox{
+    width: 95%;
+    height: 100%;
+}
+.country{
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    transform: translateX(-3px);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}

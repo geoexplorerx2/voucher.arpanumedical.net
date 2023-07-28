@@ -13,10 +13,17 @@
     <div>HİZMET / SERVICE:</div>
     <div>Tarih / Date:<span class="dataValue"></span></div>
 </div>
+<div class="countryContainer">
+    <div class="countryBox">
+        <label>Country</label>
+        <div class="country">
+            welcome
+        </div>
+    </div>
+</div>
 <div class="table">
     <div class="row1">
         <div><span class="gender">Mr</span> . <span class="fullname">Ruben Tamboleo Garcia</span></div>
-        <div class="city">Spain</div>
     </div>
     {{-- <div class="row2">
         <div>Per Night</div>

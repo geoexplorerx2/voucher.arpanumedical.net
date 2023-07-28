@@ -54,8 +54,9 @@ $('#fullname').on('keyup', function () {
     $('.fullname').text($('#fullname').val())
 })
 
-$('#city').on('keyup', function () {
-    $('.city').text($('#city').val())
+$('#countries').on('change', function () {
+    console.log($('#countries').val())
+    $('.country').text($('#countries').val())
 })
 
 // $('#ReceiptNo').click(function(){
