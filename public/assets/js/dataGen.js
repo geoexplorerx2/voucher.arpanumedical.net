@@ -110,13 +110,4 @@ $('#DHIactivator').on('click', function () {
     }else{
         $('.DHIDisplay').css('display', 'none')
     }
-    //  ? $('#DHIDisplay').html(`            
-    // <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span
-    // class="DHI"></span><span class="DHIValue mx-1">€</span></div>`) : null
 })
-
-// $('#ReceiptNo').click(function(){
-//     let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
-//     $('#ReceiptNo').val(ReceiptNo);
-//     $('.ReceiptNo').text(ReceiptNo);
-// })
