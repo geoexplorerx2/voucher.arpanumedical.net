@@ -97,7 +97,7 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer">
+<div class="LayoutContainer" style="margin-bottom: 50px !important;">
     <div class="Layout">
         <label>Payment details</label>
         <div class="subLayout">
