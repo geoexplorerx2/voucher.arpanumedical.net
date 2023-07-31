@@ -41,7 +41,9 @@
 <div class="LayoutContainer" style="height: 200px;">
     <div class="Layout">
         <label>Service</label>
-        <div id="ServiceDisplayer" class="subLayout" style="display: block;"></div>
+        <div id="ServiceDisplayer" class="subLayout" style="display: block;">
+            welcome
+        </div>
     </div>
 </div>
 

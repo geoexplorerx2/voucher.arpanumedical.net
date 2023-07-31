@@ -111,3 +111,10 @@ $('#DHIactivator').on('click', function () {
         $('.DHIDisplay').css('display', 'none')
     }
 })
+$('.DHIactivator').on('click', function () {
+    if ($('.DHIactivator').is(":checked")) {
+        $('.DHIDisplay').css('display', 'block')
+    } else {
+        $('.DHIDisplay').css('display', 'none')
+    }
+})
