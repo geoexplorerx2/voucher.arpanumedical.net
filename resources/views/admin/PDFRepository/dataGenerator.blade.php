@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="mb-3">
-                <label class="form-label">Tarih / Date</label>
+                <label class="form-label">Date</label>
                 <input class="form-control" id="dateValue">
             </div>
         </div>
