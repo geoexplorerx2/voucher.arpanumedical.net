@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PerformInvoiceListModel;
+use App\Models\Country;
 use Illuminate\Support\Carbon;
 
 class ProformaController extends Controller
@@ -24,7 +25,7 @@ class ProformaController extends Controller
             }
         }
 
-        return view('admin.proforma.proforma_all', ['ReceiptNo' => $pin]);
+        return view('admin.proforma.proforma_all', ['ReceiptNo' => $pin, 'countries' => Country::all()]);
     }
     public function proformaList()
     {
@@ -34,7 +35,7 @@ class ProformaController extends Controller
     public function proformaEdit($id)
     {
         $data = PerformInvoiceListModel::where('id', $id)->get();
-        return view('admin.proforma.proforma_all', ['data' => $data]);
+        return view('admin.proforma.proforma_all', ['data' => $data, 'countries' => Country::all()]);
     }
     public function destroyperforma($id)
     {

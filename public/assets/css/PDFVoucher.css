@@ -233,7 +233,7 @@
 
 .table2 {
     width: 95%;
-    height: 250px;
+    height: 180px;
     border: 1px solid #555;
     transform: translateX(15px);
     border-radius: 8px;
@@ -275,7 +275,7 @@
 
 .sectionAmount {
     width: 95%;
-    height: 250px;
+    height: 190px;
     transform: translateX(15px);
     border-radius: 8px;
     margin-top: 15px;
@@ -372,4 +372,29 @@ label {
 }
 .select2-selection__rendered{
     color:#000 !important;
+}
+.LayoutContainer{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    
+}
+
+.Layout{
+    width: 95%;
+    height: 100%;
+}
+.subLayout{
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    transform: translateX(-3px);
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
 }
