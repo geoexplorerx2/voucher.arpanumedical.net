@@ -35,7 +35,7 @@ class ProformaController extends Controller
     public function proformaEdit($id)
     {
         $data = PerformInvoiceListModel::where('id', $id)->get();
-        return view('admin.proforma.proforma_all', ['data' => $data]);
+        return view('admin.proforma.proforma_all', ['data' => $data, 'countries' => Country::all()]);
     }
     public function destroyperforma($id)
     {

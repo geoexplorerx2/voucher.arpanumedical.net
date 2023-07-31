@@ -14,20 +14,37 @@
     <div>HİZMET / SERVICE:</div>
     <div>Tarih / Date:<span class="dataValue">{{ date('d-m-Y', strtotime($item->date)) }}</span></div>
 </div>
-<div class="table">
-    <div class="row1">
-        <div><span class="gender">{{ $item->gender }}</span> . <span class="fullname">{{ $item->fullname }}</span></div>
-        <div class="city">{{ $item->city }}</div>
-    </div>
-    {{-- <div class="row2">
-        <div>Per Night</div>
-        <div class="PerNightValue">{{ $item->perNight }}</div>
-    </div> --}}
-    <div class="row3">
-        <div>Receipt No</div>
-        <div class="ReceiptNo">{{ $item->ReceiptNo }}</div>
+<div class="LayoutContainer">
+    <div class="Layout">
+        <label>Country</label>
+        <div class="country subLayout">
+            {{ $item->city }}
+        </div>
     </div>
 </div>
+<div class="LayoutContainer">
+    <div class="Layout">
+        <label>Name</label>
+        <div class="subLayout">
+            <span class="gender">{{ $item->gender }}</span> . <span class="fullname">{{ $item->fullname }}</span>
+        </div>
+    </div>
+</div>
+<div class="LayoutContainer">
+    <div class="Layout">
+        <label>Receipt No</label>
+        <div class="subLayout ReceiptNo">
+            {{ $item->ReceiptNo }}
+        </div>
+    </div>
+</div>
+<div class="LayoutContainer" style="height: 200px;">
+    <div class="Layout">
+        <label>Service</label>
+        <div id="ServiceDisplayer" class="subLayout" style="display: block;"></div>
+    </div>
+</div>
+
 <div class="services">
     <div>DESCRIPTION</div>
 </div>
@@ -64,6 +81,14 @@
                 <span class="amount2">{{ $item->surchargepayment }}</span>
                 <span class="amountValue2">{{ $item->surchargePaymentUnit }}</span>
             </div>
+        </div>
+    </div>
+</div>
+<div class="LayoutContainer" style="margin-bottom: 50px !important;">
+    <div class="Layout">
+        <label>Payment details</label>
+        <div class="subLayout">
+            
         </div>
     </div>
 </div>
