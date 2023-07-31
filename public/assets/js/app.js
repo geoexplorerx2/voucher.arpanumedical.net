@@ -880,7 +880,7 @@ const saveInformation = (data) => {
             dateValue: $('#dateValue').val(),
             gender: $('#gender').val(),
             fullname: $('#fullname').val(),
-            city: $('#city').val(),
+            city: $('#countries').val(),
             PerNight: $('#PerNight').val(),
             ReceiptNo: $('#ReceiptNo').val(),
             surchargepayment: $('#surchargepayment').val(),
