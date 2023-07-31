@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="t2row2" {!! $item->DHI=='0'?'style="display:none;"':'style="display:block;"' !!}>
-        <div>
+        <div class="DHIDisplay">
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span class="DHI">{{ $item->DHI }}</span><span class="DHIValue mx-1">{{ $item->DHIUnit }}</span></div>
         </div>
     </div>
