@@ -42,7 +42,11 @@
     <div class="Layout">
         <label>Service</label>
         <div id="ServiceDisplayer" class="subLayout" style="display: block;">
-            welcome
+            @foreach($service as $subitem)
+            @if(strpos($item->services, $subitem) !== false)
+             <div style="padding: 5px 0;">{{ $subitem }}</div>
+            @endif
+            @endforeach
         </div>
     </div>
 </div>
@@ -57,8 +61,8 @@
             <div class="textCustomizing mt-1"><span class="surchargepayment">{{ $item->surchargepayment }}</span><span class="surchargepaymentValue mx-1">{{ $item->surchargePaymentUnit }}</span></div>
         </div>
     </div>
-    <div class="t2row2" {!! $item->DHI=='0'?'style="display:none;"':'style="display:block;"' !!}>
-        <div class="DHIDisplay">
+    <div class="t2row2">
+        <div class="DHIDisplay" {!! $item->DHI=='0'?'style="display:none;"':'style="display:block;"' !!}>
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span class="DHI">{{ $item->DHI }}</span><span class="DHIValue mx-1">{{ $item->DHIUnit }}</span></div>
         </div>
     </div>
