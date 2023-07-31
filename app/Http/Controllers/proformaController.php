@@ -61,7 +61,8 @@ class ProformaController extends Controller
         $Services = $request->Services;
         foreach ($Services as $item) {
             if ((json_decode(json_encode($item), true))["status"] == "true") {
-                $serviceString = $serviceString . ' ' . (json_decode(json_encode($item), true))["name"];
+                $name = (json_decode(json_encode($item), true))["name"] == 'AirportTransfers' ? 'Airport Transfers' : (json_decode(json_encode($item), true))["name"];
+                $serviceString = $serviceString . ' ' . $name;
                 $counter = $counter + 1;
             }
         }
