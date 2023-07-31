@@ -44,6 +44,7 @@ class ProformaController extends Controller
     }
     public function Create(Request $request)
     {
+
         $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
@@ -67,8 +68,8 @@ class ProformaController extends Controller
             && $surchargepaymentValue
             // && $surchargepayment2
             // && $surchargepaymentValue2
-            && $DHI
-            && $DHIValue
+            // && $DHI
+            // && $DHIValue
         ) {
             $checkReceiptNo = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->count();
             if ($checkReceiptNo == 0) {
@@ -83,7 +84,7 @@ class ProformaController extends Controller
                     'surchargepaymentUnit' => $surchargepaymentValue,
                     'surchargepayment2' => 0,
                     'surchargepaymentUnit2' => '',
-                    'DHI' => $DHI,
+                    'DHI' => $DHI != false ? $DHI : '0',
                     'DHIUnit' => $DHIValue,
                 ])) {
                     return response()->json([

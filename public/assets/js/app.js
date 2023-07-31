@@ -940,8 +940,7 @@ const fixLayout = () => {
     $('#formContainerId').addClass('result-formContainer');
 }
 const saveInformation = (data) => {
-    $('#save-btn').hide();
-    // console.log(data)
+    // $('#save-btn').hide();
     $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`, {
             dateValue: $('#dateValue').val(),
             gender: $('#gender').val(),
@@ -953,8 +952,9 @@ const saveInformation = (data) => {
             surchargepaymentValue: $('#surchargepaymentValue').val(),
             surchargepayment2: $('#surchargepayment2').val(),
             surchargepaymentValue2: $('#surchargepaymentValue2').val(),
-            DHI: $('#DHI').val(),
+            DHI: $('#DHIactivator').is(":checked") ? $('#DHI').val() : false,
             DHIValue: $('#DHIValue').val(),
+            Services: Services,
         },
         function (response) {
             console.log(response)
