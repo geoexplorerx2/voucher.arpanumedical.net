@@ -99,7 +99,7 @@ const getValue = (data) => {
     }
     Services.map((item) => {
         if (item.status) {
-            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:5px 0px;">${item.name}</div>`
+            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:5px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
         }
     })
     $('#ServiceDisplayer').html(DocumentObjectMode)
@@ -107,7 +107,14 @@ const getValue = (data) => {
 $('#DHIactivator').on('click', function () {
     if ($('#DHIactivator').is(":checked")) {
         $('.DHIDisplay').css('display', 'block')
-    }else{
+    } else {
+        $('.DHIDisplay').css('display', 'none')
+    }
+})
+$('.DHIactivator').on('click', function () {
+    if ($('.DHIactivator').is(":checked")) {
+        $('.DHIDisplay').css('display', 'block')
+    } else {
         $('.DHIDisplay').css('display', 'none')
     }
 })

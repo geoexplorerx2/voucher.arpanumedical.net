@@ -40,6 +40,7 @@
                                     <th scope="col">surchargepayment</th>
                                     {{-- <th scope="col">surchargepayment2</th> --}}
                                     <th scope="col">DHI</th>
+                                    <th scope="col">Services</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,6 +67,7 @@
                                         <td>{{ $item->surchargepayment.' '.$item->surchargePaymentUnit }}</td>
                                         {{-- <td>{{ $item->surchargepayment2.' '.$item->surchargePaymentUnit2 }}</td> --}}
                                         <td>{{ $item->DHI.' '.$item->DHIUnit }}</td>
+                                        <td>{{ $item->services }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -1,16 +1,16 @@
 var dataTable;
-var select2Init = function () { };
+var select2Init = function () {};
 
 var dataTableInit = function () {
     dataTable = $('#dataTable').dataTable({
         "columnDefs": [{
-            "targets": 1,
-            "type": 'num',
-        },
-        {
-            "targets": 2,
-            "type": 'num',
-        }
+                "targets": 1,
+                "type": 'num',
+            },
+            {
+                "targets": 2,
+                "type": 'num',
+            }
         ],
     });
 };
@@ -47,8 +47,7 @@ var app = (function () {
         $('#dhi-supplement').change(function () {
             if ($(this).is(':checked')) {
                 $(".dhi-supplement-section").show(300);
-            }
-            else {
+            } else {
                 $(".dhi-supplement-section").hide(300);
             }
         });
@@ -70,9 +69,10 @@ var app = (function () {
                 var inputElement = '<div class="font-weight-700 mt-2 form-note"><label class="form-note-label" for=' + nameInput + ' >Note</label><textarea class="form-control" name=' + nameInput + ' placeholder="Enter Note" rows="3" cols="50"></textarea></div>';
                 $(this).closest('.input-container').append(inputElement).hide().slideDown(800);
                 // $(this).removeAttr("name");
-            }
-            else {
-                $(this).closest('.input-container').find('.form-note').hide('slow', function () { $(this).remove(); });
+            } else {
+                $(this).closest('.input-container').find('.form-note').hide('slow', function () {
+                    $(this).remove();
+                });
             }
         });
     });
@@ -114,7 +114,10 @@ var Layout = (function () {
     }
 
     $(document).ready(function () {
-        $("#tableData").dataTable({ paging: true, pageLength: 25 });
+        $("#tableData").dataTable({
+            paging: true,
+            pageLength: 25
+        });
     });
 
     if ($(window).width() < 1200) {
@@ -320,7 +323,7 @@ function saveVoucher() {
                 addVoucher(language, dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
             }, 500);
         });
-    } catch (error) { }
+    } catch (error) {}
 }
 
 function addVoucher(language, dhi_supplement, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package) {
@@ -394,11 +397,11 @@ function addVoucher(language, dhi_supplement, code_img, hotel_img, hospital_img,
                     }, 1000);
                 }
             },
-            error: function () { },
+            error: function () {},
         });
     } catch (error) {
         console.log(error);
-    } finally { }
+    } finally {}
 }
 
 
@@ -449,8 +452,7 @@ function updateVoucher() {
                 saveUpdateVoucher(language, dhi_supplement, id, code_img, hotel_img, hospital_img, clinic, foreseen_date, medical_type, desc, patient_name, hotel_name, room_type, category, hotel_checkin, hotel_checkout, confirmatiom_num, nights, arrival_date, departure_date, arrival_time, departure_time, pickup_time, flight_number, arrival_airport, departure_airport, airport_code, contact_person, payment_detail, important_note, clinic_balance, prepayment_received, currency, total_package);
             }, 500);
         });
-    }
-    catch (error) { }
+    } catch (error) {}
 }
 
 //Update Voucher
@@ -507,43 +509,106 @@ function saveUpdateVoucher(language, dhi_supplement, id, code_img, hotel_img, ho
             dataType: 'json',
             success: function (response) {
                 if (response) {
-                    swal({ icon: 'success', title: 'Success', text: 'Voucher Updated Successfully!' });
+                    swal({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Voucher Updated Successfully!'
+                    });
                     setTimeout(function () {
                         location.reload();
                     }, 1000);
                 }
             },
 
-            error: function () { },
+            error: function () {},
         });
     } catch (error) {
         console.log(error);
-    } finally { }
+    } finally {}
 }
 
-$("#roomType").select2({ placeholder: "Select Room Type", dropdownAutoWidth: true, allowClear: false, tags: true, multiple: true });
-$("#clinic").select2({ placeholder: "Select Clinic", dropdownAutoWidth: true, allowClear: true });
-$("#hotel_voucher").select2({ placeholder: "Select Hotel", dropdownAutoWidth: true, allowClear: true });
-$("#TotalPackageRateCurrency").select2({ placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true });
-$("#PrePaymentReceivedCurrency").select2({ placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true });
-$("#ClinicBalanceCurrency").select2({ placeholder: "Select Currency", dropdownAutoWidth: true, allowClear: true });
-$("#hotel_category").select2({ placeholder: "Select Category", dropdownAutoWidth: true, allowClear: true });
-$("#contactPerson").select2({ placeholder: "Select Contact Person", dropdownAutoWidth: true, allowClear: false, tags: true, multiple: true });
-$("#airportCode").select2({ placeholder: "Select Airport Code", dropdownAutoWidth: true, allowClear: true });
-$("#gender").select2({ placeholder: "select gender", dropdownAutoWidth: true, allowClear: true });
-$("#surchargepaymentValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
-$("#DHIValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
-$("#surchargepaymentValue2").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
-$("#countries").select2({ placeholder: "Select a Country", dropdownAutoWidth: true, allowClear: true });
+$("#roomType").select2({
+    placeholder: "Select Room Type",
+    dropdownAutoWidth: true,
+    allowClear: false,
+    tags: true,
+    multiple: true
+});
+$("#clinic").select2({
+    placeholder: "Select Clinic",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#hotel_voucher").select2({
+    placeholder: "Select Hotel",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#TotalPackageRateCurrency").select2({
+    placeholder: "Select Currency",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#PrePaymentReceivedCurrency").select2({
+    placeholder: "Select Currency",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#ClinicBalanceCurrency").select2({
+    placeholder: "Select Currency",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#hotel_category").select2({
+    placeholder: "Select Category",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#contactPerson").select2({
+    placeholder: "Select Contact Person",
+    dropdownAutoWidth: true,
+    allowClear: false,
+    tags: true,
+    multiple: true
+});
+$("#airportCode").select2({
+    placeholder: "Select Airport Code",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#gender").select2({
+    placeholder: "select gender",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#surchargepaymentValue").select2({
+    placeholder: "USD",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#DHIValue").select2({
+    placeholder: "USD",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#surchargepaymentValue2").select2({
+    placeholder: "USD",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+$("#countries").select2({
+    placeholder: "Select a Country",
+    dropdownAutoWidth: true,
+    allowClear: true
+});
+
 function dayDifference(d0, d1) {
     try {
         var diff = new Date(+d1).setHours(12) - new Date(+d0).setHours(12);
         return Math.round(diff / 8.64e7);
-    }
-    catch (error) {
+    } catch (error) {
         console.info(error);
-    }
-    finally { }
+    } finally {}
 }
 
 function selectedValues() {
@@ -702,8 +767,7 @@ function selectedValues() {
             let selectedAirport = $(this).children("option:selected").val();
             if (selectedAirport == "IST") {
 
-            }
-            else {
+            } else {
                 console.log("saw");
             }
         });
@@ -750,7 +814,9 @@ function selectedValues() {
             var checkOut = $("#check-out").val();
             var departure = checkOut.split('.');
             var dbFormatDateDeparture = (departure[2] + "." + departure[1] + "." + departure[0]);
-            [[new Date(dbFormatDateArrival), new Date(dbFormatDateDeparture)]].forEach(function (dates) {
+            [
+                [new Date(dbFormatDateArrival), new Date(dbFormatDateDeparture)]
+            ].forEach(function (dates) {
                 $("#nightResult").html('<p style="font-size: 9px; margin-bottom:0px;">' + dayDifference(dates[0], dates[1]) + '</p>');
             });
         });
@@ -831,6 +897,7 @@ function selectedValues() {
 
     }
 }
+
 function getLanguageFromURL() {
     let url = window.location.href;
     let language = "en";
@@ -874,9 +941,7 @@ const fixLayout = () => {
 }
 const saveInformation = (data) => {
     $('#save-btn').hide();
-    // console.log(data)
-    $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`,
-        {
+    $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`, {
             dateValue: $('#dateValue').val(),
             gender: $('#gender').val(),
             fullname: $('#fullname').val(),
@@ -887,8 +952,9 @@ const saveInformation = (data) => {
             surchargepaymentValue: $('#surchargepaymentValue').val(),
             surchargepayment2: $('#surchargepayment2').val(),
             surchargepaymentValue2: $('#surchargepaymentValue2').val(),
-            DHI: $('#DHI').val(),
+            DHI: $('#DHIactivator').is(":checked") ? $('#DHI').val() : false,
             DHIValue: $('#DHIValue').val(),
+            Services: Services,
         },
         function (response) {
             console.log(response)
@@ -989,6 +1055,5 @@ function timeFormat(timeInput) {
         }
     } catch (error) {
         console.info(error);
-    } finally {
-    }
+    } finally {}
 }
