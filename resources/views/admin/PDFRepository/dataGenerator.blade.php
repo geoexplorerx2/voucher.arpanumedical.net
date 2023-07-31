@@ -85,17 +85,28 @@
                 <div class="row">
                     <div class="mb-2">Hair Transplant Package</div>
                     <ul id="Service" style="list-style: none;">
-                        <li id="Operation" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Operation" /></span><span
-                                style="padding: 0 10px;">Operation</span></li>
-                        <li id="AirportTransfers" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Airport Transfers" /></span><span
+                        <li id="Operation" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox"
+                                    value="Operation" /></span><span style="padding: 0 10px;">Operation</span></li>
+                        <li id="AirportTransfers" onclick="getValue(this)" style="padding: 5px 0;"><span><input
+                                    type="checkbox" value="Airport Transfers" /></span><span
                                 style="padding: 0 10px;">Airport Transfers</span></li>
-                        <li id="Hotel" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Hotel" /></span><span
-                                style="padding: 0 10px;">Hotel</span></li>
-                        <li id="Flights" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Flights" /></span><span
-                                style="padding: 0 10px;">Flights</span></li>
-                        <li id="Post-Op" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Post-Op" /></span><span
-                                style="padding: 0 10px;">Post-Op</span></li>
+                        <li id="Hotel" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox"
+                                    value="Hotel" /></span><span style="padding: 0 10px;">Hotel</span></li>
+                        <li id="Flights" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox"
+                                    value="Flights" /></span><span style="padding: 0 10px;">Flights</span></li>
+                        <li id="Post-Op" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox"
+                                    value="Post-Op" /></span><span style="padding: 0 10px;">Post-Op</span></li>
                         <ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="mb-3">
+                <div>
+                    <span>
+                        <input id="DHIactivator" type="checkbox" value="DHI" />
+                    </span>
+                    <span style="padding: 0 10px;">DHI</span>
                 </div>
             </div>
         </div>
