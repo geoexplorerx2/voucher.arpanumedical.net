@@ -27,7 +27,7 @@
             <div class="mb-3">
                 <label class="form-label">Country</label>
                 <select class="form-control select" id="countries">
-                    <option>---Select Country---</option>
+                    <option></option>
                     @foreach($countries as $country)
                         <option value="{{ $country->name }}">{{ $country->name }}</option>
                     @endforeach

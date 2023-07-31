@@ -534,7 +534,7 @@ $("#gender").select2({ placeholder: "select gender", dropdownAutoWidth: true, al
 $("#surchargepaymentValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
 $("#DHIValue").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
 $("#surchargepaymentValue2").select2({ placeholder: "USD", dropdownAutoWidth: true, allowClear: true });
-$("#countries").select2({ placeholder: "Turkey", dropdownAutoWidth: true, allowClear: true });
+$("#countries").select2({ placeholder: "Select a Country", dropdownAutoWidth: true, allowClear: true });
 function dayDifference(d0, d1) {
     try {
         var diff = new Date(+d1).setHours(12) - new Date(+d0).setHours(12);
