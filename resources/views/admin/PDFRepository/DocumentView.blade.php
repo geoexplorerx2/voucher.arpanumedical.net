@@ -37,12 +37,10 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="height: 150px;">
+<div class="LayoutContainer" style="height: 200px;">
     <div class="Layout">
         <label>Service</label>
-        <div class="subLayout">
-            
-        </div>
+        <div id="ServiceDisplayer" class="subLayout" style="display: block;"></div>
     </div>
 </div>
 <!-- <div class="table">

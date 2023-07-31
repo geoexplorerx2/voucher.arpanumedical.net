@@ -84,16 +84,16 @@
                 <label class="form-label">Service</label>
                 <div class="row">
                     <div class="mb-2">Hair Transplant Package</div>
-                    <ul style="list-style: none;">
-                        <li style="padding: 5px 0;"><span><input type="checkbox" value="Operation" /></span><span
+                    <ul id="Service" style="list-style: none;">
+                        <li id="Operation" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Operation" /></span><span
                                 style="padding: 0 10px;">Operation</span></li>
-                        <li style="padding: 5px 0;"><span><input type="checkbox" value="Airport Transfers" /></span><span
+                        <li id="AirportTransfers" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Airport Transfers" /></span><span
                                 style="padding: 0 10px;">Airport Transfers</span></li>
-                        <li style="padding: 5px 0;"><span><input type="checkbox" value="Hotel" /></span><span
+                        <li id="Hotel" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Hotel" /></span><span
                                 style="padding: 0 10px;">Hotel</span></li>
-                        <li style="padding: 5px 0;"><span><input type="checkbox" value="Flights" /></span><span
+                        <li id="Flights" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Flights" /></span><span
                                 style="padding: 0 10px;">Flights</span></li>
-                        <li style="padding: 5px 0;"><span><input type="checkbox" value="Post-Op" /></span><span
+                        <li id="Post-Op" onclick="getValue(this)" style="padding: 5px 0;"><span><input type="checkbox" value="Post-Op" /></span><span
                                 style="padding: 0 10px;">Post-Op</span></li>
                         <ul>
                 </div>

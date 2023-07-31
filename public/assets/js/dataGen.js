@@ -1,6 +1,6 @@
-
-
-$('#dateValue').datepicker({ format: 'dd-mm-yyyy' })
+$('#dateValue').datepicker({
+    format: 'dd-mm-yyyy'
+})
 $('#dateValue').on('change', function () {
     $('.dataValue').text($('#dateValue').val())
 })
@@ -59,6 +59,51 @@ $('#countries').on('change', function () {
     $('.country').text($('#countries').val())
 })
 
+const Services = [{
+        "name": "Operation",
+        "status": false
+    },
+    {
+        "name": "AirportTransfers",
+        "status": false
+    },
+    {
+        "name": "Hotel",
+        "status": false
+    },
+    {
+        "name": "Flights",
+        "status": false
+    },
+    {
+        "name": "Post-Op",
+        "status": false
+    }
+]
+const getValue = (data) => {
+    // console.log(data.id)
+    let DocumentObjectMode = ''
+
+    if ($(`#${data.id}>span>input`).is(':checked')) {
+        Services.map((item) => {
+            if (item.name == data.id) {
+                item.status = true
+            }
+        })
+    } else {
+        Services.map((item) => {
+            if (item.name == data.id) {
+                item.status = false
+            }
+        })
+    }
+    Services.map((item) => {
+        if (item.status) {
+            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:5px 0px;">${item.name}</div>`
+        }
+    })
+    $('#ServiceDisplayer').html(DocumentObjectMode)
+}
 // $('#ReceiptNo').click(function(){
 //     let ReceiptNo = Math.floor(100000 + Math.random() * 900000);
 //     $('#ReceiptNo').val(ReceiptNo);
