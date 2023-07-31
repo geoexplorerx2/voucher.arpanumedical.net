@@ -22,5 +22,6 @@ class PerformInvoiceListModel extends Model
         'surchargepaymentUnit2',
         'DHI',
         'DHIUnit',
+        'services',
     ];
 }

@@ -44,7 +44,8 @@ class ProformaController extends Controller
     }
     public function Create(Request $request)
     {
-        $servicesTemp = array();
+        $serviceString = '';
+        $counter = 0;
         $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
@@ -59,10 +60,13 @@ class ProformaController extends Controller
         $DHIValue = isset($request->DHIValue) ? $request->DHIValue  : false;
         $Services = $request->Services;
         foreach ($Services as $item) {
-            if ((json_decode(json_encode($item), true))["status"]=="true") {
-                array_push($servicesTemp, $item);
+            if ((json_decode(json_encode($item), true))["status"] == "true") {
+                $serviceString = $serviceString . ' ' . (json_decode(json_encode($item), true))["name"];
+                $counter = $counter + 1;
             }
         }
+
+
         if (
             $date
             && $gender
@@ -91,6 +95,7 @@ class ProformaController extends Controller
                     'surchargepaymentUnit2' => '',
                     'DHI' => $DHI != false ? $DHI : '0',
                     'DHIUnit' => $DHIValue,
+                    'services' => $counter > 0 ? $serviceString : 'No Services',
                 ])) {
                     return response()->json([
                         "status" => true,
@@ -114,6 +119,8 @@ class ProformaController extends Controller
     }
     public function Update(Request $request, $id)
     {
+        $serviceString = '';
+        $counter = 0;
         $date = isset($request->dateValue) ? Carbon::createFromFormat('d-m-Y', $request->dateValue) : false;
         $gender = isset($request->gender) ? $request->gender : false;
         $fullname = isset($request->fullname) ? $request->fullname : false;
@@ -126,6 +133,13 @@ class ProformaController extends Controller
         $surchargepaymentValue2 = isset($request->surchargepaymentValue2) ? $request->surchargepaymentValue2  : false;
         $DHI = isset($request->DHI) ? $request->DHI  : false;
         $DHIValue = isset($request->DHIValue) ? $request->DHIValue  : false;
+        $Services = $request->Services;
+        foreach ($Services as $item) {
+            if ((json_decode(json_encode($item), true))["status"] == "true") {
+                $serviceString = $serviceString . ' ' . (json_decode(json_encode($item), true))["name"];
+                $counter = $counter + 1;
+            }
+        }
 
         if (
             $date
@@ -137,8 +151,8 @@ class ProformaController extends Controller
             && $surchargepaymentValue
             // && $surchargepayment2
             // && $surchargepaymentValue2
-            && $DHI
-            && $DHIValue
+            // && $DHI
+            // && $DHIValue
         ) {
             $updatingRecord = PerformInvoiceListModel::where('id', $id)->first();
             $updatingRecord->date = $date;
@@ -151,8 +165,9 @@ class ProformaController extends Controller
             $updatingRecord->surchargePaymentUnit = $surchargepaymentValue;
             $updatingRecord->surchargepayment2 = 0;
             $updatingRecord->surchargePaymentUnit2 = '';
-            $updatingRecord->DHI = $DHI;
+            $updatingRecord->DHI = $DHI != false ? $DHI : '0';
             $updatingRecord->DHIUnit = $DHIValue;
+            $updatingRecord->services = $counter > 0 ? $serviceString : 'No Services';
             if ($updatingRecord->save()) {
                 return response()->json([
                     "status" => true,

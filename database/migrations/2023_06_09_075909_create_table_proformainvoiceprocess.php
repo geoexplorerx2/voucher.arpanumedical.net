@@ -27,6 +27,7 @@ class CreateTableProformainvoiceprocess extends Migration
             $table->string('surchargePaymentUnit2');
             $table->integer('DHI');
             $table->string('DHIUnit');
+            $table->string('services');
             $table->timestamps();
         });
     }
