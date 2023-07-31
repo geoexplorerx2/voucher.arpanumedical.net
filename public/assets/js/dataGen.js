@@ -107,7 +107,7 @@ const getValue = (data) => {
 $('#DHIactivator').on('click', function () {
     if ($('#DHIactivator').is(":checked")) {
         $('.DHIDisplay').css('display', 'block')
-    }else{
+    } else {
         $('.DHIDisplay').css('display', 'none')
     }
 })
