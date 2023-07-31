@@ -97,3 +97,11 @@
         </div>
     </div>
 </div>
+<div class="LayoutContainer">
+    <div class="Layout">
+        <label>Payment details</label>
+        <div class="subLayout">
+            
+        </div>
+    </div>
+</div>
