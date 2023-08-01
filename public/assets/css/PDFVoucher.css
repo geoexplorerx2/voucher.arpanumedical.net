@@ -370,14 +370,11 @@ label {
     color:#000 !important;
 }
 .LayoutContainer{
-    margin-top: 10px;
     width: 100%;
-    height: 50px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
-    
 }
 
 .Layout{
@@ -387,10 +384,11 @@ label {
 .subLayout{
     width: 100%;
     height: 100%;
+    padding: 10px 10px;
     border: 1px solid gray;
     border-radius: 8px;
     transform: translateX(-3px);
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    
 }

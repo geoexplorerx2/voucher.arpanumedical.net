@@ -37,10 +37,10 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="height: 200px;">
+<div class="LayoutContainer" style="margin-bottom: 10px;">
     <div class="Layout">
         <label>Service</label>
-        <div id="ServiceDisplayer" class="subLayout" style="display: block;"></div>
+        <div id="ServiceDisplayer" class="subLayout" style="display: block;min-height: 50px;"></div>
     </div>
 </div>
 <!-- <div class="table">
@@ -97,10 +97,10 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="margin-bottom: 50px !important;">
+<div class="LayoutContainer" style="transform:translateY(-20px);">
     <div class="Layout">
         <label>Payment details</label>
-        <div class="subLayout">
+        <div class="subLayout" style="min-height: 50px;">
             
         </div>
     </div>
