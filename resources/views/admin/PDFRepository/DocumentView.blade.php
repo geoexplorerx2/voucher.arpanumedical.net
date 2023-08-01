@@ -67,8 +67,8 @@
                     class="surchargepaymentValue mx-1">€</span></div>
         </div>
     </div>
-    <div class="t2row2" style="border-bottom: 0px solid transparent;">
-        <div class="DHIDisplay" style="display: none;">
+    <div class="t2row2">
+        <div class="DHIDisplay" style="display: none;border-top:1px solid #555;padding:10px 0;">
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span
                     class="DHI"></span><span class="DHIValue mx-1">€</span></div>
         </div>

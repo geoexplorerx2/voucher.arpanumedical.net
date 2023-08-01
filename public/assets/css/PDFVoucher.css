@@ -233,7 +233,6 @@
 
 .table2 {
     width: 95%;
-    height: 180px;
     border: 1px solid #555;
     transform: translateX(15px);
     border-radius: 8px;
@@ -243,10 +242,9 @@
 
 .t2row1 {
     width: 100%;
-    height: 100px;
+    padding: 5px 0px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #7F8C8D;
 }
 
 .textCustomizing {
@@ -260,10 +258,8 @@
 
 .t2row2 {
     width: 100%;
-    height: 50px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #7F8C8D;
 }
 
 .t2row3 {
