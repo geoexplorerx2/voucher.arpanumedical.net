@@ -83,21 +83,21 @@
 <div class="sectionAmount">
     <div class="amountContainer">
         <div>
-            <div class="tutar">Tutar / Amount</div>
-            <div class="value mb-2">
+            <div class="tutar mt-2">Tutar / Amount</div>
+            <div class="value">
                 <span class="amount"></span>
                 <span class="amountValue">€</span>
             </div>
             <hr />
             <div class="tutar">Toplam / Total</div>
-            <div class="value mb-2">
+            <div class="value">
                 <span class="amount2"></span>
                 <span class="amountValue2">€</span>
             </div>
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="transform:translateY(-20px);">
+<div class="LayoutContainer" style="transform:translateY(-110px);">
     <div class="Layout">
         <label>Payment details</label>
         <div class="subLayout" style="min-height: 50px;">
