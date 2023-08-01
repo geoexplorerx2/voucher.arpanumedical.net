@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="height: 200px;">
+<div class="LayoutContainer mb-1">
     <div class="Layout">
         <label>Service</label>
         <div id="ServiceDisplayer" class="subLayout" style="display: block;">
@@ -62,7 +62,7 @@
         </div>
     </div>
     <div class="t2row2">
-        <div class="DHIDisplay" {!! $item->DHI=='0'?'style="display:none;"':'style="display:block;"' !!}>
+        <div class="DHIDisplay" {!! $item->DHI=='0'?'style="display:none;"':'style="display:block;border-top:1px solid #000;padding:8px 0px;"' !!}>
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span class="DHI">{{ $item->DHI }}</span><span class="DHIValue mx-1">{{ $item->DHIUnit }}</span></div>
         </div>
     </div>
@@ -77,8 +77,8 @@
 <div class="sectionAmount">
     <div class="amountContainer">
         <div>
-            <div class="tutar">Tutar / Amount</div>
-            <div class="value mb-2">
+            <div class="tutar mt-2">Tutar / Amount</div>
+            <div class="value">
                 <span class="amount">{{ $item->surchargepayment }}</span>
                 <span class="amountValue">{{ $item->surchargePaymentUnit }}</span>
             </div>
@@ -91,10 +91,10 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="margin-bottom: 50px !important;">
+<div class="LayoutContainer" style="transform:translate(0px,-100px)">
     <div class="Layout">
         <label>Payment details</label>
-        <div class="subLayout">
+        <div class="subLayout" style="min-height: 50px;">
 
         </div>
     </div>
