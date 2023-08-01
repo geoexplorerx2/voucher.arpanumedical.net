@@ -64,7 +64,7 @@ class ProformaController extends Controller
         foreach ($Services as $item) {
             if ((json_decode(json_encode($item), true))["status"] == "true") {
                 $name = (json_decode(json_encode($item), true))["name"] == 'AirportTransfers' ? 'Airport Transfers' : (json_decode(json_encode($item), true))["name"];
-                $serviceString = $serviceString . ' ' . $name;
+                $serviceString = $serviceString . ' - ' . $name;
                 $counter = $counter + 1;
             }
         }
@@ -98,7 +98,7 @@ class ProformaController extends Controller
                     'surchargepaymentUnit2' => '',
                     'DHI' => $DHI != false ? $DHI : '0',
                     'DHIUnit' => $DHIValue,
-                    'services' => $counter > 0 ? $serviceString : 'No Services',
+                    'services' => $counter > 0 ? trim($serviceString, ' - ') : 'No Services',
                 ])) {
                     return response()->json([
                         "status" => true,
