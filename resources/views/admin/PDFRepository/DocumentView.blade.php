@@ -97,7 +97,7 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="transform:translateY(-110px);">
+<div class="LayoutContainer">
     <div class="Layout">
         <label>Payment details</label>
         <div class="subLayout" style="min-height: 50px;">

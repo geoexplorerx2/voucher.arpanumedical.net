@@ -109,7 +109,7 @@
     background: #ff8000;
     background: linear-gradient(99deg, #ff8000 0.00%, #f84500 100.00%);
     color: #fff;
-    transform: translate(15px, -40px);
+    transform: translate(15px, -50px);
     display: flex;
     justify-content: space-between;
 }
@@ -238,7 +238,7 @@
 .table2 {
     width: 95%;
     border: 1px solid #555;
-    transform: translate(15px,-25px);
+    transform: translate(15px,-43px);
     border-radius: 8px;
     padding: 0px 15px;
 }
@@ -274,10 +274,10 @@
 
 .sectionAmount {
     width: 95%;
-    height: 190px;
-    transform: translate(15px,-30px);
+    transform: translate(15px,-35px);
     border-radius: 8px;
-    margin-top: 15px;
+    margin-bottom: 146px;
+    /* margin-top: 15px; */
     padding: 0px 15px;
     position: relative;
 }
@@ -375,7 +375,7 @@ label {
 }
 
 .LayoutContainer {
-    transform: translate(0px, -43px);
+    transform: translate(0px, -54px);
     width: 100%;
     margin-top: 10px;
     display: flex;

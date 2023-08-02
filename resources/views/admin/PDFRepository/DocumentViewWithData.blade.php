@@ -44,7 +44,7 @@
         <div id="ServiceDisplayer" class="subLayout" style="display: block;">
             @foreach($service as $subitem)
             @if(strpos($item->services, $subitem) !== false)
-             <div style="padding: 5px 0;">{{ $subitem }}</div>
+             <div style="padding: 1px 0;">{{ $subitem }}</div>
             @endif
             @endforeach
         </div>
@@ -91,7 +91,7 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="transform:translate(0px,-100px)">
+<div class="LayoutContainer">
     <div class="Layout">
         <label>Payment details</label>
         <div class="subLayout" style="min-height: 50px;">
