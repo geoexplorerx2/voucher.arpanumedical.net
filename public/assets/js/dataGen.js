@@ -99,7 +99,7 @@ const getValue = (data) => {
     }
     Services.map((item) => {
         if (item.status) {
-            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:2px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
+            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
         }
     })
     $('#ServiceDisplayer').html(DocumentObjectMode)
