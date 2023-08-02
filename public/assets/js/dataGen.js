@@ -81,27 +81,40 @@ const Services = [{
     }
 ]
 const getValue = (data) => {
-    // console.log(data.id)
+    const pathname = window.location.pathname.split('/').length
     let DocumentObjectMode = ''
-
-    if ($(`#${data.id}>span>input`).is(':checked')) {
+    if (pathname == 2) {
+        if ($(`#${data.id}>span>input`).is(':checked')) {
+            Services.map((item) => {
+                if (item.name == data.id) {
+                    item.status = true
+                }
+            })
+        } else {
+            Services.map((item) => {
+                if (item.name == data.id) {
+                    item.status = false
+                }
+            })
+        }
         Services.map((item) => {
-            if (item.name == data.id) {
-                item.status = true
+            if (item.status) {
+                DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
             }
         })
     } else {
-        Services.map((item) => {
-            if (item.name == data.id) {
-                item.status = false
-            }
-        })
+        $.ajax({
+            url: '/api/proforma/servicelog/' + window.location.pathname.split('/')[3], // Replace with your server endpoint URL
+            method: 'GET', // HTTP method (GET, POST, PUT, DELETE, etc.)
+            dataType: 'json', // Data type expected from the server response
+            success: function (response) {
+                // This function is called when the AJAX request is successful
+                // 'response' contains the data returned by the server
+                console.log(response);
+                // You can update your page elements with the response data here
+            },
+        });
     }
-    Services.map((item) => {
-        if (item.status) {
-            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
-        }
-    })
     $('#ServiceDisplayer').html(DocumentObjectMode)
 }
 $('#DHIactivator').on('click', function () {

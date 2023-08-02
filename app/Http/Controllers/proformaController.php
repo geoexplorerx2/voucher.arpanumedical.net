@@ -191,4 +191,10 @@ class ProformaController extends Controller
         $response = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->first();
         return $response->id;
     }
+    public function ServicesLog($id){
+        $data = PerformInvoiceListModel::find($id);
+        $services = explode(' - ',$data->services);
+        return $services;
+        
+    }
 }
