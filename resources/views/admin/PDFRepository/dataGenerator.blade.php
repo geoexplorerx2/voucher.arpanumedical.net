@@ -13,8 +13,8 @@
                     <div class="col-lg-5 transformation">
                         <select class="form-control" id="gender">
                             <option></option>
-                            <option value="Mr">Mr</option>
-                            <option value="Mrs">Mrs</option>
+                            <option value="Mr . ">Mr</option>
+                            <option value="Mrs . ">Mrs</option>
                         </select>
                     </div>
                     <div class="col-lg-7"><input id="fullname" type="text" class="form-control"
