@@ -37,10 +37,10 @@
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="height: 200px;">
+<div class="LayoutContainer" style="margin-bottom: 10px;">
     <div class="Layout">
         <label>Service</label>
-        <div id="ServiceDisplayer" class="subLayout" style="display: block;"></div>
+        <div id="ServiceDisplayer" class="subLayout" style="display: block;min-height: 50px;"></div>
     </div>
 </div>
 <!-- <div class="table">
@@ -67,8 +67,8 @@
                     class="surchargepaymentValue mx-1">€</span></div>
         </div>
     </div>
-    <div class="t2row2" style="border-bottom: 0px solid transparent;">
-        <div class="DHIDisplay" style="display: none;">
+    <div class="t2row2">
+        <div class="DHIDisplay" style="display: none;border-top:1px solid #555;padding:10px 0;">
             <div class="textCustomizing">İn case DHI technique will be applied, there is supplement of <span
                     class="DHI"></span><span class="DHIValue mx-1">€</span></div>
         </div>
@@ -83,24 +83,24 @@
 <div class="sectionAmount">
     <div class="amountContainer">
         <div>
-            <div class="tutar">Tutar / Amount</div>
-            <div class="value mb-2">
+            <div class="tutar mt-2">Tutar / Amount</div>
+            <div class="value">
                 <span class="amount"></span>
                 <span class="amountValue">€</span>
             </div>
             <hr />
             <div class="tutar">Toplam / Total</div>
-            <div class="value mb-2">
+            <div class="value">
                 <span class="amount2"></span>
                 <span class="amountValue2">€</span>
             </div>
         </div>
     </div>
 </div>
-<div class="LayoutContainer" style="margin-bottom: 50px !important;">
+<div class="LayoutContainer">
     <div class="Layout">
         <label>Payment details</label>
-        <div class="subLayout">
+        <div class="subLayout" style="min-height: 50px;">
             
         </div>
     </div>
