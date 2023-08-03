@@ -139,7 +139,8 @@ class ProformaController extends Controller
         $Services = $request->Services;
         foreach ($Services as $item) {
             if ((json_decode(json_encode($item), true))["status"] == "true") {
-                $serviceString = $serviceString . ' ' . (json_decode(json_encode($item), true))["name"];
+                $name = (json_decode(json_encode($item), true))["name"] == 'AirportTransfers' ? 'Airport Transfers' : (json_decode(json_encode($item), true))["name"];
+                $serviceString = $serviceString . ' - ' . $name;
                 $counter = $counter + 1;
             }
         }
@@ -170,7 +171,7 @@ class ProformaController extends Controller
             $updatingRecord->surchargePaymentUnit2 = '';
             $updatingRecord->DHI = $DHI != false ? $DHI : '0';
             $updatingRecord->DHIUnit = $DHIValue;
-            $updatingRecord->services = $counter > 0 ? $serviceString : 'No Services';
+            $updatingRecord->services = $counter > 0 ? trim($serviceString, ' - ') : 'No Services';
             if ($updatingRecord->save()) {
                 return response()->json([
                     "status" => true,
@@ -191,10 +192,10 @@ class ProformaController extends Controller
         $response = PerformInvoiceListModel::where('ReceiptNo', $ReceiptNo)->first();
         return $response->id;
     }
-    public function ServicesLog($id){
+    public function ServicesLog($id)
+    {
         $data = PerformInvoiceListModel::find($id);
-        $services = explode(' - ',$data->services);
+        $services = explode(' - ', $data->services);
         return $services;
-        
     }
 }
