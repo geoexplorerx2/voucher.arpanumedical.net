@@ -81,29 +81,77 @@ const Services = [{
     }
 ]
 const getValue = (data) => {
-    // console.log(data.id)
-    let DocumentObjectMode = ''
 
-    if ($(`#${data.id}>span>input`).is(':checked')) {
-        Services.map((item) => {
-            if (item.name == data.id) {
-                item.status = true
-            }
-        })
-    } else {
-        Services.map((item) => {
-            if (item.name == data.id) {
-                item.status = false
-            }
-        })
-    }
-    Services.map((item) => {
-        if (item.status) {
-            DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
+    const pathname = window.location.pathname.split('/').length
+    let DocumentObjectMode = ''
+    if (pathname == 2) {
+        if ($(`#${data.id}>span>input`).is(':checked')) {
+            Services.map((item) => {
+                if (item.name == data.id) {
+                    item.status = true
+                }
+            })
+        } else {
+            Services.map((item) => {
+                if (item.name == data.id) {
+                    item.status = false
+                }
+            })
         }
-    })
-    $('#ServiceDisplayer').html(DocumentObjectMode)
+        Services.map((item) => {
+            if (item.status) {
+                DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
+            }
+        })
+        $('#ServiceDisplayer').html(DocumentObjectMode)
+    } else {
+        $.ajax({
+            url: '/api/proforma/servicelog/' + window.location.pathname.split('/')[3],
+            method: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                response.map((item, index) => {
+                    if (item == (Services[index].name == 'AirportTransfers' ? 'Airport Transfers' : Services[index].name)) {
+                        Services[index].status = true
+                    }
+                })
+                if ($(`#${'Operation'}>span>input`).is(':checked')) {
+                    Services[0].status = true
+                } else {
+                    Services[0].status = false
+                }
+                if ($(`#${'AirportTransfers'}>span>input`).is(':checked')) {
+                    Services[1].status = true
+                } else {
+                    Services[1].status = false
+                }
+                if ($(`#${'Hotel'}>span>input`).is(':checked')) {
+                    Services[2].status = true
+                } else {
+                    Services[2].status = false
+                }
+                if ($(`#${'Flights'}>span>input`).is(':checked')) {
+                    Services[3].status = true
+                } else {
+                    Services[3].status = false
+                }
+                if ($(`#${'Post-Op'}>span>input`).is(':checked')) {
+                    Services[4].status = true
+                } else {
+                    Services[4].status = false
+                }
+                Services.map((item) => {
+                    if (item.status) {
+                        DocumentObjectMode = DocumentObjectMode + `<div style="width:100%;padding:1px 0px;">${item.name=='AirportTransfers'?'Airport Transfers':item.name}</div>`
+                    }
+                })
+                $('#ServiceDisplayer').html(DocumentObjectMode)
+            },
+        });
+    }
+    
 }
+
 $('#DHIactivator').on('click', function () {
     if ($('#DHIactivator').is(":checked")) {
         $('.DHIDisplay').css('display', 'block')

@@ -15,8 +15,8 @@
                     <div class="col-lg-5 transformation">
                         <select class="form-control" id="gender">
                             <option></option>
-                            <option value="Mr" {{ $item->gender=="Mr"?'selected':'' }}>Mr</option>
-                            <option value="Mrs" {{ $item->gender=="Mrs"?'selected':'' }}>Mrs</option>
+                            <option value="Mr ." {{ $item->gender=="Mr ."?'selected':'' }}>Mr</option>
+                            <option value="Mrs ." {{ $item->gender=="Mrs ."?'selected':'' }}>Mrs</option>
                         </select>
                     </div>
                     <div class="col-lg-7"><input id="fullname" type="text" class="form-control" style="transform: translateX(-10px)" value="{{ $item->fullname }}"></div>
