@@ -48,7 +48,7 @@
         </div>
         <div class="col-lg-6">
             <div class="mb-3">
-                <label class="form-label">surcharge for payment by credit card</label>
+                <label class="form-label">Surcharge for payment by credit card</label>
                 <div class="row">
                     <div class="col-lg-8"><input id="surchargepayment" type="number" class="form-control"
                             style="transform: translateX(-10px)"></div>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-lg-6">
             <div class="mb-3">
-                <label class="form-label">İn case DHI technique will be applied</label>
+                <label class="form-label">In case DHI technique will be applied</label>
                 <div class="row">
                     <div class="col-lg-8"><input id="DHI" type="number" class="form-control"
                             style="transform: translateX(-10px)"></div>
