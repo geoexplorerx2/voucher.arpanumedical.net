@@ -89,11 +89,11 @@
     text-align: left;
     color: #000000;
     padding: 0px 20px;
-    transform: translateY(-20px) !important;
+    transform: translateY(0px) !important;
 }
 
 .proformaInvoiceDescription {
-    transform: translateY(-20px);
+    transform: translateY(0px);
     font-size: 13px;
     width: 90%;
     font-weight: 500;
