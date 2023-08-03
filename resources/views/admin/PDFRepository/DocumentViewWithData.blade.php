@@ -26,7 +26,7 @@
     <div class="Layout">
         <label>Name</label>
         <div class="subLayout">
-            <span class="gender">{{ $item->gender }}</span> <span class="fullname">{{ $item->fullname }}</span>
+            <span class="gender">{{ $item->gender }} </span> <span class="fullname" style="margin:0 5px;">{{ $item->fullname }}</span>
         </div>
     </div>
 </div>

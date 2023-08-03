@@ -25,7 +25,7 @@
     <div class="Layout">
         <label>Name</label>
         <div class="subLayout">
-            <span class="gender">Mr</span> <span class="fullname">Ruben Tamboleo Garcia</span>
+            <span class="gender">Mr.</span><span class="fullname" style="margin:0 5px;">Ruben Tamboleo Garcia</span>
         </div>
     </div>
 </div>
