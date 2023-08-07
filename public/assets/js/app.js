@@ -971,6 +971,7 @@ const saveInformation = (data) => {
                                 window.location.href = getURL() + '/proforma/edit/' + response
                             })
                         } else {
+                            window.location.href = getURL() + '/proforma/edit/' + data[0].id
                             console.log(data[0].id)
                         }
                     }
