@@ -939,6 +939,7 @@ const fixLayout = () => {
     $('#formContainerId').removeClass('formContainer');
     $('#formContainerId').addClass('result-formContainer');
 }
+// Information Recorder Function
 const saveInformation = (data) => {
     $('#save-btn').hide();
     $.post(getURL() + `${data == null ? '/api/create/proformainvoice' : '/api/proforma/update/' + data[0].id}`, {

@@ -8,9 +8,7 @@ $('#PerNight').on('keyup', function () {
     $('.PerNightValue').text($('#PerNight').val())
 })
 
-// $('#ReceiptNo').on('keyup', function () {
-//      $('.ReceiptNo').text($('#ReceiptNo').val())
-// })
+
 
 $('#surchargepayment').on('keyup', function () {
     $('.ReceiptNo').text($('#ReceiptNo').val())
@@ -149,7 +147,7 @@ const getValue = (data) => {
             },
         });
     }
-    
+
 }
 
 $('#DHIactivator').on('click', function () {
