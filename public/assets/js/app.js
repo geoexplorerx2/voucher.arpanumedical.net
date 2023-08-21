@@ -679,15 +679,15 @@ function selectedValues() {
                 let importantNotesText = '';
 
                 if (language == "es") {
-                    importantNotesText = '<span style="font-size: 9px;font-weight:700" id="important-note-airport">A su llegada al aeropuerto, después de haber pasado por el punto de control de pasaportes y la recogida de equipajes, se dirigirá a la puerta de salida.  En el aeropuerto de Sabiha Gökçen nuestro conductor le estará esperando en la columna 13 bajo un cartel con el código 3E.</span><br>';
+                    importantNotesText = '<span style="font-size: 9px;font-weight:700" id="important-note-airport">A su llegada al aeropuerto, después de haber pasado por el punto de control de pasaportes y la recogida de equipajes, se dirigirá a la puerta de salida.  En el aeropuerto de Sabiha Gökçen nuestro conductor le estará esperando en la columna 12 bajo un cartel con el código 3E.</span><br>';
                 } else if (language == "it") {
-                    importantNotesText = '<span style="font-size: 9px;font-weight:700;" id="important-note-airport">Dopo aver superato il controllo passaporti e il ritiro bagagli, dovrai recarti alla porta di uscita, dove le persone aspettano tenendo in alto cartelli con i nomi scritti. All\'aeroporto di Sabiha Gökçen: il nostro autista ti accoglierà appena fuori, alla Colonna 13, tenendo un cartello con 3E.</span><br>';
+                    importantNotesText = '<span style="font-size: 9px;font-weight:700;" id="important-note-airport">Dopo aver superato il controllo passaporti e il ritiro bagagli, dovrai recarti alla porta di uscita, dove le persone aspettano tenendo in alto cartelli con i nomi scritti. All\'aeroporto di Sabiha Gökçen: il nostro autista ti accoglierà appena fuori, alla Colonna 12, tenendo un cartello con 3E.</span><br>';
                 } else {
-                    importantNotesText = '<span style="font-size: 9px;font-weight:700" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Gökçen: you will be greeted by our driver just outside, at Column 13, holding a board with 3E.</span><br>';
+                    importantNotesText = '<span style="font-size: 9px;font-weight:700" id="important-note-airport">After having passed through passport checkpoint and baggage claim, you will proceed to the Exit door, where people wait while holding up signs with names written on them. At Sabiha Gökçen: you will be greeted by our driver just outside, at Column 12, holding a board with 3E.</span><br>';
                 }
 
                 $("#importantNotesText").html(importantNotesText);
-                $("#airportImage").html('<img src="/images/3e.jpg" style="width: 75px;margin-top: 25px;" id="code_img">');
+                $("#airportImage").html('<img src="/images/3e12.jpg" style="width: 75px;margin-top: 25px;" id="code_img">');
             }
             console.log(language);
 
