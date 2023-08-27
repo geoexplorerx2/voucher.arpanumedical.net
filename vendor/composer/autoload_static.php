@@ -590,6 +590,7 @@ class ComposerStaticInit09562780d17e078b3d8c724b0909a0d3
         'App\\Models\\Country' => __DIR__ . '/../..' . '/app/Models/Country.php',
         'App\\Models\\Hospital' => __DIR__ . '/../..' . '/app/Models/Hospital.php',
         'App\\Models\\Hotel' => __DIR__ . '/../..' . '/app/Models/Hotel.php',
+        'App\\Models\\PerformInvoiceListModel' => __DIR__ . '/../..' . '/app/Models/PerformInvoiceListModel.php',
         'App\\Models\\SalesPerson' => __DIR__ . '/../..' . '/app/Models/SalesPerson.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Voucher' => __DIR__ . '/../..' . '/app/Models/Voucher.php',
